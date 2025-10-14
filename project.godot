@@ -13,8 +13,9 @@ config_version=5
 config/name="Riskuits: Love at First Crunchs"
 config/description="A game about a rat eating all the different types of biscuits he could find in his school."
 config/version="1.0"
+run/main_scene="uid://c3mgol4nrts6b"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://sprites/icon.svg"
 
 [autoload]
 
