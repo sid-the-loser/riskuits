@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://uww0dw0d6m7f"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_fp3wc"]
+
+[node name="Player" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_fp3wc")
