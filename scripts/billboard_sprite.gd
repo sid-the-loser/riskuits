@@ -1,4 +1,4 @@
-class_name billboard_sprite
+class_name BillboardSprite
 extends Sprite3D
 
 var current_camera: Camera3D = null
