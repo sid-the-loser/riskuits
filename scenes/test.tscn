@@ -17,18 +17,20 @@ sky = SubResource("Sky_bl13t")
 [node name="Test" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-size = Vector3(7, 1, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.930176)
+size = Vector3(7, 1, 18.860352)
 
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6663637, 2.6792212, 6.5646653)
+transform = Transform3D(1, 0, 0, 0, 0.9018325, 0.43208575, 0, -0.43208575, 0.9018325, 0, 5.895, 5)
 current = true
 script = ExtResource("1_bl13t")
 main_subject_ = NodePath("../Player")
-movement_speed_ = 2.5
+rail_movement_axis = "z"
+offset_ = 10.0
 metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 
 [node name="Player" parent="." instance=ExtResource("1_errlg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5233617, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iyx0m")

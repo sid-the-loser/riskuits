@@ -7,4 +7,4 @@ func _ready() -> void:
 	current_camera = get_viewport().get_camera_3d()
 	
 func _process(delta: float) -> void:
-	look_at(current_camera.position)
+	look_at(current_camera.get_position())
