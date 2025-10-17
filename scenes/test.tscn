@@ -23,7 +23,7 @@ flip_faces = true
 size = Vector3(19.738342, 5.9765625, 19.298096)
 
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_")]
-transform = Transform3D(1, 0, 0, 0, 0.83807117, 0.5455609, 0, -0.5455609, 0.83807117, 0, 8.54863, 8.125768)
+transform = Transform3D(1, 0, 0, 0, 0.851306, 0.5246696, 0, -0.5246696, 0.851306, 0, 8.006878, 5.495559)
 current = true
 script = ExtResource("1_bl13t")
 main_subject_ = NodePath("../Player")
