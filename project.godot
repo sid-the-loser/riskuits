@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Riskuits: Love at First Crunchs"
+config/name="Riskuits: Love at First Crunch"
 config/description="A game about a rat eating all the different types of biscuits he could find in his school."
 config/version="1.0"
 run/main_scene="uid://c3mgol4nrts6b"
