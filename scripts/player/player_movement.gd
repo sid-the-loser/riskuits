@@ -1,4 +1,4 @@
-class_name PlayerMoveent
+class_name PlayerMovement
 extends Node
 
 @export var parent_character_body: CharacterBody3D

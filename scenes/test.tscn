@@ -16,19 +16,25 @@ sky = SubResource("Sky_bl13t")
 
 [node name="Test" type="Node3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6647949)
-size = Vector3(7, 1, 7)
+[node name="Chamber" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95, -6.814)
+use_collision = true
+flip_faces = true
+size = Vector3(19.738342, 5.9765625, 19.298096)
 
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_")]
-transform = Transform3D(1, 0, 0, 0, 0.9018325, 0.43208575, 0, -0.43208575, 0.9018325, 0, 5.895, 5)
+transform = Transform3D(1, 0, 0, 0, 0.83807117, 0.5455609, 0, -0.5455609, 0.83807117, 0, 8.54863, 8.125768)
 current = true
 script = ExtResource("1_bl13t")
 main_subject_ = NodePath("../Player")
 metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 
 [node name="Player" parent="." instance=ExtResource("1_errlg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iyx0m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.08819012, 0.40311408, -0.9108905, 0.038846843, 0.91514975, 0.40123793, 0.9953459, 0, -0.096366875, 0, 0, 0)
+light_color = Color(1, 1, 0.7882353, 1)
+shadow_enabled = true
