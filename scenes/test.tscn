@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3mgol4nrts6b"]
+[gd_scene load_steps=7 format=3 uid="uid://c3mgol4nrts6b"]
 
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="1_bl13t"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="1_errlg"]
+[ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/RiscuitsClassroomNoBorder.gltf" id="3_iyx0m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_errlg"]
 sky_top_color = Color(0.22471717, 0.5023197, 0.81317407, 1)
@@ -16,20 +17,15 @@ sky = SubResource("Sky_bl13t")
 
 [node name="Test" type="Node3D"]
 
-[node name="Chamber" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95, -6.814)
-use_collision = true
-flip_faces = true
-size = Vector3(19.738342, 5.9765625, 19.298096)
-
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_")]
-transform = Transform3D(1, 0, 0, 0, 0.851306, 0.5246696, 0, -0.5246696, 0.851306, 0, 8.006878, 5.495559)
+transform = Transform3D(1, 0, 0, 0, 0.851306, 0.5246696, 0, -0.5246696, 0.851306, 0, 8.006878, 6.277887)
 current = true
 script = ExtResource("1_bl13t")
 main_subject_ = NodePath("../Player")
 metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 
 [node name="Player" parent="." instance=ExtResource("1_errlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iyx0m")
@@ -38,3 +34,6 @@ environment = SubResource("Environment_iyx0m")
 transform = Transform3D(-0.08819012, 0.40311408, -0.9108905, 0.038846843, 0.91514975, 0.40123793, 0.9953459, 0, -0.096366875, 0, 0, 0)
 light_color = Color(1, 1, 0.7882353, 1)
 shadow_enabled = true
+
+[node name="blockbench_export" parent="." instance=ExtResource("3_iyx0m")]
+transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -8.551542, 0, 0)
