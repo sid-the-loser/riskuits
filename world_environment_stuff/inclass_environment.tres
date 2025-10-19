@@ -1,6 +1,7 @@
 [gd_resource type="Environment" load_steps=3 format=3 uid="uid://cuxra7uc8caxi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_prk7x"]
+ground_bottom_color = Color(0.17979056, 0.65311515, 0.115210794, 1)
 
 [sub_resource type="Sky" id="Sky_wlxty"]
 sky_material = SubResource("ProceduralSkyMaterial_prk7x")
@@ -10,4 +11,4 @@ background_mode = 2
 background_color = Color(1, 1, 1, 1)
 sky = SubResource("Sky_wlxty")
 ambient_light_source = 2
-ambient_light_color = Color(0.7807016, 0.7807017, 0.7807016, 1)
+ambient_light_color = Color(1, 1, 1, 1)
