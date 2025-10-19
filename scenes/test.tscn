@@ -15,14 +15,14 @@ sky_material = SubResource("ProceduralSkyMaterial_errlg")
 background_mode = 2
 sky = SubResource("Sky_bl13t")
 fog_light_energy = 0.0
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.004
 
 [node name="Test" type="Node3D"]
 
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_")]
-transform = Transform3D(1, 0, 0, 0, 0.851306, 0.5246696, 0, -0.5246696, 0.851306, 0, 8.006878, 6.277887)
+transform = Transform3D(1, 0, 0, 0, 0.9464692, 0.3227944, 0, -0.3227944, 0.9464692, 0, 6.141553, 6.277887)
 current = true
+fov = 60.0
 script = ExtResource("1_bl13t")
 look_at_main_subject_ = false
 main_subject_ = NodePath("../Player")
@@ -35,7 +35,7 @@ transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8.941399, 1, -9.185396)
 environment = SubResource("Environment_iyx0m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.091276996, 0.3206956, -0.942774, 0.030904433, 0.9471823, 0.31920308, 0.9953459, 0, -0.096366875, 0, 0, 0)
+transform = Transform3D(0.12527607, 0.30766034, -0.94321316, 0.030362247, 0.94906867, 0.313603, 0.9916572, -0.06792503, 0.10955435, -8.113295, 0, 8.661687)
 visible = false
 light_color = Color(1, 1, 0.7882353, 1)
 shadow_enabled = true
@@ -44,7 +44,7 @@ shadow_enabled = true
 transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -8.551542, 0, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(0.3591421, 0.4411913, -0.8224156, 0.016891103, 0.87799, 0.4783809, 0.93313, -0.18569818, 0.3078709, -20.623055, 8.465008, 0)
+transform = Transform3D(0.3591421, 0.4411913, -0.82241553, 0.016891103, 0.87799, 0.47838092, 0.93313, -0.18569821, 0.30787095, -23.152996, 8.465008, 1.5327473)
 light_energy = 16.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 16.0
@@ -54,7 +54,7 @@ spot_range = 53.168
 spot_angle = 77.791
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(0.3591421, 0.4411913, -0.8224156, 0.016891103, 0.87799, 0.4783809, 0.93313, -0.18569818, 0.3078709, -20.623055, 8.465008, 0)
+transform = Transform3D(0.3591421, 0.4411913, -0.82241553, 0.016891103, 0.87799, 0.47838092, 0.93313, -0.18569821, 0.30787095, -23.152996, 8.465008, 1.5327473)
 light_energy = 16.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 16.0
@@ -64,7 +64,7 @@ spot_range = 53.168
 spot_angle = 77.791
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="."]
-transform = Transform3D(0.3591421, 0.4411913, -0.8224156, 0.016891103, 0.87799, 0.4783809, 0.93313, -0.18569818, 0.3078709, -20.623055, 8.465008, 0)
+transform = Transform3D(0.3591421, 0.4411913, -0.82241553, 0.016891103, 0.87799, 0.47838092, 0.93313, -0.18569821, 0.30787095, -23.152996, 8.465008, 1.5327473)
 light_energy = 16.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 16.0
