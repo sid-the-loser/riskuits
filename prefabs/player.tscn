@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://uww0dw0d6m7f"]
+[gd_scene load_steps=4 format=3 uid="uid://uww0dw0d6m7f"]
 
 [ext_resource type="Texture2D" uid="uid://cmjfigb5yh0xl" path="res://sprites/Riskuits_Player_Idle_South.png" id="1_72ieh"]
-[ext_resource type="Script" uid="uid://mp6ms3xl77ha" path="res://scripts/billboard_sprite.gd" id="2_4dohe"]
 [ext_resource type="Script" uid="uid://cspmfil51ehpl" path="res://scripts/player/player_movement.gd" id="3_r66lb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4dohe"]
@@ -16,8 +15,6 @@ shape = SubResource("CapsuleShape3D_4dohe")
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0.9707329, 0)
 alpha_cut = 2
 texture = ExtResource("1_72ieh")
-script = ExtResource("2_4dohe")
-metadata/_custom_type_script = "uid://mp6ms3xl77ha"
 
 [node name="PlayerMovement" type="Node" parent="." node_paths=PackedStringArray("parent_character_body")]
 script = ExtResource("3_r66lb")

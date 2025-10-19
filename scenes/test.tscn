@@ -29,7 +29,7 @@ main_subject_ = NodePath("../Player")
 metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 
 [node name="Player" parent="." instance=ExtResource("1_errlg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3237212, 1, 0.135221)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8.941399, 1, -9.185396)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iyx0m")
