@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://n116h5ha2gja"
 path.s3tc="res://.godot/imported/RiscuitsClassroomNoBorder_0.png-d827cdb959dac57f1fe07af111a0df44.s3tc.ctex"
+path.etc2="res://.godot/imported/RiscuitsClassroomNoBorder_0.png-d827cdb959dac57f1fe07af111a0df44.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/RiscuitsClassroomNoBorder_0.png"
-dest_files=["res://.godot/imported/RiscuitsClassroomNoBorder_0.png-d827cdb959dac57f1fe07af111a0df44.s3tc.ctex"]
+dest_files=["res://.godot/imported/RiscuitsClassroomNoBorder_0.png-d827cdb959dac57f1fe07af111a0df44.s3tc.ctex", "res://.godot/imported/RiscuitsClassroomNoBorder_0.png-d827cdb959dac57f1fe07af111a0df44.etc2.ctex"]
 
 [params]
 
