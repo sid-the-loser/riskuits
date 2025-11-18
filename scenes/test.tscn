@@ -22,7 +22,10 @@ transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8.941399, 1, -9.185396)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.29135734, 0.56282747, -0.7735218, 0.13722922, 0.82483125, 0.5484719, 0.9467201, 0.053651437, -0.31755704, -8.113295, 0, 8.661687)
 light_color = Color(1, 1, 0.7882353, 1)
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
 shadow_enabled = true
+shadow_blur = 10.0
 
 [node name="blockbench_export" parent="." instance=ExtResource("3_iyx0m")]
 transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -8.551542, 0, 0)

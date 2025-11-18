@@ -9,6 +9,7 @@ extends Camera3D
 @export var rail_limit_max_: float = 5.0
 @export var ignore_rail_movement_: bool = false
 @export_range(0, 100, 0.5) var offset_: float = 0.0
+@export var run_on_physics_process: bool = true
 
 var feasible_position: Vector3 = Vector3.ZERO
 
@@ -16,6 +17,14 @@ func _ready() -> void:
 	feasible_position = get_position()
 
 func _process(delta: float) -> void:
+	if run_on_physics_process:
+		mov_cam(delta)
+
+func _physics_process(delta: float) -> void:
+	if run_on_physics_process:
+		mov_cam(delta)
+	
+func mov_cam(delta: float) -> void:
 	if look_at_main_subject_:
 		look_at(main_subject_.get_position())
 	
