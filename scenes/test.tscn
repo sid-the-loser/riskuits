@@ -32,7 +32,7 @@ shadow_blur = 10.0
 transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -8.551542, 0, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(0.35945526, 0.50032914, -0.7876946, -0.007763355, 0.8456873, 0.5336223, 0.93313, -0.1856982, 0.30787098, -16.899302, 10.149696, -9.6017)
+transform = Transform3D(0.35945526, 0.50032914, -0.7876946, -0.007763355, 0.8456873, 0.5336223, 0.93313, -0.1856982, 0.30787098, -16.899302, 10.0914345, -9.6017)
 light_energy = 16.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 16.0
