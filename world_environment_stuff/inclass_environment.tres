@@ -1,10 +1,10 @@
 [gd_resource type="Environment" load_steps=3 format=3 uid="uid://cuxra7uc8caxi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_prk7x"]
-sky_top_color = Color(0.31027052, 0.3247903, 1, 1)
-sky_horizon_color = Color(0.30980393, 0.3254902, 1, 1)
-ground_bottom_color = Color(0.30980393, 0.3254902, 1, 1)
-ground_horizon_color = Color(0.30980393, 0.3254902, 1, 1)
+sky_top_color = Color(0.1245786, 0.5400236, 0.9673938, 1)
+sky_horizon_color = Color(0.47042394, 0.70963305, 0.9967173, 1)
+ground_bottom_color = Color(0.47650683, 0.72130924, 0.99678427, 1)
+ground_horizon_color = Color(0.49989814, 0.70356315, 0.99452883, 1)
 
 [sub_resource type="Sky" id="Sky_wlxty"]
 sky_material = SubResource("ProceduralSkyMaterial_prk7x")
@@ -12,9 +12,15 @@ sky_material = SubResource("ProceduralSkyMaterial_prk7x")
 [resource]
 background_mode = 2
 background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 1.17
 sky = SubResource("Sky_wlxty")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.75
 glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.38
+glow_strength = 0.26
+glow_bloom = 0.33
 glow_blend_mode = 0
 glow_hdr_threshold = 0.69
