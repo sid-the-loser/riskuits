@@ -39,6 +39,7 @@ light_volumetric_fog_energy = 16.0
 shadow_enabled = true
 shadow_blur = 1.12
 spot_range = 70.0
+spot_attenuation = 0.9
 spot_angle = 71.0
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
@@ -49,7 +50,9 @@ light_volumetric_fog_energy = 16.0
 shadow_enabled = true
 shadow_blur = 2.563
 spot_range = 70.0
+spot_attenuation = 0.9
 spot_angle = 71.0
+spot_angle_attenuation = 0.4204482
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_74lek")
@@ -66,3 +69,15 @@ spot_range = 9.022
 spot_attenuation = 0.78
 spot_angle = 81.49
 spot_angle_attenuation = 0.20306315
+
+[node name="ExitSpotLight" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.6096976, 0.74924135, -0.25866237, 0.04644245, 0.35954, 0.9319733, 0.7912724, 0.5562089, -0.25400728, 15.854614, 15.947399, -16.559404)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.12
+spot_range = 70.0
+spot_attenuation = 0.79
+spot_angle = 75.11775
