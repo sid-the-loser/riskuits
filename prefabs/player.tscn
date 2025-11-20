@@ -13,6 +13,7 @@ shape = SubResource("CapsuleShape3D_4dohe")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0.9707329, 0)
+shaded = true
 alpha_cut = 2
 texture = ExtResource("1_72ieh")
 
