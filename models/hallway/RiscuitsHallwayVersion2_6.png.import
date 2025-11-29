@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dspqie0lqy78r"
-path.s3tc="res://.godot/imported/RiscuitsHallwayVersion1_12.png-bd8f13df545bc285e097c247b19e5f24.s3tc.ctex"
-path.etc2="res://.godot/imported/RiscuitsHallwayVersion1_12.png-bd8f13df545bc285e097c247b19e5f24.etc2.ctex"
+uid="uid://b1du8xeco3i3p"
+path.s3tc="res://.godot/imported/RiscuitsHallwayVersion2_6.png-fdc89278267d42ae06a2793bec77f12a.s3tc.ctex"
+path.etc2="res://.godot/imported/RiscuitsHallwayVersion2_6.png-fdc89278267d42ae06a2793bec77f12a.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7864f09c871099089dd59f1278d242df"
+"md5": "2cc4b6669052b6c5aa92dadc8db71b5b"
 }
 
 [deps]
 
-source_file="res://models/hallway/RiscuitsHallwayVersion1_12.png"
-dest_files=["res://.godot/imported/RiscuitsHallwayVersion1_12.png-bd8f13df545bc285e097c247b19e5f24.s3tc.ctex", "res://.godot/imported/RiscuitsHallwayVersion1_12.png-bd8f13df545bc285e097c247b19e5f24.etc2.ctex"]
+source_file="res://models/hallway/RiscuitsHallwayVersion2_6.png"
+dest_files=["res://.godot/imported/RiscuitsHallwayVersion2_6.png-fdc89278267d42ae06a2793bec77f12a.s3tc.ctex", "res://.godot/imported/RiscuitsHallwayVersion2_6.png-fdc89278267d42ae06a2793bec77f12a.etc2.ctex"]
 
 [params]
 

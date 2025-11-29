@@ -1,36 +1,38 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0jasc8dyycal"]
 
-[ext_resource type="PackedScene" uid="uid://g1mhxu6he8r5" path="res://models/hallway/RiscuitsHallwayVersion1.gltf" id="1_owcqv"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="2_h81ti"]
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="3_u7i40"]
+[ext_resource type="PackedScene" uid="uid://cea8gvhv2cs05" path="res://models/hallway/RiscuitsHallwayVersion2.gltf" id="4_1k2v8"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="4_3w3tr"]
 
 [node name="Hallway" type="Node3D"]
-
-[node name="blockbench_export" parent="." instance=ExtResource("1_owcqv")]
-transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -38.378498, 0, -5.315464)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_h81ti")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-visible = false
+transform = Transform3D(-0.41343093, 0.06844506, 0.9079594, 0.3387747, 0.937145, 0.08361276, -0.8451666, 0.34216174, -0.410632, 0, 7.339922, 0)
+light_color = Color(1, 0.3254902, 1, 1)
+shadow_enabled = true
 
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.088027, 7.168146, 39.75902)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.396945, 5.830878, 28.9)
 script = ExtResource("3_u7i40")
 look_at_main_subject_ = false
 main_subject_ = NodePath("../Player")
 rail_movement_axis = "z"
 rail_limit_1_ = NodePath("Limit1")
 rail_limit_2_ = NodePath("Limit2")
-offset_ = 8.0
+offset_ = 9.0
 metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 
 [node name="Limit1" type="Camera3D" parent="RailCamera3D"]
 
 [node name="Limit2" type="Camera3D" parent="RailCamera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -43.089912)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -37.47465)
 
 [node name="Player" parent="." instance=ExtResource("4_3w3tr")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -3.245284, 0.99999905, 18.900265)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -4.4049654, 0.9999981, 18.617641)
+
+[node name="blockbench_export" parent="." instance=ExtResource("4_1k2v8")]
+transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -38.221077, 0, -7.5450535)

@@ -54,79 +54,78 @@ light_volumetric_fog_energy = 16.0
 shadow_enabled = true
 shadow_blur = 10.0
 
-[node name="blockbench_export" parent="." instance=ExtResource("3_xubko")]
-transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -8.551542, 0, 0)
+[node name="Collisions" type="Node3D" parent="."]
 
-[node name="Collisions" type="Node3D" parent="blockbench_export"]
-transform = Transform3D(0.2754821, 0, 0, 0, 0.2754821, 0, 0, 0, 0.2754821, 2.3557968, 0, 0)
+[node name="Classroom" type="StaticBody3D" parent="Collisions"]
 
-[node name="Classroom" type="StaticBody3D" parent="blockbench_export/Collisions"]
-
-[node name="BlackBoardWall" type="CollisionShape3D" parent="blockbench_export/Collisions/Classroom"]
+[node name="BlackBoardWall" type="CollisionShape3D" parent="Collisions/Classroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8345871, 2.191795, -22.088387)
 shape = SubResource("BoxShape3D_x5cc4")
 
-[node name="BackWall" type="CollisionShape3D" parent="blockbench_export/Collisions/Classroom"]
+[node name="BackWall" type="CollisionShape3D" parent="Collisions/Classroom"]
 transform = Transform3D(0.766022, 0, -0.6428144, 0, 1, 0, 0.6428144, 0, 0.766022, -11.924972, 1.9109516, 3.05104)
 shape = SubResource("BoxShape3D_kkrti")
 
-[node name="BackWall2" type="CollisionShape3D" parent="blockbench_export/Collisions/Classroom"]
+[node name="BackWall2" type="CollisionShape3D" parent="Collisions/Classroom"]
 transform = Transform3D(0.8464813, 0, 0.5324184, 0, 1, 0, -0.5324184, 0, 0.8464813, 11.633778, 1.9109511, 3.17464)
 shape = SubResource("BoxShape3D_kkrti")
 
-[node name="BackWall3" type="CollisionShape3D" parent="blockbench_export/Collisions/Classroom"]
+[node name="BackWall3" type="CollisionShape3D" parent="Collisions/Classroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9109516, 5.2332067)
 shape = SubResource("BoxShape3D_kkrti")
 
-[node name="LeftWall" type="CollisionShape3D" parent="blockbench_export/Collisions/Classroom"]
+[node name="LeftWall" type="CollisionShape3D" parent="Collisions/Classroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.814449, 2.1073058, -8.300171)
 shape = SubResource("BoxShape3D_xubko")
 
-[node name="RightWall" type="CollisionShape3D" parent="blockbench_export/Collisions/Classroom"]
+[node name="RightWall" type="CollisionShape3D" parent="Collisions/Classroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.261006, 1.334302, -3.3798828)
 shape = SubResource("BoxShape3D_rt84g")
 
-[node name="Tables" type="StaticBody3D" parent="blockbench_export/Collisions"]
+[node name="Tables" type="StaticBody3D" parent="Collisions"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11345166, 1.8586333, 0.89737904)
 shape = SubResource("BoxShape3D_cj0lk")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.649981, 1.8586333, 0.89737904)
 shape = SubResource("BoxShape3D_cj0lk")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03974, 1.8586333, 0.89737904)
 shape = SubResource("BoxShape3D_cj0lk")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1030653, 1.8586333, -4.51864)
 shape = SubResource("BoxShape3D_cj0lk")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.408744, 1.8586333, -4.51864)
 shape = SubResource("BoxShape3D_cj0lk")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.041035, 1.8586333, -4.51864)
 shape = SubResource("BoxShape3D_cj0lk")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1030653, 1.8586333, -9.546612)
 shape = SubResource("BoxShape3D_cj0lk")
 
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4545264, 1.8586333, -9.546612)
 shape = SubResource("BoxShape3D_cj0lk")
 
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.00923, 1.8586333, -9.546612)
 shape = SubResource("BoxShape3D_cj0lk")
 
-[node name="Teacher" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
+[node name="Teacher" type="CollisionShape3D" parent="Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05429858, 1.8586333, -17.364208)
 shape = SubResource("BoxShape3D_rlgmb")
+
+[node name="blockbench_export" parent="." instance=ExtResource("3_xubko")]
+transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -8.551542, 0, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.35945526, 0.50032914, -0.7876946, -0.007763355, 0.8456873, 0.5336223, 0.93313, -0.1856982, 0.30787098, -16.899302, 10.0914345, -9.6017)

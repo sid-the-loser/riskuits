@@ -18,17 +18,18 @@ var feasible_position: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	feasible_position = get_position()
+	print(feasible_position, "fff")
 	
 	match rail_movement_axis:
 		"x":
-			rail_limit_max_ = rail_limit_1_.position.x if rail_limit_1_.position.x > rail_limit_2_.position.x else rail_limit_2_.position.x
-			rail_limit_min_ += rail_limit_1_.position.x if rail_limit_1_.position.x < rail_limit_2_.position.x else rail_limit_2_.position.x
+			rail_limit_max_ = rail_limit_1_.global_position.x if rail_limit_1_.global_position.x > rail_limit_2_.global_position.x else rail_limit_2_.global_position.x
+			rail_limit_min_ = rail_limit_1_.global_position.x if rail_limit_1_.global_position.x < rail_limit_2_.global_position.x else rail_limit_2_.global_position.x
 		"y":
-			rail_limit_max_ = rail_limit_1_.position.y if rail_limit_1_.position.y > rail_limit_2_.position.y else rail_limit_2_.position.y
-			rail_limit_min_ += rail_limit_1_.position.y if rail_limit_1_.position.y < rail_limit_2_.position.y else rail_limit_2_.position.y
+			rail_limit_max_ = rail_limit_1_.global_position.y if rail_limit_1_.global_position.y > rail_limit_2_.global_position.y else rail_limit_2_.global_position.y
+			rail_limit_min_ = rail_limit_1_.global_position.y if rail_limit_1_.global_position.y < rail_limit_2_.global_position.y else rail_limit_2_.global_position.y
 		"z":
-			rail_limit_max_ = rail_limit_1_.position.z if rail_limit_1_.position.z > rail_limit_2_.position.z else rail_limit_2_.position.z
-			rail_limit_min_ += rail_limit_1_.position.z if rail_limit_1_.position.z < rail_limit_2_.position.z else rail_limit_2_.position.z
+			rail_limit_max_ = rail_limit_1_.global_position.z if rail_limit_1_.global_position.z > rail_limit_2_.global_position.z else rail_limit_2_.global_position.z
+			rail_limit_min_ = rail_limit_1_.global_position.z if rail_limit_1_.global_position.z < rail_limit_2_.global_position.z else rail_limit_2_.global_position.z
 
 func _process(delta: float) -> void:
 	if run_on_physics_process:
@@ -54,7 +55,7 @@ func mov_cam(delta: float) -> void:
 				feasible_position.z = clamp(main_subject_.get_position().z + offset_, 
 				rail_limit_min_, rail_limit_max_)
 		
-		print(feasible_position, rail_limit_min_, rail_limit_max_)
+		print(get_position(),"a", rail_limit_min_, "a", rail_limit_max_)
 		
 		set_position(
 			get_position().lerp(feasible_position, movement_speed_ * delta))
