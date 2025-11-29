@@ -76,6 +76,12 @@ audio/channel_defaults={
 "fade_length": 0.0,
 "loop": true,
 "volume": 0.0
+},
+"new_channel_name": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": true,
+"volume": 0.0
 }
 }
 layout/style_list=["res://dialogic stuff/style/s_lotus.tres", "res://dialogic stuff/style/s_wafune.tres", "res://dialogic stuff/style/s_ginna.tres", "res://dialogic stuff/style/s_rat.tres", "res://dialogic stuff/style/default.tres", "res://dialogic stuff/style/s_pa.tres"]
