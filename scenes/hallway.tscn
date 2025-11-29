@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://d0jasc8dyycal"]
+[gd_scene load_steps=3 format=3 uid="uid://d0jasc8dyycal"]
+
+[ext_resource type="PackedScene" uid="uid://g1mhxu6he8r5" path="res://models/hallway/RiscuitsHallwayVersion1.gltf" id="1_owcqv"]
+[ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="2_h81ti"]
 
 [node name="Hallway" type="Node3D"]
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_owcqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.873262, 0, -5.315464)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_h81ti")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

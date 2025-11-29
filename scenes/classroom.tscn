@@ -17,7 +17,7 @@ main_subject_ = NodePath("../Player")
 metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 
 [node name="Player" parent="." instance=ExtResource("2_kkrti")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8.941399, 1, -9.185396)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 10.322715, 0.99999905, -14.60843)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.2841786, 0.5560002, -0.7810931, -0.15715902, 0.7766489, 0.6100145, 0.94580305, 0.29610887, -0.13332656, -8.113295, 0, 8.661687)
