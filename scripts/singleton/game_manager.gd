@@ -3,6 +3,8 @@ extends Node
 # TODO: needs to change if we have ui in the main menu
 var using_ui: bool = false
 
+var tutorial_flag = true
+
 var debug_mode: bool = false
 
 var fullscreen = true

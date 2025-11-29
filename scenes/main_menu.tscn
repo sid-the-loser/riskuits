@@ -1,59 +1,34 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4iijybop1qfa"]
+[gd_scene load_steps=10 format=3 uid="uid://ciinhkhf0s14n"]
 
-[ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="1_x5cc4"]
-[ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="2_kkrti"]
-[ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/classroom/RiscuitsClassroomNoBorder.gltf" id="3_xubko"]
-[ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="4_rt84g"]
+[ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/classroom/RiscuitsClassroomNoBorder.gltf" id="2_wu84c"]
+[ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="3_8ln24"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_x5cc4"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_rtw2f"]
 size = Vector3(29.929565, 1, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kkrti"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_oa1go"]
 size = Vector3(29, 1, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xubko"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_tbmy8"]
 size = Vector3(1, 1, 27.82788)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rt84g"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_jk1qb"]
 size = Vector3(1, 1, 19.080078)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cj0lk"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_5dd4i"]
 size = Vector3(2.2264404, 1, 1.9765625)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rlgmb"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_lgwnu"]
 size = Vector3(5.608124, 1, 1.7752686)
 
-[node name="Classroom" type="Node3D"]
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ekxnf"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.01
+dof_blur_amount = 0.34
 
-[node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_")]
-transform = Transform3D(1, 0, 0, 0, 0.9464692, 0.3227944, 0, -0.3227944, 0.9464692, 0, 6.141553, 9.182448)
-current = true
-fov = 60.0
-script = ExtResource("1_x5cc4")
-look_at_main_subject_ = false
-main_subject_ = NodePath("../Player")
-rail_movement_axis = "z"
-metadata/_custom_type_script = "uid://du6mtnue0r5dw"
+[node name="MainMenu" type="Node3D"]
 
-[node name="Limit1" type="Node3D" parent="RailCamera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-
-[node name="Limit2" type="Node3D" parent="RailCamera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-
-[node name="Player" parent="." instance=ExtResource("2_kkrti")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -9.575501, 0.99999905, -1.144989)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.2841786, 0.5560002, -0.7810931, -0.15715902, 0.7766489, 0.6100145, 0.94580305, 0.29610887, -0.13332656, -8.113295, 0, 8.661687)
-visible = false
-light_color = Color(1, 1, 0.7882353, 1)
-light_indirect_energy = 16.0
-light_volumetric_fog_energy = 16.0
-shadow_enabled = true
-shadow_blur = 10.0
-
-[node name="blockbench_export" parent="." instance=ExtResource("3_xubko")]
+[node name="blockbench_export" parent="." instance=ExtResource("2_wu84c")]
 transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -8.551542, 0, 0)
 
 [node name="Collisions" type="Node3D" parent="blockbench_export"]
@@ -63,69 +38,69 @@ transform = Transform3D(0.2754821, 0, 0, 0, 0.2754821, 0, 0, 0, 0.2754821, 2.355
 
 [node name="BlackBoardWall" type="CollisionShape3D" parent="blockbench_export/Collisions/Classroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8345871, 2.191795, -22.088387)
-shape = SubResource("BoxShape3D_x5cc4")
+shape = SubResource("BoxShape3D_rtw2f")
 
 [node name="BackWall" type="CollisionShape3D" parent="blockbench_export/Collisions/Classroom"]
-transform = Transform3D(0.766022, 0, -0.6428144, 0, 1, 0, 0.6428144, 0, 0.766022, -11.924972, 1.9109516, 3.05104)
-shape = SubResource("BoxShape3D_kkrti")
+transform = Transform3D(0.89322233, 0, -0.44961524, 0, 1, 0, 0.44961524, 0, 0.89322233, -12.927785, 1.9109516, 3.7474282)
+shape = SubResource("BoxShape3D_oa1go")
 
 [node name="BackWall2" type="CollisionShape3D" parent="blockbench_export/Collisions/Classroom"]
-transform = Transform3D(0.8464813, 0, 0.5324184, 0, 1, 0, -0.5324184, 0, 0.8464813, 11.633778, 1.9109511, 3.17464)
-shape = SubResource("BoxShape3D_kkrti")
+transform = Transform3D(0.90553176, 0, 0.42427847, 0, 1, 0, -0.42427847, 0, 0.90553176, 13.129667, 1.9109516, 3.7474282)
+shape = SubResource("BoxShape3D_oa1go")
 
 [node name="BackWall3" type="CollisionShape3D" parent="blockbench_export/Collisions/Classroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9109516, 5.2332067)
-shape = SubResource("BoxShape3D_kkrti")
+shape = SubResource("BoxShape3D_oa1go")
 
 [node name="LeftWall" type="CollisionShape3D" parent="blockbench_export/Collisions/Classroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.814449, 2.1073058, -8.300171)
-shape = SubResource("BoxShape3D_xubko")
+shape = SubResource("BoxShape3D_tbmy8")
 
 [node name="RightWall" type="CollisionShape3D" parent="blockbench_export/Collisions/Classroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.261006, 1.334302, -3.3798828)
-shape = SubResource("BoxShape3D_rt84g")
+shape = SubResource("BoxShape3D_jk1qb")
 
 [node name="Tables" type="StaticBody3D" parent="blockbench_export/Collisions"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11345166, 1.8586333, 0.89737904)
-shape = SubResource("BoxShape3D_cj0lk")
+shape = SubResource("BoxShape3D_5dd4i")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.649981, 1.8586333, 0.89737904)
-shape = SubResource("BoxShape3D_cj0lk")
+shape = SubResource("BoxShape3D_5dd4i")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03974, 1.8586333, 0.89737904)
-shape = SubResource("BoxShape3D_cj0lk")
+shape = SubResource("BoxShape3D_5dd4i")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1030653, 1.8586333, -4.51864)
-shape = SubResource("BoxShape3D_cj0lk")
+shape = SubResource("BoxShape3D_5dd4i")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.408744, 1.8586333, -4.51864)
-shape = SubResource("BoxShape3D_cj0lk")
+shape = SubResource("BoxShape3D_5dd4i")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.041035, 1.8586333, -4.51864)
-shape = SubResource("BoxShape3D_cj0lk")
+shape = SubResource("BoxShape3D_5dd4i")
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1030653, 1.8586333, -9.546612)
-shape = SubResource("BoxShape3D_cj0lk")
+shape = SubResource("BoxShape3D_5dd4i")
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4545264, 1.8586333, -9.546612)
-shape = SubResource("BoxShape3D_cj0lk")
+shape = SubResource("BoxShape3D_5dd4i")
 
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.00923, 1.8586333, -9.546612)
-shape = SubResource("BoxShape3D_cj0lk")
+shape = SubResource("BoxShape3D_5dd4i")
 
 [node name="Teacher" type="CollisionShape3D" parent="blockbench_export/Collisions/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05429858, 1.8586333, -17.364208)
-shape = SubResource("BoxShape3D_rlgmb")
+shape = SubResource("BoxShape3D_lgwnu")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.35945526, 0.50032914, -0.7876946, -0.007763355, 0.8456873, 0.5336223, 0.93313, -0.1856982, 0.30787098, -16.899302, 10.0914345, -9.6017)
@@ -151,7 +126,7 @@ spot_angle = 71.0
 spot_angle_attenuation = 0.4204482
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("4_rt84g")
+environment = ExtResource("3_8ln24")
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="."]
 transform = Transform3D(-0.73742867, 0.6739836, -0.044107314, -0.3970111, -0.37970036, 0.83558965, 0.546426, 0.6336987, 0.5475809, -0.3167162, 10.242211, -19.389572)
@@ -177,3 +152,8 @@ shadow_blur = 1.12
 spot_range = 70.0
 spot_attenuation = 0.79
 spot_angle = 75.11775
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.95863473, -0.07254141, 0.27524036, -0.01003011, 0.9577698, 0.28736052, -0.28446248, -0.2782344, 0.91742396, 2.3808331, 6.6596413, 2.4832978)
+attributes = SubResource("CameraAttributesPractical_ekxnf")
+current = true
