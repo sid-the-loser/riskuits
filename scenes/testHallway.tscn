@@ -1,23 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3mgol4nrts6b"]
+[gd_scene load_steps=7 format=3 uid="uid://duf6j2ptrwxqt"]
 
-[ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="1_bl13t"]
-[ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="1_errlg"]
-[ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/RiscuitsClassroomNoBorder.gltf" id="3_iyx0m"]
-[ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="4_74lek"]
+[ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="1_5xec8"]
+[ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="2_8uff0"]
+[ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/RiscuitsClassroomNoBorder.gltf" id="3_ryfih"]
+[ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="4_xom8v"]
+[ext_resource type="PackedScene" uid="uid://uafeyfxf6rbn" path="res://RiscuitsHallwayTest.gltf" id="5_8uff0"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_8uff0"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 70.0
+dof_blur_far_transition = 90.0
+dof_blur_near_distance = 2.25
 
 [node name="Test" type="Node3D"]
 
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_")]
 transform = Transform3D(1, 0, 0, 0, 0.9464692, 0.3227944, 0, -0.3227944, 0.9464692, 0, 6.141553, 9.182448)
+attributes = SubResource("CameraAttributesPractical_8uff0")
 current = true
 fov = 60.0
-script = ExtResource("1_bl13t")
+script = ExtResource("1_5xec8")
 look_at_main_subject_ = false
 main_subject_ = NodePath("../Player")
 metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 
-[node name="Player" parent="." instance=ExtResource("1_errlg")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8.941399, 0.919075, -9.185396)
+[node name="Player" parent="." instance=ExtResource("2_8uff0")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 8.941399, 1, -9.185396)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.2841786, 0.5560002, -0.7810931, -0.15715902, 0.7766489, 0.6100145, 0.94580305, 0.29610887, -0.13332656, -8.113295, 0, 8.661687)
@@ -28,7 +36,7 @@ light_volumetric_fog_energy = 16.0
 shadow_enabled = true
 shadow_blur = 10.0
 
-[node name="blockbench_export" parent="." instance=ExtResource("3_iyx0m")]
+[node name="blockbench_export" parent="." instance=ExtResource("3_ryfih")]
 transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -8.551542, 0, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
@@ -54,8 +62,20 @@ spot_attenuation = 0.9
 spot_angle = 71.0
 spot_angle_attenuation = 0.4204482
 
+[node name="SpotLight3D2" type="SpotLight3D" parent="SpotLight3D2"]
+transform = Transform3D(0.8673286, 0.4901776, 0.0864113, 0.3363937, -0.7052376, 0.62408257, 0.36685184, -0.5122165, -0.7765655, -8.498272, 37.1932, -57.43643)
+light_energy = 0.495
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
+shadow_enabled = true
+shadow_blur = 2.563
+spot_range = 7.963815
+spot_attenuation = -0.35
+spot_angle = 84.74115
+spot_angle_attenuation = 0.4204482
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("4_74lek")
+environment = ExtResource("4_xom8v")
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="."]
 transform = Transform3D(-0.73742867, 0.6739836, -0.044107314, -0.3970111, -0.37970036, 0.83558965, 0.546426, 0.6336987, 0.5475809, -0.3167162, 10.242211, -19.389572)
@@ -81,3 +101,6 @@ shadow_blur = 1.12
 spot_range = 70.0
 spot_attenuation = 0.79
 spot_angle = 75.11775
+
+[node name="blockbench_export2" parent="." instance=ExtResource("5_8uff0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.583738, 10.490132, 7.5054474)
