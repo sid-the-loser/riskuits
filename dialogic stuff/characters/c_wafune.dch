@@ -7,7 +7,7 @@
 "prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "",
+"style": "s_wafune",
 "suffix": ""
 },
 &"default_portrait": "wafune",
@@ -22,7 +22,7 @@
 "image": "\"res://assets from harrish/Art/Dialogue_Art/Wafune_Defualt_Faded.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
+"offset": Vector2(-300, 0),
 "scale": 0.6,
 "scene": ""
 }

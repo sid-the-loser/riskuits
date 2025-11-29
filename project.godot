@@ -25,16 +25,24 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"c_ginna": "res://dialogic stuff/characters/c_ginna.dch",
 "c_lotus": "res://dialogic stuff/characters/c_lotus.dch",
+"c_pa": "res://dialogic stuff/characters/c_pa.dch",
+"c_rat": "res://dialogic stuff/characters/c_rat.dch",
 "c_wafune": "res://dialogic stuff/characters/c_wafune.dch"
 }
 directories/dtl_directory={
 "classroom": "res://dialogic stuff/timelines/classroom.dtl",
-"test": "res://dialogic stuff/timelines/test.dtl"
+"pre_classroom_hallway": "res://dialogic stuff/timelines/pre_classroom_hallway.dtl"
 }
 layout/style_directory={
-"": "res://dialogic stuff/style/shgkjhasjkdghjkashgukhasjkdghjakshgjkasdkj.tres",
-"shgkjhasjkdghjkashgukhasjkdghjakshgjkasdkj": "res://dialogic stuff/style/shgkjhasjkdghjkashgukhasjkdghjakshgjkasdkj.tres"
+"": "res://dialogic stuff/style/default.tres",
+"default": "res://dialogic stuff/style/default.tres",
+"s_ginna": "res://dialogic stuff/style/s_ginna.tres",
+"s_lotus": "res://dialogic stuff/style/s_lotus.tres",
+"s_pa": "res://dialogic stuff/style/s_pa.tres",
+"s_rat": "res://dialogic stuff/style/s_rat.tres",
+"s_wafune": "res://dialogic stuff/style/s_wafune.tres"
 }
 variables={}
 extensions_folder="res://addons/dialogic_additions"
@@ -70,8 +78,8 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
-layout/style_list=["res://dialogic stuff/style/shgkjhasjkdghjkashgukhasjkdghjakshgjkasdkj.tres"]
-layout/default_style="res://dialogic stuff/style/shgkjhasjkdghjkashgukhasjkdghjakshgjkasdkj.tres"
+layout/style_list=["res://dialogic stuff/style/s_lotus.tres", "res://dialogic stuff/style/s_wafune.tres", "res://dialogic stuff/style/s_ginna.tres", "res://dialogic stuff/style/s_rat.tres", "res://dialogic stuff/style/default.tres", "res://dialogic stuff/style/s_pa.tres"]
+layout/default_style="res://dialogic stuff/style/default.tres"
 glossary/default_case_sensitive=true
 
 [display]

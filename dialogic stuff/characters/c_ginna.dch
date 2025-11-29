@@ -7,24 +7,23 @@
 "prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "s_lotus",
+"style": "s_ginna",
 "suffix": ""
 },
-&"default_portrait": "lotus",
-&"description": "Likes: Tea, long walks on the beach, gardening",
-&"display_name": "Lotus-Senpai",
+&"default_portrait": "ginna",
+&"description": "Likes: Ice cream, Anime, Video Games",
+&"display_name": "Ginna-Chan",
 &"mirror": false,
-&"nicknames": ["Lotus-Senpai"],
+&"nicknames": ["Ginna-Chan"],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"lotus": {
+"ginna": {
 "export_overrides": {
-"image": "\"res://assets from harrish/Art/Dialogue_Art/Lotus_Defualt_Faded.png\""
+"image": "\"res://assets from harrish/Art/Dialogue_Art/Ginna_Defualt_Faded.png\""
 },
-"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(-600, 0),
-"scale": 1.0,
+"scale": 1,
 "scene": ""
 }
 },

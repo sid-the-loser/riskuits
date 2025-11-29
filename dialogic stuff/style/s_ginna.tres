@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=21 format=3 uid="uid://dh6vr1rpnp1yg"]
+
+[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="1_5a7l6"]
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_krbja"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="3_0mjtr"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="4_m7cfy"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="5_p2e08"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="6_4nj28"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="7_imc6e"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="8_dlgis"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="9_80r8l"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="10_qap0h"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_7dj5t"]
+
+[sub_resource type="Resource" id="Resource_8xf2q"]
+script = ExtResource("2_krbja")
+scene = ExtResource("1_5a7l6")
+overrides = {
+"global_bg_color": "Color(0.38025665, 0, 0.49414063, 0.9019608)"
+}
+
+[sub_resource type="Resource" id="Resource_dfpdo"]
+script = ExtResource("2_krbja")
+scene = ExtResource("3_0mjtr")
+
+[sub_resource type="Resource" id="Resource_ka37x"]
+script = ExtResource("2_krbja")
+scene = ExtResource("4_m7cfy")
+
+[sub_resource type="Resource" id="Resource_7gsrv"]
+script = ExtResource("2_krbja")
+scene = ExtResource("5_p2e08")
+
+[sub_resource type="Resource" id="Resource_ueceo"]
+script = ExtResource("2_krbja")
+scene = ExtResource("6_4nj28")
+overrides = {
+"box_color_custom": "Color(0.7890625, 0, 0.5270691, 1)"
+}
+
+[sub_resource type="Resource" id="Resource_8vfuk"]
+script = ExtResource("2_krbja")
+scene = ExtResource("7_imc6e")
+
+[sub_resource type="Resource" id="Resource_quw16"]
+script = ExtResource("2_krbja")
+scene = ExtResource("8_dlgis")
+
+[sub_resource type="Resource" id="Resource_ay7c5"]
+script = ExtResource("2_krbja")
+scene = ExtResource("9_80r8l")
+
+[sub_resource type="Resource" id="Resource_5tvbn"]
+script = ExtResource("2_krbja")
+scene = ExtResource("10_qap0h")
+
+[resource]
+script = ExtResource("11_7dj5t")
+name = "s_ginna"
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
+layer_info = {
+"": SubResource("Resource_8xf2q"),
+"10": SubResource("Resource_dfpdo"),
+"11": SubResource("Resource_ka37x"),
+"12": SubResource("Resource_7gsrv"),
+"13": SubResource("Resource_ueceo"),
+"14": SubResource("Resource_8vfuk"),
+"15": SubResource("Resource_quw16"),
+"16": SubResource("Resource_ay7c5"),
+"17": SubResource("Resource_5tvbn")
+}
+metadata/_latest_layer = ""

@@ -1,3 +1,25 @@
-join c_lotus center [animation="Fade In Up"]
-c_lotus: Hey!
-c_lotus: asafasd
+You sit down at your seat as class is starting.
+You notice some faces you've never seen before….wait a minute.
+c_rat: ARE THEY BISCUITS???
+The teacher says that there are some exchange students joining our class today. She asks the biscuits to introduce themselves to the rest of the class.
+join c_wafune center [animation="Fade In Up" wait="true"]
+c_wafune: H-hi..um. My name is Wafune Vanille Feuillete, b-but most people call me “Wafune”.
+c_wafune: I….I like reading and doing puzzles during my free time, accompanied by a cup of warm espresso. Its just…so comforting and cozy. Ah- sorry, I'm rambling *fiddles with her fingers*
+c_wafune: It is nice to meet you all. I hope we get along, layer by layer!
+join c_ginna rightmost [animation="Slide From Right" wait="true"]
+c_ginna: Ugh, do I really have to do this?
+c_ginna: Fine. My name’s Ginnake Burno, but just call me “Ginna”.
+c_ginna: I just transferred here, so don’t get any weird ideas about being friends or anything, okay?
+c_ginna: I like… uh… never mind, it’s none of your business! *mumbers Ice cream. And anime. And video games.* But don’t you dare make fun of me!
+c_ginna: Anyway, just stay out of my way and we’ll get along fine. Got it?!
+c_ginna: *She crosses her arms, then notices someone staring at her.*
+c_ginna: W-What are you looking at?! Stop staring at me like a creep! *snaps fingers*
+join c_lotus left [animation="Slide From Left" wait="true"]
+c_lotus: My my.. Love the energy from you two!
+c_lotus: Looks like it's my turn. I am Lotus Caramona.
+c_lotus: I enjoy long walks by the beach while sipping my tea, and I love watching sci-fi movies. Just simple hobbies, but I think they have their own charm.
+c_lotus: I may be a year above most of you, but don’t let that scare you off. If you ever need advice… or just someone to chat with… I’d be happy to help. I promise I don’t bite…most of the time, haha.
+c_rat: Whoa… they’re fine as hell! This is your chance to make your move!
+*school bell rings*
+c_rat: Huh.. Lunch break already?
+You must catch up with them before you miss my shot!
