@@ -8,11 +8,11 @@ extends Camera3D
 @export var rail_limit_1_: Node3D
 @export var rail_limit_2_: Node3D
 @export var ignore_rail_movement_: bool = false
-@export_range(0, 100, 0.5) var offset_: float = 0.0
+@export_range(-100, 100, 0.5) var offset_: float = 0.0
 @export var run_on_physics_process: bool = true
 
-var rail_limit_min_: float = -5.0
-var rail_limit_max_: float = 5.0
+var rail_limit_min_: float = 0
+var rail_limit_max_: float = 0
 
 var feasible_position: Vector3 = Vector3.ZERO
 
@@ -21,11 +21,14 @@ func _ready() -> void:
 	
 	match rail_movement_axis:
 		"x":
-			pass
+			rail_limit_max_ = rail_limit_1_.position.x if rail_limit_1_.position.x > rail_limit_2_.position.x else rail_limit_2_.position.x
+			rail_limit_min_ += rail_limit_1_.position.x if rail_limit_1_.position.x < rail_limit_2_.position.x else rail_limit_2_.position.x
 		"y":
-			pass
+			rail_limit_max_ = rail_limit_1_.position.y if rail_limit_1_.position.y > rail_limit_2_.position.y else rail_limit_2_.position.y
+			rail_limit_min_ += rail_limit_1_.position.y if rail_limit_1_.position.y < rail_limit_2_.position.y else rail_limit_2_.position.y
 		"z":
-			pass
+			rail_limit_max_ = rail_limit_1_.position.z if rail_limit_1_.position.z > rail_limit_2_.position.z else rail_limit_2_.position.z
+			rail_limit_min_ += rail_limit_1_.position.z if rail_limit_1_.position.z < rail_limit_2_.position.z else rail_limit_2_.position.z
 
 func _process(delta: float) -> void:
 	if run_on_physics_process:
