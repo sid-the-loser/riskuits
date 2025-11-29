@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0jasc8dyycal"]
+[gd_scene load_steps=8 format=3 uid="uid://d0jasc8dyycal"]
 
 [ext_resource type="Script" uid="uid://tac1tx36u1fm" path="res://scenes/hallway.gd" id="1_1k2v8"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="2_h81ti"]
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="3_u7i40"]
 [ext_resource type="PackedScene" uid="uid://cea8gvhv2cs05" path="res://models/hallway/RiscuitsHallwayVersion2.gltf" id="4_1k2v8"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="4_3w3tr"]
+[ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="6_txc3n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1k2v8"]
 size = Vector3(2.9698486, 2.2020264, 6.8615723)
@@ -49,5 +50,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.284977, 1.9384022, -24.11
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21295166, 0.11327219, 0.2581787)
 shape = SubResource("BoxShape3D_1k2v8")
 debug_color = Color(0, 11.708403, 13.469126, 1)
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_txc3n")]
+visible = false
 
 [connection signal="body_entered" from="ClassroomEntrance" to="." method="_on_classroom_entrance_body_entered"]

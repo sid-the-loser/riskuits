@@ -1,4 +1,18 @@
-[gd_scene format=3 uid="uid://eh7te1cp07q5"]
+[gd_scene load_steps=3 format=3 uid="uid://eh7te1cp07q5"]
+
+[ext_resource type="Script" uid="uid://bkbbh4ca5fq0" path="res://scripts/pause_menu.gd" id="1_hf53u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hf53u"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.26666668)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +21,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hf53u")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hf53u")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -46,3 +70,7 @@ text = "Quit to Main Menu"
 [node name="QuitG" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit to Game"
+
+[connection signal="button_down" from="VBoxContainer/Resume" to="." method="_on_resume_button_down"]
+[connection signal="button_down" from="VBoxContainer/QuitMM" to="." method="_on_quit_mm_button_down"]
+[connection signal="button_down" from="VBoxContainer/QuitG" to="." method="_on_quit_g_button_down"]
