@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://spre3dq0n3xj"
+path="res://.godot/imported/Wafune_Theme_Fixed.wav-e7c0029c593b9cc29c433a40c59b3348.sample"
+
+[deps]
+
+source_file="res://assets from harrish/Music/Wafune_Theme_Fixed.wav"
+dest_files=["res://.godot/imported/Wafune_Theme_Fixed.wav-e7c0029c593b9cc29c433a40c59b3348.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

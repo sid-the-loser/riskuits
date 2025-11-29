@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpuygljnaki3i"
+path="res://.godot/imported/RiskuitsTitleTheme_Fixed.wav-dff6ad6556c52bf77968593105dae580.sample"
+
+[deps]
+
+source_file="res://assets from harrish/Music/RiskuitsTitleTheme_Fixed.wav"
+dest_files=["res://.godot/imported/RiskuitsTitleTheme_Fixed.wav-dff6ad6556c52bf77968593105dae580.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

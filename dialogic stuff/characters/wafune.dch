@@ -1,0 +1,31 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "wafune",
+&"description": "Likes: Coffee, Books, Puzzles",
+&"display_name": "wafune",
+&"mirror": false,
+&"nicknames": ["Wafune-Chan"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"wafune": {
+"export_overrides": {
+"image": "\"res://assets from harrish/Art/Dialogue_Art/Wafune_Defualt_Faded.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.6,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

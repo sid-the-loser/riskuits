@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://ciinhkhf0s14n"]
+[gd_scene load_steps=11 format=3 uid="uid://ciinhkhf0s14n"]
 
+[ext_resource type="Script" uid="uid://bhu1jqfr66fh7" path="res://scripts/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/classroom/RiscuitsClassroomNoBorder.gltf" id="2_wu84c"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="3_8ln24"]
 
@@ -27,6 +28,7 @@ dof_blur_far_distance = 0.01
 dof_blur_amount = 0.34
 
 [node name="MainMenu" type="Node3D"]
+script = ExtResource("1_bqqt6")
 
 [node name="blockbench_export" parent="." instance=ExtResource("2_wu84c")]
 transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -8.551542, 0, 0)
@@ -157,3 +159,44 @@ spot_angle = 75.11775
 transform = Transform3D(0.95863473, -0.07254141, 0.27524036, -0.01003011, 0.9577698, 0.28736052, -0.28446248, -0.2782344, 0.91742396, 2.3808331, 6.6596413, 2.4832978)
 attributes = SubResource("CameraAttributesPractical_ekxnf")
 current = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -216.0
+offset_right = -112.0
+offset_bottom = -185.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -128.0
+offset_right = -112.0
+offset_bottom = -97.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Quit"
+
+[connection signal="button_down" from="Control/PlayButton" to="." method="_on_play_button_button_down"]
+[connection signal="button_down" from="Control/QuitButton" to="." method="_on_quit_button_button_down"]

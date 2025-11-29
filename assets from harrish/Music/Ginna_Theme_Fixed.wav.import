@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c11nr6yi3y1oq"
+path="res://.godot/imported/Ginna_Theme_Fixed.wav-62a39f14174b3ec6074bebf85ac16128.sample"
+
+[deps]
+
+source_file="res://assets from harrish/Music/Ginna_Theme_Fixed.wav"
+dest_files=["res://.godot/imported/Ginna_Theme_Fixed.wav-62a39f14174b3ec6074bebf85ac16128.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cr56t8b2qbuee"
+path="res://.godot/imported/Lotus_Theme_Fixed.wav-58ff5d37eb10ba7f08f0737edf6bbc0e.sample"
+
+[deps]
+
+source_file="res://assets from harrish/Music/Lotus_Theme_Fixed.wav"
+dest_files=["res://.godot/imported/Lotus_Theme_Fixed.wav-58ff5d37eb10ba7f08f0737edf6bbc0e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

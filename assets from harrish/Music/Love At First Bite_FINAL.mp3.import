@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxm77dliscnon"
+path="res://.godot/imported/Love At First Bite_FINAL.mp3-a311012b23107cd97b24f22c383f91b3.mp3str"
+
+[deps]
+
+source_file="res://assets from harrish/Music/Love At First Bite_FINAL.mp3"
+dest_files=["res://.godot/imported/Love At First Bite_FINAL.mp3-a311012b23107cd97b24f22c383f91b3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
