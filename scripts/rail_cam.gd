@@ -54,5 +54,7 @@ func mov_cam(delta: float) -> void:
 				feasible_position.z = clamp(main_subject_.get_position().z + offset_, 
 				rail_limit_min_, rail_limit_max_)
 		
+		print(feasible_position, rail_limit_min_, rail_limit_max_)
+		
 		set_position(
 			get_position().lerp(feasible_position, movement_speed_ * delta))

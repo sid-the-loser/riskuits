@@ -14,24 +14,23 @@ transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -38.378498, 0, -5.31
 environment = ExtResource("2_h81ti")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+visible = false
 
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.088027, 7.168146, 31.647255)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.088027, 7.168146, 39.75902)
 script = ExtResource("3_u7i40")
 look_at_main_subject_ = false
 main_subject_ = NodePath("../Player")
 rail_movement_axis = "z"
 rail_limit_1_ = NodePath("Limit1")
 rail_limit_2_ = NodePath("Limit2")
-ignore_rail_movement_ = true
-offset_ = -6.5
+offset_ = 8.0
 metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 
 [node name="Limit1" type="Camera3D" parent="RailCamera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9566154)
 
 [node name="Limit2" type="Camera3D" parent="RailCamera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -38.51613)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -43.089912)
 
 [node name="Player" parent="." instance=ExtResource("4_3w3tr")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -3.245284, 0.99999905, 18.900265)
