@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="4_3w3tr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1k2v8"]
-size = Vector3(1.7719727, 1, 6.8615723)
+size = Vector3(2.9698486, 2.2020264, 6.8615723)
 
 [node name="Hallway" type="Node3D"]
 script = ExtResource("1_1k2v8")
@@ -46,7 +46,7 @@ transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -38.221077, 0, -7.54
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.284977, 1.9384022, -24.112011)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ClassroomEntrance"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38598633, -0.487741, 0.2581787)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21295166, 0.11327219, 0.2581787)
 shape = SubResource("BoxShape3D_1k2v8")
 debug_color = Color(0, 11.708403, 13.469126, 1)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4iijybop1qfa"]
+[gd_scene load_steps=14 format=3 uid="uid://c4iijybop1qfa"]
 
 [ext_resource type="Script" uid="uid://b030rhnbgwfbt" path="res://scenes/classroom.gd" id="1_kkrti"]
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="1_x5cc4"]
@@ -16,7 +16,7 @@ size = Vector3(29, 1, 1)
 size = Vector3(1, 1, 27.82788)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rt84g"]
-size = Vector3(1, 1, 19.080078)
+size = Vector3(1, 1, 29.989014)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cj0lk"]
 size = Vector3(2.2264404, 1, 1.9765625)
@@ -25,6 +25,9 @@ size = Vector3(2.2264404, 1, 1.9765625)
 size = Vector3(5.608124, 1, 1.7752686)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l51k1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kt5ds"]
+size = Vector3(2.4086914, 1, 7.286682)
 
 [node name="Classroom" type="Node3D"]
 script = ExtResource("1_kkrti")
@@ -47,7 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.235068, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_kkrti")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -9.575501, 0.99999905, -1.144989)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 9.352572, 0.99999905, -15.645048)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.2841786, 0.5560002, -0.7810931, -0.15715902, 0.7766489, 0.6100145, 0.94580305, 0.29610887, -0.13332656, -8.113295, 0, 8.661687)
@@ -83,7 +86,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.814449, 2.1073058, -8.300
 shape = SubResource("BoxShape3D_xubko")
 
 [node name="RightWall" type="CollisionShape3D" parent="Collisions/Classroom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.261006, 1.334302, -3.3798828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.261006, 1.334302, -8.834351)
 shape = SubResource("BoxShape3D_rt84g")
 
 [node name="Tables" type="StaticBody3D" parent="Collisions"]
@@ -189,4 +192,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.065366745, 1.5540378, -2.9
 shape = SubResource("BoxShape3D_l51k1")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="ClassroomExit" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.794241, 1.5562034, -16.078358)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClassroomExit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7043457, 0, -0.38345337)
+shape = SubResource("BoxShape3D_kt5ds")
+debug_color = Color(0, 11.708403, 13.469126, 1)
+
 [connection signal="body_entered" from="PlayerSeat" to="." method="_on_player_seat_body_entered"]
+[connection signal="body_entered" from="ClassroomExit" to="." method="_on_classroom_exit_body_entered"]

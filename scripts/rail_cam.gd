@@ -14,6 +14,8 @@ extends Camera3D
 var rail_limit_min_: float = 0
 var rail_limit_max_: float = 0
 
+var first_frame_flag: bool = true
+
 var feasible_position: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
@@ -55,5 +57,9 @@ func mov_cam(delta: float) -> void:
 				feasible_position.z = clamp(main_subject_.get_position().z + offset_, 
 				rail_limit_min_, rail_limit_max_)
 		
-		set_position(
-			get_position().lerp(feasible_position, movement_speed_ * delta))
+		if not first_frame_flag:
+			set_position(
+				get_position().lerp(feasible_position, movement_speed_ * delta))
+		else:
+			set_position(feasible_position)
+			first_frame_flag = false

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ciinhkhf0s14n"]
 
-[ext_resource type="Script" uid="uid://bhu1jqfr66fh7" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Script" uid="uid://bhu1jqfr66fh7" path="res://scenes/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/classroom/RiscuitsClassroomNoBorder.gltf" id="2_wu84c"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="3_8ln24"]
 
