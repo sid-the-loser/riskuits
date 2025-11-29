@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 	)
 	
 func _physics_process(delta: float) -> void:
-	parent_character_body.set_velocity(input_direction * movement_speed * delta)
-	
-	parent_character_body.move_and_slide()
+	if Dialogic.current_timeline == null:
+		parent_character_body.set_velocity(input_direction * movement_speed * delta)
+		
+		parent_character_body.move_and_slide()

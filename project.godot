@@ -32,7 +32,10 @@ directories/dtl_directory={
 "classroom": "res://dialogic stuff/timelines/classroom.dtl",
 "test": "res://dialogic stuff/timelines/test.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://dialogic stuff/style/shgkjhasjkdghjkashgukhasjkdghjakshgjkasdkj.tres",
+"shgkjhasjkdghjkashgukhasjkdghjakshgjkasdkj": "res://dialogic stuff/style/shgkjhasjkdghjkashgukhasjkdghjakshgjkasdkj.tres"
+}
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -67,8 +70,8 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://dialogic stuff/style/shgkjhasjkdghjkashgukhasjkdghjakshgjkasdkj.tres"]
+layout/default_style="res://dialogic stuff/style/shgkjhasjkdghjkashgukhasjkdghjakshgjkasdkj.tres"
 glossary/default_case_sensitive=true
 
 [display]

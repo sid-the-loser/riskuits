@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4iijybop1qfa"]
+[gd_scene load_steps=13 format=3 uid="uid://c4iijybop1qfa"]
 
+[ext_resource type="Script" uid="uid://b030rhnbgwfbt" path="res://scenes/classroom.gd" id="1_kkrti"]
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="1_x5cc4"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="2_kkrti"]
 [ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/classroom/RiscuitsClassroomNoBorder.gltf" id="3_xubko"]
@@ -23,7 +24,10 @@ size = Vector3(2.2264404, 1, 1.9765625)
 [sub_resource type="BoxShape3D" id="BoxShape3D_rlgmb"]
 size = Vector3(5.608124, 1, 1.7752686)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_l51k1"]
+
 [node name="Classroom" type="Node3D"]
+script = ExtResource("1_kkrti")
 
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
 transform = Transform3D(1, 0, 0, 0, 0.9464692, 0.3227944, 0, -0.3227944, 0.9464692, 0, 6.141553, 9.182448)
@@ -177,3 +181,12 @@ shadow_blur = 1.12
 spot_range = 70.0
 spot_attenuation = 0.79
 spot_angle = 75.11775
+
+[node name="PlayerSeat" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.065366745, 1.5540378, -2.929266)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerSeat"]
+shape = SubResource("BoxShape3D_l51k1")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[connection signal="body_entered" from="PlayerSeat" to="." method="_on_player_seat_body_entered"]
