@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy7s5gqt7ndix"
-path.s3tc="res://.godot/imported/RiscuitsClassroomNoBorder_3.png-1dbd6885522f70cdce7938d3c9fa59c6.s3tc.ctex"
-path.etc2="res://.godot/imported/RiscuitsClassroomNoBorder_3.png-1dbd6885522f70cdce7938d3c9fa59c6.etc2.ctex"
+uid="uid://bq7c8074s1a1m"
+path.s3tc="res://.godot/imported/RiscuitsClassroomNoBorder_11.png-c4ad8660032c2c1ebe99563d87bdaf18.s3tc.ctex"
+path.etc2="res://.godot/imported/RiscuitsClassroomNoBorder_11.png-c4ad8660032c2c1ebe99563d87bdaf18.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "eb23a6fffe05df0421758083e2cfb9c7"
+"md5": "8125fc7de0f569e2a3f161ded61b8cb5"
 }
 
 [deps]
 
-source_file="res://models/RiscuitsClassroomNoBorder_3.png"
-dest_files=["res://.godot/imported/RiscuitsClassroomNoBorder_3.png-1dbd6885522f70cdce7938d3c9fa59c6.s3tc.ctex", "res://.godot/imported/RiscuitsClassroomNoBorder_3.png-1dbd6885522f70cdce7938d3c9fa59c6.etc2.ctex"]
+source_file="res://models/classroom/RiscuitsClassroomNoBorder_11.png"
+dest_files=["res://.godot/imported/RiscuitsClassroomNoBorder_11.png-c4ad8660032c2c1ebe99563d87bdaf18.s3tc.ctex", "res://.godot/imported/RiscuitsClassroomNoBorder_11.png-c4ad8660032c2c1ebe99563d87bdaf18.etc2.ctex"]
 
 [params]
 

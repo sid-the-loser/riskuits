@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://uafeyfxf6rbn"
-path="res://.godot/imported/RiscuitsHallwayTest.gltf-86d43993057393f56b1f9dba5d900b4c.scn"
+uid="uid://bdgi38t1sv8jn"
+path="res://.godot/imported/RiscuitsClassroomNoBorder.gltf-992cdcdf08c4a2c42ed841ac66545661.scn"
 
 [deps]
 
-source_file="res://RiscuitsHallwayTest.gltf"
-dest_files=["res://.godot/imported/RiscuitsHallwayTest.gltf-86d43993057393f56b1f9dba5d900b4c.scn"]
+source_file="res://models/classroom/RiscuitsClassroomNoBorder.gltf"
+dest_files=["res://.godot/imported/RiscuitsClassroomNoBorder.gltf-992cdcdf08c4a2c42ed841ac66545661.scn"]
 
 [params]
 

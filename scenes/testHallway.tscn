@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="1_5xec8"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="2_8uff0"]
-[ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/RiscuitsClassroomNoBorder.gltf" id="3_ryfih"]
+[ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/classroom/RiscuitsClassroomNoBorder.gltf" id="3_ryfih"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="4_xom8v"]
-[ext_resource type="PackedScene" uid="uid://uafeyfxf6rbn" path="res://RiscuitsHallwayTest.gltf" id="5_8uff0"]
+[ext_resource type="PackedScene" uid="uid://uafeyfxf6rbn" path="res://old stuff/RiscuitsHallwayTest.gltf" id="5_8uff0"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_8uff0"]
 dof_blur_far_enabled = true
