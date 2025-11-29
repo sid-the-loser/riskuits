@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ciinhkhf0s14n"]
+[gd_scene load_steps=15 format=3 uid="uid://ciinhkhf0s14n"]
 
 [ext_resource type="Script" uid="uid://bhu1jqfr66fh7" path="res://scenes/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/classroom/RiscuitsClassroomNoBorder.gltf" id="2_wu84c"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://bvlfqxctlt80k" path="res://assets from harrish/Art/RiskuitsTitleScreen_Transparent.png" id="4_wu84c"]
+[ext_resource type="Texture2D" uid="uid://ofp6457bs5ac" path="res://assets from harrish/Art/RiskuitsTitleText.png" id="5_8ln24"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rtw2f"]
 size = Vector3(29.929565, 1, 1)
@@ -26,6 +28,30 @@ size = Vector3(5.608124, 1, 1.7752686)
 dof_blur_far_enabled = true
 dof_blur_far_distance = 0.01
 dof_blur_amount = 0.34
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.42352942, 0.050980393, 0.21176471, 0.80784315)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.42352942, 0.050980393, 0.21176471, 0.80784315)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="MainMenu" type="Node3D"]
 script = ExtResource("1_bqqt6")
@@ -168,6 +194,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_wu84c")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -768.0
+offset_top = 112.0
+offset_right = 211.0
+offset_bottom = 1378.9412
+grow_horizontal = 0
+texture = ExtResource("5_8ln24")
+expand_mode = 1
+
 [node name="PlayButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 3
@@ -175,12 +224,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -272.0
-offset_top = -216.0
-offset_right = -112.0
-offset_bottom = -185.0
+offset_left = -360.0
+offset_top = -200.0
+offset_right = -200.0
+offset_bottom = -169.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
 text = "Play"
 
 [node name="QuitButton" type="Button" parent="Control"]
@@ -190,12 +240,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -272.0
-offset_top = -128.0
-offset_right = -112.0
-offset_bottom = -97.0
+offset_left = -360.0
+offset_top = -152.0
+offset_right = -200.0
+offset_bottom = -121.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa1go")
 text = "Quit"
 
 [connection signal="button_down" from="Control/PlayButton" to="." method="_on_play_button_button_down"]
