@@ -12,7 +12,7 @@
 },
 &"default_portrait": "wafune",
 &"description": "Likes: Coffee, Books, Puzzles",
-&"display_name": "wafune",
+&"display_name": "c_wafune",
 &"mirror": false,
 &"nicknames": ["Wafune-Chan"],
 &"offset": Vector2(0, 0),

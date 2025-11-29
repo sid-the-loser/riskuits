@@ -25,11 +25,12 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"lotus": "res://dialogic stuff/characters/lotus.dch",
-"wafune": "res://dialogic stuff/characters/wafune.dch"
+"c_lotus": "res://dialogic stuff/characters/c_lotus.dch",
+"c_wafune": "res://dialogic stuff/characters/c_wafune.dch"
 }
 directories/dtl_directory={
-"test": "res://timelines/test.dtl"
+"classroom": "res://dialogic stuff/timelines/classroom.dtl",
+"test": "res://dialogic stuff/timelines/test.dtl"
 }
 layout/style_directory={}
 variables={}
@@ -67,7 +68,8 @@ audio/channel_defaults={
 }
 }
 layout/style_list=[]
-layout/default_style="Default"
+layout/default_style=""
+glossary/default_case_sensitive=true
 
 [display]
 
