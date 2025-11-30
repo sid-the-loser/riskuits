@@ -19,7 +19,7 @@ c_lotus: My my.. Love the energy from you two!
 c_lotus: Looks like it's my turn. I am Lotus Caramona.
 c_lotus: I enjoy long walks by the beach while sipping my tea, and I love watching sci-fi movies. Just simple hobbies, but I think they have their own charm.
 c_lotus: I may be a year above most of you, but don’t let that scare you off. If you ever need advice… or just someone to chat with… I’d be happy to help. I promise I don’t bite…most of the time, haha.
-c_rat: Whoa… they’re fine as hell! This is your chance to make your move!
+Whoa… they’re fine as hell! This is your chance to make your move!
 audio "res://sfx from outside/bel-sekolah-153453.mp3" [volume="-20.0"]
 *school bell rings*
 leave c_lotus [animation="Slide To Left" wait="true"]

@@ -15,6 +15,9 @@
 [sub_resource type="Resource" id="Resource_ptmyv"]
 script = ExtResource("2_cl8eq")
 scene = ExtResource("1_vpyen")
+overrides = {
+"global_bg_color": "Color(0, 0, 0, 0.70980394)"
+}
 
 [sub_resource type="Resource" id="Resource_a8gaf"]
 script = ExtResource("2_cl8eq")

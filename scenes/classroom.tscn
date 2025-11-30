@@ -1,10 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4iijybop1qfa"]
+[gd_scene load_steps=23 format=3 uid="uid://c4iijybop1qfa"]
 
 [ext_resource type="Script" uid="uid://b030rhnbgwfbt" path="res://scenes/classroom.gd" id="1_kkrti"]
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="1_x5cc4"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="2_kkrti"]
 [ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/classroom/RiscuitsClassroomNoBorder.gltf" id="3_xubko"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="4_rt84g"]
+[ext_resource type="Texture2D" uid="uid://bnmf865ncijf7" path="res://assets from harrish/Art/Biscuit_Pixel_Sprites/Riskuits_Ginna_Pixel(New).png" id="6_cj0lk"]
+[ext_resource type="Texture2D" uid="uid://dxsdflr04tkt7" path="res://assets from harrish/Art/Biscuit_Pixel_Sprites/Riskuits_Lotus_Pixel.png" id="7_rlgmb"]
+[ext_resource type="Texture2D" uid="uid://c2mantfn2lu04" path="res://assets from harrish/Art/Biscuit_Pixel_Sprites/Riskuits_Wafune_Pixel.png" id="8_l51k1"]
+[ext_resource type="Texture2D" uid="uid://5oflto28umxt" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_NPC_North.png" id="9_ye5h5"]
+[ext_resource type="Texture2D" uid="uid://bmqthjltqmlrb" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_NPC2_North.png" id="10_14aws"]
+[ext_resource type="Texture2D" uid="uid://647iaq0lwr4d" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_NPC3_North.png" id="11_gyxwi"]
+[ext_resource type="Texture2D" uid="uid://cjq3mmtr4c708" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_NPC5_North.png" id="12_6y7hp"]
+[ext_resource type="Texture2D" uid="uid://dpmvfyn3088rj" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_Chair.png" id="13_ut2n3"]
+[ext_resource type="Texture2D" uid="uid://5f4ihmf0vxdl" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_NPC4_North.png" id="14_f0xpw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x5cc4"]
 size = Vector3(29.929565, 1, 1)
@@ -199,6 +208,61 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.794241, 1.5562034, -16.078
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7043457, 0, -0.38345337)
 shape = SubResource("BoxShape3D_kt5ds")
 debug_color = Color(0, 11.708403, 13.469126, 1)
+
+[node name="BiscuitGals" type="Node3D" parent="."]
+
+[node name="Lotus" type="Sprite3D" parent="BiscuitGals"]
+transform = Transform3D(0.6272585, 0, 0, 0, 0.6272585, 0, 0, 0, 1, -3.0096793, 2.712984, -14.630901)
+shaded = true
+texture = ExtResource("7_rlgmb")
+
+[node name="Ginna" type="Sprite3D" parent="BiscuitGals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19988346, 2.3796573, -14.630901)
+shaded = true
+texture = ExtResource("6_cj0lk")
+
+[node name="Wafune" type="Sprite3D" parent="BiscuitGals"]
+transform = Transform3D(0.21410152, 0.40882564, 0, -0.40882564, 0.21410152, 0, 0, 0, 1, 3.0427682, 2.6488454, -14.630901)
+shaded = true
+texture = ExtResource("8_l51k1")
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -6.691059, 2.5088675, 2.132277)
+texture = ExtResource("9_ye5h5")
+
+[node name="Sprite3D2" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -0.09679723, 2.5088675, 2.132277)
+texture = ExtResource("10_14aws")
+
+[node name="Sprite3D3" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, 5.909071, 2.5088675, 2.132277)
+texture = ExtResource("11_gyxwi")
+
+[node name="Sprite3D4" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, 5.909071, 2.564916, -3.1409986)
+texture = ExtResource("12_6y7hp")
+
+[node name="Sprite3D6" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -0.12373543, 2.58371, -2.6929579)
+texture = ExtResource("13_ut2n3")
+
+[node name="Sprite3D7" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -0.110027075, 2.5356162, -8.085486)
+texture = ExtResource("13_ut2n3")
+
+[node name="Sprite3D8" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -6.3478723, 2.5356162, -8.085486)
+texture = ExtResource("13_ut2n3")
+
+[node name="Sprite3D9" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, 5.937398, 2.5356162, -8.085486)
+texture = ExtResource("13_ut2n3")
+
+[node name="Sprite3D5" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -6.409779, 2.564916, -3.1409986)
+texture = ExtResource("14_f0xpw")
 
 [connection signal="body_entered" from="PlayerSeat" to="." method="_on_player_seat_body_entered"]
 [connection signal="body_entered" from="ClassroomExit" to="." method="_on_classroom_exit_body_entered"]
