@@ -16,7 +16,7 @@
 script = ExtResource("2_flkli")
 scene = ExtResource("1_5t88v")
 overrides = {
-"global_bg_color": "Color(0, 0.012939453, 0.20703125, 0.9019608)"
+"global_bg_color": "Color(0, 0.102941185, 0.23529413, 0.7058824)"
 }
 
 [sub_resource type="Resource" id="Resource_38pwc"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0jasc8dyycal"]
+[gd_scene load_steps=18 format=3 uid="uid://d0jasc8dyycal"]
 
 [ext_resource type="Script" uid="uid://tac1tx36u1fm" path="res://scenes/hallway.gd" id="1_1k2v8"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="2_h81ti"]
@@ -6,9 +6,127 @@
 [ext_resource type="PackedScene" uid="uid://cea8gvhv2cs05" path="res://models/hallway/RiscuitsHallwayVersion2.gltf" id="4_1k2v8"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="4_3w3tr"]
 [ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="6_txc3n"]
+[ext_resource type="Texture2D" uid="uid://bnmf865ncijf7" path="res://assets from harrish/Art/Biscuit_Pixel_Sprites/Riskuits_Ginna_Pixel(New).png" id="7_yjeik"]
+[ext_resource type="Texture2D" uid="uid://blc8vawulmiqd" path="res://assets from harrish/Art/UI_Sprite/SpaceBarPress-export.png" id="8_nlnob"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1k2v8"]
 size = Vector3(2.9698486, 2.2020264, 6.8615723)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txc3n"]
+transparency = 1
+albedo_color = Color(0.50980395, 0.8784314, 1, 0.35686275)
+metallic_specular = 0.81
+roughness = 0.0
+clearcoat_enabled = true
+clearcoat = 0.36
+clearcoat_roughness = 0.0
+anisotropy = -0.45
+ao_light_affect = 1.0
+refraction_scale = -1.0
+stencil_flags = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yjeik"]
+material = SubResource("StandardMaterial3D_txc3n")
+
+[sub_resource type="Animation" id="Animation_nlnob"]
+resource_name = "GinnaBobbing"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.7936468, 2.748487, -42.898075), Vector3(1.7936468, 3.0798955, -42.898075), Vector3(1.7936468, 2.748487, -42.898075)]
+}
+
+[sub_resource type="Animation" id="Animation_w57m6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.7936468, 2.748487, -42.898075)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_drbwl"]
+_data = {
+&"GinnaBobbing": SubResource("Animation_nlnob"),
+&"RESET": SubResource("Animation_w57m6")
+}
+
+[sub_resource type="Animation" id="Animation_drbwl"]
+resource_name = "SpaceBar_UI"
+length = 1.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.46666667, 0.7, 0.93333334, 1.1666666, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1607134, 1.1666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector3(1.8231094, 4.36251, -42.916225), Vector3(1.8231094, 4.3169127, -42.916225), Vector3(1.8231094, 4.2862644, -42.916225)]
+}
+
+[sub_resource type="Animation" id="Animation_hwv8p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.8231094, 4.332182, -42.916225)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_52g5x"]
+_data = {
+&"RESET": SubResource("Animation_hwv8p"),
+&"SpaceBar_UI": SubResource("Animation_drbwl")
+}
 
 [node name="Hallway" type="Node3D"]
 script = ExtResource("1_1k2v8")
@@ -18,6 +136,7 @@ environment = ExtResource("2_h81ti")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.41343093, 0.06844506, 0.9079594, 0.3387747, 0.937145, 0.08361276, -0.8451666, 0.34216174, -0.410632, 0, 7.339922, 0)
+visible = false
 light_color = Color(1, 0.3254902, 1, 1)
 shadow_enabled = true
 
@@ -35,10 +154,10 @@ metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 [node name="Limit1" type="Camera3D" parent="RailCamera3D"]
 
 [node name="Limit2" type="Camera3D" parent="RailCamera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -41.017826)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -116.02697)
 
 [node name="Player" parent="." instance=ExtResource("4_3w3tr")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -4.4049654, 0.9999981, 18.617641)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -4.4049654, 0.888371, 18.617641)
 
 [node name="blockbench_export" parent="." instance=ExtResource("4_1k2v8")]
 transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -38.221077, 0, -7.5450535)
@@ -53,5 +172,150 @@ debug_color = Color(0, 11.708403, 13.469126, 1)
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_txc3n")]
 visible = false
+
+[node name="IndoorLighting" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.994467, 0.10504918, 0, -0.10504918, -0.994467, -10.044668, 33.912212, 7.6079617)
+
+[node name="HallwayTypeA_Lights" type="Node3D" parent="IndoorLighting"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="IndoorLighting/HallwayTypeA_Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.052597396, -0.99861574, 0, 0.99861574, 0.052597392, 6.2552795, 18.321997, -14.285998)
+light_energy = 1.347
+shadow_enabled = true
+spot_range = 4096.0
+spot_attenuation = 0.38
+spot_angle = 63.393536
+spot_angle_attenuation = 2.2191393
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="IndoorLighting/HallwayTypeA_Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.052597396, -0.99861574, 0, 0.99861574, 0.052597392, 5.699412, 20.557951, 6.218045)
+visible = false
+light_energy = 1.182
+shadow_enabled = true
+spot_range = 4096.0
+spot_attenuation = 0.38
+spot_angle = 70.0579
+spot_angle_attenuation = 2.2191393
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="IndoorLighting/HallwayTypeA_Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.052597396, -0.99861574, 0, 0.99861574, 0.052597392, 5.407512, 22.757992, 27.045002)
+visible = false
+light_energy = 1.182
+shadow_enabled = true
+spot_range = 4096.0
+spot_attenuation = 0.38
+spot_angle = 70.0579
+spot_angle_attenuation = 2.2191393
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="IndoorLighting/HallwayTypeA_Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.052597396, -0.99861574, 0, 0.99861574, 0.052597392, 5.699412, 26.129198, 58.95932)
+visible = false
+light_energy = 1.182
+shadow_enabled = true
+spot_range = 4096.0
+spot_attenuation = 0.38
+spot_angle = 70.0579
+spot_angle_attenuation = 2.2191393
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="IndoorLighting/HallwayTypeA_Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.052597396, -0.99861574, 0, 0.99861574, 0.052597392, 5.699412, 29.380327, 89.73658)
+light_energy = 1.182
+shadow_enabled = true
+spot_range = 4096.0
+spot_attenuation = 0.38
+spot_angle = 70.0579
+spot_angle_attenuation = 2.2191393
+
+[node name="HallwayTypeB_Lights" type="Node3D" parent="IndoorLighting"]
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="IndoorLighting/HallwayTypeB_Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.052597396, -0.99861574, 0, 0.99861574, 0.052597392, 34.55085, 26.952686, 66.7549)
+light_energy = 10.897
+shadow_enabled = true
+spot_range = 19.258768
+spot_attenuation = 1.15
+spot_angle = 70.0579
+spot_angle_attenuation = 2.2191393
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="IndoorLighting/HallwayTypeB_Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.052597396, -0.99861574, 0, 0.99861574, 0.052597392, 62.31183, 26.952686, 66.7549)
+light_energy = 10.897
+shadow_enabled = true
+spot_range = 19.258768
+spot_attenuation = 1.15
+spot_angle = 70.0579
+spot_angle_attenuation = 2.2191393
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="IndoorLighting/HallwayTypeB_Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.052597396, -0.99861574, 0, 0.99861574, 0.052597392, 83.54472, 26.952686, 66.7549)
+light_energy = 10.897
+shadow_enabled = true
+spot_range = 19.258768
+spot_attenuation = 1.15
+spot_angle = 70.0579
+spot_angle_attenuation = 2.2191393
+
+[node name="OutdoorLighting" type="Node3D" parent="."]
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="OutdoorLighting"]
+transform = Transform3D(0.46289992, -0.5200923, 0.71779364, 0.033936366, 0.8195802, 0.5719586, -0.8857607, -0.24040027, 0.39703366, 15.248642, 14.464712, -2.6362839)
+light_energy = 2.831
+shadow_enabled = true
+spot_range = 4096.0
+spot_attenuation = 0.38
+spot_angle = 43.612396
+spot_angle_attenuation = 2.2191393
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="OutdoorLighting"]
+transform = Transform3D(-0.0861562, -0.56775874, 0.81867397, 0.03393636, 0.8195802, 0.5719586, -0.9957035, 0.077060595, -0.051344253, 15.248642, 14.464712, 6.598366)
+light_energy = 2.831
+shadow_enabled = true
+spot_range = 4096.0
+spot_attenuation = 0.38
+spot_angle = 43.612396
+spot_angle_attenuation = 2.2191393
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="OutdoorLighting"]
+transform = Transform3D(0.34076792, -0.54748356, 0.76428986, 0.033936404, 0.8195802, 0.57195866, -0.9395348, -0.16896792, 0.29786626, 15.124708, 14.464712, -22.284079)
+light_energy = 2.831
+shadow_enabled = true
+spot_range = 4096.0
+spot_attenuation = 0.38
+spot_angle = 43.612396
+spot_angle_attenuation = 2.2191393
+
+[node name="Windows" type="Node3D" parent="."]
+transform = Transform3D(36.807358, 0, 0, 0, -7.868048e-08, -6.762735, 0, 1.7999996, -2.9560854e-07, 48.319817, 7.4341993, -55.87123)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Windows"]
+transform = Transform3D(-3.139187e-08, -0.048903253, 0, 14.685366, -4.371139e-08, 1.4210855e-14, 1.4210855e-14, 5.293956e-23, 0.77232176, -1.1085843, 26.983183, 0.07023716)
+mesh = SubResource("PlaneMesh_yjeik")
+skeleton = NodePath("../../Player")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Windows"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 2.842171e-14, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_yjeik")
+skeleton = NodePath("../../Player")
+
+[node name="Ginna" type="Sprite3D" parent="."]
+transform = Transform3D(0.90408254, 0, -0.42735788, 0, 1, 0, 0.42735788, 0, 0.90408254, 1.7936468, 2.748487, -42.898075)
+shaded = true
+texture = ExtResource("7_yjeik")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ginna"]
+libraries = {
+&"": SubResource("AnimationLibrary_drbwl")
+}
+
+[node name="Ginna2" type="Sprite3D" parent="."]
+transform = Transform3D(0.45204127, 0, -0.21367894, 0, 0.5, 0, 0.21367894, 0, 0.45204127, 1.8231094, 4.332182, -42.916225)
+billboard = 1
+texture = ExtResource("8_nlnob")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ginna2"]
+libraries = {
+&"": SubResource("AnimationLibrary_52g5x")
+}
 
 [connection signal="body_entered" from="ClassroomEntrance" to="." method="_on_classroom_entrance_body_entered"]

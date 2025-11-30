@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpmvfyn3088rj"
-path.s3tc="res://.godot/imported/Riskuits_Chair.png-1c83f709b04c3da963cf99a5646e1d7e.s3tc.ctex"
-path.etc2="res://.godot/imported/Riskuits_Chair.png-1c83f709b04c3da963cf99a5646e1d7e.etc2.ctex"
+uid="uid://dfttxfyrcejjx"
+path.s3tc="res://.godot/imported/RiskuitsMenuGals.png-fed93d48f45c828d5eb5957d28f939c3.s3tc.ctex"
+path.etc2="res://.godot/imported/RiskuitsMenuGals.png-fed93d48f45c828d5eb5957d28f939c3.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets from harrish/Art/NPC_Sprites/Riskuits_Chair.png"
-dest_files=["res://.godot/imported/Riskuits_Chair.png-1c83f709b04c3da963cf99a5646e1d7e.s3tc.ctex", "res://.godot/imported/Riskuits_Chair.png-1c83f709b04c3da963cf99a5646e1d7e.etc2.ctex"]
+source_file="res://assets from harrish/Art/RiskuitsMenuGals.png"
+dest_files=["res://.godot/imported/RiskuitsMenuGals.png-fed93d48f45c828d5eb5957d28f939c3.s3tc.ctex", "res://.godot/imported/RiskuitsMenuGals.png-fed93d48f45c828d5eb5957d28f939c3.etc2.ctex"]
 
 [params]
 
