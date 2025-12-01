@@ -38,23 +38,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Dialogic.current_timeline == null:
-		if !GameManager.tutorial_flag:
-			if talking_to_ginna_flag:
-				if Dialogic.VAR.get_variable("bagged"):
-					GameManager.using_ui = true
-					win_control.show()
-				else:
-					GameManager.using_ui = true
-					lose_control.show()
-					
-			ended_flag = true
-			talking_to_ginna_flag = false
-				
-			if Input.is_action_just_pressed("talk") and can_talk_to_ginna_flag:
-				Dialogic.start("ginna")
-				print(Dialogic.VAR.get_variable("bagged"))
-				talking_to_ginna_flag = true
-				
 		if !ended_flag:
 			if Input.is_action_just_pressed("back"):
 				if GameManager.using_ui:
@@ -64,6 +47,23 @@ func _process(delta: float) -> void:
 				else:
 					GameManager.using_ui = true
 					pause_menu.show()
+		
+		if !GameManager.using_ui:
+			if Input.is_action_just_pressed("talk") and can_talk_to_ginna_flag and !talking_to_ginna_flag:
+				Dialogic.start("ginna")
+				talking_to_ginna_flag = true
+			
+			elif talking_to_ginna_flag:
+				ended_flag = true
+				
+		if ended_flag:
+			if Dialogic.VAR.get_variable("bagged"):
+				win_control.show()
+			else:
+				lose_control.show()
+				
+			GameManager.using_ui = true
+			
 
 func _on_classroom_entrance_body_entered(body: Node3D) -> void:
 	if GameManager.tutorial_flag and body.name == "Player":

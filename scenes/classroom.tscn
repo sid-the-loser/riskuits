@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c4iijybop1qfa"]
+[gd_scene load_steps=25 format=3 uid="uid://c4iijybop1qfa"]
 
 [ext_resource type="Script" uid="uid://b030rhnbgwfbt" path="res://scenes/classroom.gd" id="1_kkrti"]
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="1_x5cc4"]
@@ -27,6 +27,9 @@ size = Vector3(1, 1, 27.82788)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rt84g"]
 size = Vector3(1, 1, 29.989014)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_14aws"]
+size = Vector3(8.97406, 1, 2.5761719)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cj0lk"]
 size = Vector3(2.2264404, 1, 1.9765625)
@@ -99,6 +102,11 @@ shape = SubResource("BoxShape3D_xubko")
 [node name="RightWall" type="CollisionShape3D" parent="Collisions/Classroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.261006, 1.334302, -8.834351)
 shape = SubResource("BoxShape3D_rt84g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Classroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2599182, 1.3687506, -15.39089)
+shape = SubResource("BoxShape3D_14aws")
+debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Tables" type="StaticBody3D" parent="Collisions"]
 
