@@ -11,9 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://blc8vawulmiqd" path="res://assets from harrish/Art/UI_Sprite/SpaceBarPress-export.png" id="8_u2u04"]
 [ext_resource type="Texture2D" uid="uid://u3w4f6od0wpj" path="res://assets from harrish/Art/WafuneBooks.png" id="9_qkvnl"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_qkvnl"]
-size = Vector3(3.9561157, 1, 1)
-
 [sub_resource type="Animation" id="Animation_hwv8p"]
 length = 0.001
 tracks/0/type = "value"
@@ -54,6 +51,9 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u2u04"]
 size = Vector3(12.943359, 1, 3.9902954)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4wg2u"]
+size = Vector3(2.580307, 1, 0.09399414)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yqfbd"]
 size = Vector3(1, 1, 8.233154)
@@ -184,16 +184,6 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("6_k7dkh")
 
-[node name="Lotus" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.07968, 3.3566427, 22.324253)
-texture = ExtResource("7_pimhm")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Lotus"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Lotus/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20956421, -0.815603, 0)
-shape = SubResource("BoxShape3D_qkvnl")
-
 [node name="InteractionIcon" type="Sprite3D" parent="."]
 transform = Transform3D(0.45204127, 0, -0.21367894, 0, 0.5, 0, 0.21367894, 0, 0.45204127, 43.22821, 5.3860965, 22.014496)
 billboard = 1
@@ -212,6 +202,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.804966, 1.546274, 22.29815
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.430664, 0, -0.06436157)
 shape = SubResource("BoxShape3D_u2u04")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.305077, 2.712984, 22.622452)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11986542, 0, -0.015991211)
+shape = SubResource("BoxShape3D_4wg2u")
+
+[node name="Lotus" type="Sprite3D" parent="."]
+transform = Transform3D(0.6272585, 0, 0, 0, 0.6272585, 0, 0, 0, 1, 42.305077, 2.712984, 22.622452)
+shaded = true
+texture = ExtResource("7_pimhm")
 
 [node name="LotusTea" type="Sprite3D" parent="."]
 transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 39.576168, 3.042973, 21.307158)

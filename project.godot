@@ -36,7 +36,8 @@ directories/dtl_directory={
 "classroom": "res://dialogic stuff/timelines/classroom.dtl",
 "ginna": "res://dialogic stuff/timelines/ginna.dtl",
 "lotus": "res://dialogic stuff/timelines/lotus.dtl",
-"pre_classroom_hallway": "res://dialogic stuff/timelines/pre_classroom_hallway.dtl"
+"pre_classroom_hallway": "res://dialogic stuff/timelines/pre_classroom_hallway.dtl",
+"wafune": "res://dialogic stuff/timelines/wafune.dtl"
 }
 layout/style_directory={
 "": "res://dialogic stuff/style/default.tres",

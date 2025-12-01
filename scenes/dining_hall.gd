@@ -9,6 +9,7 @@ extends Node3D
 @export var interactions_icon_animator: AnimationPlayer
 
 var talking_to_lotus_flag = false
+var can_talk_to_lotus_flag = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -39,7 +40,7 @@ func _process(delta: float) -> void:
 			pause_menu.show()
 			
 	if Dialogic.current_timeline == null and !GameManager.using_ui:
-		if Input.is_action_just_pressed("talk"):
+		if Input.is_action_just_pressed("talk") and can_talk_to_lotus_flag:
 			Dialogic.start("lotus")
 			talking_to_lotus_flag = true
 			AudioManager.play_soundtrack("lotus")
@@ -47,11 +48,13 @@ func _process(delta: float) -> void:
 func _on_lotus_area_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		interactions_icon.show()
+		can_talk_to_lotus_flag = true
 
 
 func _on_lotus_area_body_exited(body: Node3D) -> void:
 	if body.name == "Player":
 		interactions_icon.hide()
+		can_talk_to_lotus_flag = false
 
 
 func _on_exit_hallway_body_entered(body: Node3D) -> void:
