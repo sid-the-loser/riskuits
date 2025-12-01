@@ -1,16 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbi1f2uc836vy"]
+[gd_scene load_steps=7 format=3 uid="uid://dbi1f2uc836vy"]
 
 [ext_resource type="PackedScene" uid="uid://dq64vp5tos7cw" path="res://models/dininghall/RiscuitsDiningHall.gltf" id="1_8w4oh"]
 [ext_resource type="Script" uid="uid://caxamwvyek2n" path="res://scenes/dining_hall.gd" id="1_hvw7s"]
 [ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="3_t7842"]
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="4_k7dkh"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="5_pimhm"]
+[ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="6_k7dkh"]
 
-[node name="DiningHall" type="Node3D"]
+[node name="DiningHall" type="Node3D" node_paths=PackedStringArray("pause_menu", "win_control", "lose_control")]
 script = ExtResource("1_hvw7s")
+pause_menu = NodePath("PauseMenu")
+win_control = NodePath("Win")
+lose_control = NodePath("Lose")
 
 [node name="blockbench_export" parent="." instance=ExtResource("1_8w4oh")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-1.5867235e-07, 0, 3.6300004, 0, 3.63, 0, -3.6300004, 0, -1.5867235e-07, 0, 0, 0)
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_t7842")]
 visible = false
@@ -104,22 +108,25 @@ grow_vertical = 2
 text = "Main Menu"
 
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.408115, 5.830878, 34.029858)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.05272, 5.830878, 34.87659)
 script = ExtResource("4_k7dkh")
 look_at_main_subject_ = false
-main_subject_ = NodePath("")
+main_subject_ = NodePath("../Player")
 rail_limit_1_ = NodePath("Limit1")
 rail_limit_2_ = NodePath("Limit2")
 metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 
 [node name="Limit2" type="Camera3D" parent="RailCamera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.34276, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.563925, 0, 0)
 
 [node name="Limit1" type="Camera3D" parent="RailCamera3D"]
 
 [node name="Player" parent="." instance=ExtResource("5_pimhm")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -4.405, 1, 18.618)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.899727, 1.000001, 28.779451)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.9976586, -0.035388608, -0.058523193, -0.046339035, 0.9791307, 0.19787823, 0.050299212, 0.20012683, -0.9784781, 0, 0, 0)
 shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("6_k7dkh")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtwjf1dyx2cp4"]
+[gd_scene load_steps=7 format=3 uid="uid://dtwjf1dyx2cp4"]
 
 [ext_resource type="Script" uid="uid://bnwo3ije6hs4g" path="res://scenes/library.gd" id="1_m4m2s"]
 [ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="2_n61aj"]
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="3_igipr"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="4_6frsu"]
 [ext_resource type="PackedScene" uid="uid://bcwmeteaf00ew" path="res://models/library/RiscuitsLibrary.gltf" id="5_6frsu"]
+[ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="6_dr2oc"]
 
 [node name="Library" type="Node3D" node_paths=PackedStringArray("pause_menu", "win_control", "lose_control")]
 script = ExtResource("1_m4m2s")
@@ -126,3 +127,6 @@ transform = Transform3D(-1.5867235e-07, 0, 3.6300004, 0, 3.63, 0, -3.6300004, 0,
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.9976586, -0.035388608, -0.058523193, -0.046339035, 0.9791307, 0.19787823, 0.050299212, 0.20012683, -0.9784781, 0, 0, 0)
 shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("6_dr2oc")
