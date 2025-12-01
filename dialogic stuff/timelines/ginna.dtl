@@ -1,0 +1,30 @@
+join c_ginna center
+c_ginna: Hey! You’re the weirdo who was staring at me. What do you want!?
+- I like your round face.
+	c_ginna: Weirdo
+	[end_timeline]
+- Are..are you a…g-gamer girl??
+	c_ginna: Get lost, you creep!
+	[end_timeline]
+- Hey, we’re in the same class, so I thought I’d introduce myself
+	c_ginna: Ugh…nice to meet you too, I guess.
+c_ginna: Anyways, I gotta deliver these posters for the school’s Anime Club.
+- Hey, that looks sick! I might join Anime Club. You make it look like it’s worth the while
+	c_ginna: O-oh, you think so?.. I mean, it's whatever, I guess. If you join, it would mean I would have to see you more often.
+- Anime Club? Weeb!
+	c_ginna: Shut up!
+	[end_timeline]
+- Cool?
+	c_ginna: Whu-what, that’s it? Why are you still standing here!? Get lost.
+	[end_timeline]
+c_ginna: Well, I was just gonna play some Super Crunch Bros after school. Although it does get boring every now and then, playing by yourself.
+- I don’t really play video games. I think they are childish.
+	c_ginna: It’s not like I was asking to play Crunch Bros. with me anyway. UGH.
+	[end_timeline]
+- I can’t stop staring at your round face
+	c_ginna: And I can’t stop resisting my urge to leave this conversation right now.
+	[end_timeline]
+- Hey, I’m free after school if you want to run a couple of games. I’m a Captain Crunch main.
+	c_ginna: Ah, you must be a sweat when it comes to this game. Fine, meet me at the cafe after class…And prepare to get your butt kicked!
+	c_ginna: And the loser should buy us sundaes.
+	set {bagged} = true

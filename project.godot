@@ -33,6 +33,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "classroom": "res://dialogic stuff/timelines/classroom.dtl",
+"ginna": "res://dialogic stuff/timelines/ginna.dtl",
 "pre_classroom_hallway": "res://dialogic stuff/timelines/pre_classroom_hallway.dtl"
 }
 layout/style_directory={
@@ -44,7 +45,9 @@ layout/style_directory={
 "s_rat": "res://dialogic stuff/style/s_rat.tres",
 "s_wafune": "res://dialogic stuff/style/s_wafune.tres"
 }
-variables={}
+variables={
+"bagged": false
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true

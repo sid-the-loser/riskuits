@@ -1,8 +1,8 @@
 extends Node3D
 
 
-var talking_to_ginna = false
-var can_talk_to_ginna = false
+var talking_to_ginna_flag = false
+var can_talk_to_ginna_flag = false
 
 @onready var player: CharacterBody3D = $Player
 @onready var pause_menu: Control = $PauseMenu
@@ -25,6 +25,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Dialogic.current_timeline == null:
+		if talking_to_ginna_flag:
+			if Dialogic.VAR.get_variable("bagged"):
+				print("Winner!")
+			else:
+				print("LOSER")
+				
+			talking_to_ginna_flag = false
+			
 		if Input.is_action_just_pressed("back"):
 			if GameManager.using_ui:
 				GameManager.using_ui = false
@@ -34,8 +42,10 @@ func _process(delta: float) -> void:
 				GameManager.using_ui = true
 				pause_menu.show()
 			
-		if Input.is_action_just_pressed("talk") and can_talk_to_ginna:
-			talking_to_ginna = true
+		if Input.is_action_just_pressed("talk") and can_talk_to_ginna_flag:
+			Dialogic.start("ginna")
+			print(Dialogic.VAR.get_variable("bagged"))
+			talking_to_ginna_flag = true
 
 func _on_classroom_entrance_body_entered(body: Node3D) -> void:
 	if GameManager.tutorial_flag and body.name == "Player":
@@ -45,9 +55,9 @@ func _on_classroom_entrance_body_entered(body: Node3D) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if not GameManager.tutorial_flag and body.name == "Player":
 		interaction_icon.show()
-		can_talk_to_ginna = true
+		can_talk_to_ginna_flag = true
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if not GameManager.tutorial_flag and body.name == "Player":
 		interaction_icon.hide()
-		can_talk_to_ginna = false
+		can_talk_to_ginna_flag = false
