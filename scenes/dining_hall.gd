@@ -8,6 +8,8 @@ extends Node3D
 @export var interactions_icon: Sprite3D
 @export var interactions_icon_animator: AnimationPlayer
 
+@export var lotus_animatior: AnimationPlayer
+
 var talking_to_lotus_flag = false
 var can_talk_to_lotus_flag = false
 
@@ -17,6 +19,7 @@ func _ready() -> void:
 	win_control.hide()
 	lose_control.hide()
 	interactions_icon_animator.play("SpaceBar_UI")
+	lotus_animatior.play("LotusBobbing")
 	interactions_icon.hide()
 
 
