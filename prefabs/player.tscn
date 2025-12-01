@@ -1,9 +1,100 @@
-[gd_scene load_steps=4 format=3 uid="uid://uww0dw0d6m7f"]
+[gd_scene load_steps=13 format=3 uid="uid://uww0dw0d6m7f"]
 
-[ext_resource type="Texture2D" uid="uid://cmjfigb5yh0xl" path="res://sprites/Riskuits_Player_Idle_South.png" id="1_72ieh"]
+[ext_resource type="Texture2D" uid="uid://ciysma8ii57ki" path="res://assets from harrish/Art/Mouse-Kun_Sprites/Riskuits_Player_Idle_South.png" id="1_kbsxf"]
+[ext_resource type="Texture2D" uid="uid://dj6wfckrihuwb" path="res://assets from harrish/Art/Mouse-Kun_Sprites/Riskuits_Player_Walk_South-Sheet.png" id="2_rgeog"]
+[ext_resource type="Script" uid="uid://bju84g2ikeoa7" path="res://scripts/player/player_animation.gd" id="3_1txc5"]
+[ext_resource type="Texture2D" uid="uid://dqd6q8ypiyyxu" path="res://assets from harrish/Art/Mouse-Kun_Sprites/Riskuits_Player_Idle_North.png" id="3_opo22"]
 [ext_resource type="Script" uid="uid://cspmfil51ehpl" path="res://scripts/player/player_movement.gd" id="3_r66lb"]
+[ext_resource type="Texture2D" uid="uid://d2rdbwnjqj02x" path="res://assets from harrish/Art/Mouse-Kun_Sprites/Riskuits_Player_Walk_North-Sheet.png" id="4_8rb0w"]
+[ext_resource type="Texture2D" uid="uid://bnuyeam833l44" path="res://assets from harrish/Art/Mouse-Kun_Sprites/Riskuits_Player_Idle_Side.png" id="5_sd3sa"]
+[ext_resource type="Texture2D" uid="uid://bixb28fqmybhs" path="res://assets from harrish/Art/Mouse-Kun_Sprites/Riskuits_Player_Walk_Side-Sheet.png" id="6_m2qjg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4dohe"]
+
+[sub_resource type="Animation" id="Animation_kbsxf"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BackWalk:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.4989393, 0.7637327),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../SideWalk:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_rgeog"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BackWalk:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../SideWalk:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_opo22"]
+_data = {
+&"RESET": SubResource("Animation_rgeog"),
+&"walk": SubResource("Animation_kbsxf")
+}
 
 [node name="Player" type="CharacterBody3D"]
 
@@ -11,13 +102,68 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_4dohe")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0.9707329, 0)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../FrontWalk")
+libraries = {
+&"": SubResource("AnimationLibrary_opo22")
+}
+
+[node name="Front" type="Sprite3D" parent="."]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 1, 0)
+visible = false
 shaded = true
 alpha_cut = 2
-texture = ExtResource("1_72ieh")
+texture = ExtResource("1_kbsxf")
+
+[node name="FrontWalk" type="Sprite3D" parent="."]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 1, 0)
+visible = false
+shaded = true
+alpha_cut = 2
+texture = ExtResource("2_rgeog")
+hframes = 4
+
+[node name="Back" type="Sprite3D" parent="."]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 1, 0)
+visible = false
+shaded = true
+alpha_cut = 2
+texture = ExtResource("3_opo22")
+
+[node name="BackWalk" type="Sprite3D" parent="."]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 1, 0)
+visible = false
+shaded = true
+alpha_cut = 2
+texture = ExtResource("4_8rb0w")
+hframes = 4
+
+[node name="Side" type="Sprite3D" parent="."]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 1, 0)
+visible = false
+shaded = true
+alpha_cut = 2
+texture = ExtResource("5_sd3sa")
+
+[node name="SideWalk" type="Sprite3D" parent="."]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 1, 0)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("6_m2qjg")
+hframes = 2
 
 [node name="PlayerMovement" type="Node" parent="." node_paths=PackedStringArray("parent_character_body")]
 script = ExtResource("3_r66lb")
 parent_character_body = NodePath("..")
 metadata/_custom_type_script = "uid://cspmfil51ehpl"
+
+[node name="PlayerAnimation" type="Node" parent="." node_paths=PackedStringArray("forward_sprite_", "forward_walk_sprite_", "backward_sprite_", "backward_walk_sprite_", "side_sprite_", "side_walk_sprite_", "animation_player_")]
+script = ExtResource("3_1txc5")
+forward_sprite_ = NodePath("../Front")
+forward_walk_sprite_ = NodePath("../FrontWalk")
+backward_sprite_ = NodePath("../Back")
+backward_walk_sprite_ = NodePath("../BackWalk")
+side_sprite_ = NodePath("../Side")
+side_walk_sprite_ = NodePath("../SideWalk")
+animation_player_ = NodePath("../AnimationPlayer")
+metadata/_custom_type_script = "uid://bju84g2ikeoa7"

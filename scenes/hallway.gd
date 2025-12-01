@@ -26,4 +26,4 @@ func _process(delta: float) -> void:
 
 func _on_classroom_entrance_body_entered(body: Node3D) -> void:
 	if GameManager.tutorial_flag and body.name == "Player":
-		get_tree().change_scene_to_file("res://scenes/classroom.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/classroom.tscn")
