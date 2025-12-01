@@ -68,7 +68,7 @@ func update_sprite_rendered():
 				side_walk_sprite_.flip_h = true
 			else:
 				side_walk_sprite_.flip_h = false
-				
+
 	else:
 		if last_unique_input_direction.y > 0:
 			forward_sprite_.show()

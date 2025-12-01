@@ -307,13 +307,13 @@ libraries = {
 &"": SubResource("AnimationLibrary_drbwl")
 }
 
-[node name="Ginna2" type="Sprite3D" parent="."]
+[node name="InteractionIcon" type="Sprite3D" parent="."]
 transform = Transform3D(0.45204127, 0, -0.21367894, 0, 0.5, 0, 0.21367894, 0, 0.45204127, 1.8231094, 4.332182, -42.916225)
 billboard = 1
 texture = ExtResource("8_nlnob")
 hframes = 8
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Ginna2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InteractionIcon"]
 libraries = {
 &"": SubResource("AnimationLibrary_52g5x")
 }

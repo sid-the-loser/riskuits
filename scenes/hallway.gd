@@ -4,6 +4,9 @@ extends Node3D
 @onready var player: CharacterBody3D = $Player
 @onready var pause_menu: Control = $PauseMenu
 
+@onready var ginna: Sprite3D = $Ginna
+@onready var interaction_icon: Sprite3D = $InteractionIcon
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pause_menu.hide()
