@@ -2,7 +2,6 @@ extends Node3D
 
 
 @export var limit_2: Camera3D
-@export var rail_camera_3d: RailCamera3D
 
 @export var player: CharacterBody3D
 @export var pause_menu: Control
@@ -10,8 +9,16 @@ extends Node3D
 @export var ginna: Sprite3D
 @export var interaction_icon: Sprite3D
 
+@export var ginna_animator: AnimationPlayer
+@export var interaction_animator: AnimationPlayer
+
 @export var win_control: Control
 @export var lose_control: Control
+
+@export var Cam1: RailCamera3D
+@export var Cam2: RailCamera3D
+
+var x_cam_flag = false
 
 var talking_to_ginna_flag = false
 var can_talk_to_ginna_flag = false
@@ -23,6 +30,8 @@ func _ready() -> void:
 	interaction_icon.hide()
 	win_control.hide()
 	lose_control.hide()
+	ginna_animator.play("GinnaBobbing")
+	interaction_animator.play("SpaceBar_UI")
 	if GameManager.tutorial_flag:
 		ginna.hide()
 		Dialogic.start("pre_classroom_hallway")
@@ -32,11 +41,18 @@ func _ready() -> void:
 		player.position = Vector3(-13.212, 1.0, -23.651)
 		limit_2.position.z = -107.416
 		
-	rail_camera_3d.update_limits()
+	Cam1.update_limits()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if x_cam_flag:
+		Cam1.current = false
+		Cam2.current = true
+	else:
+		Cam1.current = true
+		Cam2.current = false
+	
 	if Dialogic.current_timeline == null:
 		if !ended_flag:
 			if Input.is_action_just_pressed("back"):
@@ -91,3 +107,13 @@ func _on_main_menu_2_button_down() -> void:
 	GameManager.tutorial_flag = true
 	GameManager.using_ui = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _on_x_cam_trigger_body_entered(body: Node3D) -> void:
+	if body.name == "Player":
+		x_cam_flag = true
+
+
+func _on_x_cam_trigger_body_exited(body: Node3D) -> void:
+	if body.name == "Player":
+		x_cam_flag = false

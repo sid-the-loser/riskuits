@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d0jasc8dyycal"]
+[gd_scene load_steps=20 format=3 uid="uid://d0jasc8dyycal"]
 
 [ext_resource type="Script" uid="uid://tac1tx36u1fm" path="res://scenes/hallway.gd" id="1_1k2v8"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="2_h81ti"]
@@ -131,16 +131,22 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_nlnob"]
 size = Vector3(4.703453, 1, 4.405426)
 
-[node name="Hallway" type="Node3D" node_paths=PackedStringArray("limit_2", "rail_camera_3d", "player", "pause_menu", "ginna", "interaction_icon", "win_control", "lose_control")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_w57m6"]
+size = Vector3(72.554535, 1, 10.16217)
+
+[node name="Hallway" type="Node3D" node_paths=PackedStringArray("limit_2", "player", "pause_menu", "ginna", "interaction_icon", "ginna_animator", "interaction_animator", "win_control", "lose_control", "Cam1", "Cam2")]
 script = ExtResource("1_1k2v8")
 limit_2 = NodePath("RailCamera3D2/Limit2")
-rail_camera_3d = NodePath("RailCamera3D2")
 player = NodePath("Player")
 pause_menu = NodePath("PauseMenu")
 ginna = NodePath("Ginna")
 interaction_icon = NodePath("InteractionIcon")
+ginna_animator = NodePath("Ginna/AnimationPlayer")
+interaction_animator = NodePath("InteractionIcon/AnimationPlayer")
 win_control = NodePath("Win")
 lose_control = NodePath("Lose")
+Cam1 = NodePath("RailCamera3D")
+Cam2 = NodePath("RailCamera3D2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_h81ti")
@@ -168,20 +174,18 @@ metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -107.41551)
 
 [node name="RailCamera3D2" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8424168, 5.830878, 28.9)
+transform = Transform3D(1, 0, 0, 0, 0.9931115, 0.11717341, 0, -0.11717341, 0.9931115, 20.62902, 7.5178022, -49.752052)
 script = ExtResource("3_u7i40")
 look_at_main_subject_ = false
 main_subject_ = NodePath("../Player")
-rail_movement_axis = "z"
 rail_limit_1_ = NodePath("Limit1")
 rail_limit_2_ = NodePath("Limit2")
-offset_ = 9.0
 metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 
 [node name="Limit1" type="Camera3D" parent="RailCamera3D2"]
 
 [node name="Limit2" type="Camera3D" parent="RailCamera3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -107.41551)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.125984, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_3w3tr")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -4.405, 1, 18.618)
@@ -442,8 +446,18 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
 
+[node name="XCamTrigger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.608175, 2.9950585, -61.754585)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XCamTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.777267, -1.4037414, 0.057151794)
+shape = SubResource("BoxShape3D_w57m6")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
 [connection signal="body_entered" from="ClassroomEntrance" to="." method="_on_classroom_entrance_body_entered"]
 [connection signal="body_entered" from="GinnaArea3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="GinnaArea3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="button_down" from="Win/MainMenu" to="." method="_on_main_menu_button_down"]
 [connection signal="button_down" from="Lose/MainMenu2" to="." method="_on_main_menu_2_button_down"]
+[connection signal="body_entered" from="XCamTrigger" to="." method="_on_x_cam_trigger_body_entered"]
+[connection signal="body_exited" from="XCamTrigger" to="." method="_on_x_cam_trigger_body_exited"]
