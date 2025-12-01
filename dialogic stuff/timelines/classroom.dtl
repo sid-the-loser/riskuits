@@ -1,3 +1,4 @@
+set {class_dis} = false
 You sit down at your seat as class is starting.
 You notice some faces you've never seen before….wait a minute.
 c_rat: ARE THEY BISCUITS???
@@ -25,5 +26,6 @@ audio "res://sfx from outside/bel-sekolah-153453.mp3" [volume="-20.0"]
 leave c_lotus [animation="Slide To Left" wait="true"]
 leave c_ginna [animation="Slide Out Down" wait="true"]
 leave c_wafune [animation="Slide To Right" wait="true"]
+set {class_dis} = true
 c_rat: Huh.. Lunch break already?
 You must catch up with them before you miss my shot!

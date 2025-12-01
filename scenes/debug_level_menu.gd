@@ -20,11 +20,6 @@ func _on_hallway_button_down() -> void:
 func _on_classroom_tutorial_button_down() -> void:
 	GameManager.tutorial_flag = true
 	get_tree().change_scene_to_file("res://scenes/classroom.tscn")
-
-
-func _on_classroom_button_down() -> void:
-	GameManager.tutorial_flag = false
-	get_tree().change_scene_to_file("res://scenes/classroom.tscn")
 	
 
 func _on_library_button_down() -> void:

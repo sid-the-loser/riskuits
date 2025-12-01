@@ -169,7 +169,7 @@ size = Vector3(2.1548386, 1, 2.1624036)
 
 [node name="Hallway" type="Node3D" node_paths=PackedStringArray("limit_2", "player", "pause_menu", "ginna", "interaction_icon", "ginna_animator", "interaction_animator", "win_control", "lose_control", "Cam1", "Cam2")]
 script = ExtResource("1_1k2v8")
-limit_2 = NodePath("RailCamera3D2/Limit2")
+limit_2 = NodePath("RailCamera3D/Limit2")
 player = NodePath("Player")
 pause_menu = NodePath("PauseMenu")
 ginna = NodePath("Ginna")
@@ -204,7 +204,7 @@ metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 [node name="Limit1" type="Camera3D" parent="RailCamera3D"]
 
 [node name="Limit2" type="Camera3D" parent="RailCamera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -107.41551)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -106.47384)
 
 [node name="RailCamera3D2" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
 transform = Transform3D(1, 0, 0, 0, 0.9931115, 0.11717341, 0, -0.11717341, 0.9931115, 20.62902, 7.5178022, -49.752052)

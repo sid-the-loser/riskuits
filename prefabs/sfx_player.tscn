@@ -1,14 +1,20 @@
 [gd_scene load_steps=7 format=3 uid="uid://dldx6kg26r4xl"]
 
-[ext_resource type="Script" uid="uid://duppwwxlkrj4d" path="res://prefabs/sfx_player.gd" id="1_8p78e"]
+[ext_resource type="Script" uid="uid://duppwwxlkrj4d" path="res://scripts/sfx_player.gd" id="1_8p78e"]
 [ext_resource type="AudioStream" uid="uid://dpuygljnaki3i" path="res://assets from harrish/Music/RiskuitsTitleTheme_Fixed.wav" id="2_c2aan"]
 [ext_resource type="AudioStream" uid="uid://dks2srqpe1ffy" path="res://assets from harrish/Music/Riskuits_LevelTheme_Fixed.wav" id="3_vbyyt"]
 [ext_resource type="AudioStream" uid="uid://c11nr6yi3y1oq" path="res://assets from harrish/Music/Ginna_Theme_Fixed.wav" id="4_7k15i"]
 [ext_resource type="AudioStream" uid="uid://cr56t8b2qbuee" path="res://assets from harrish/Music/Lotus_Theme_Fixed.wav" id="5_mbg0e"]
 [ext_resource type="AudioStream" uid="uid://spre3dq0n3xj" path="res://assets from harrish/Music/Wafune_Theme_Fixed.wav" id="6_vg53h"]
 
-[node name="SFXPlayer" type="Node3D"]
+[node name="SFXPlayer" type="Node3D" node_paths=PackedStringArray("title_theme", "level_theme", "wafune_theme", "lotus_theme", "ginna_theme")]
 script = ExtResource("1_8p78e")
+title_theme = NodePath("Title")
+level_theme = NodePath("Level")
+wafune_theme = NodePath("Wafune")
+lotus_theme = NodePath("Lotus")
+ginna_theme = NodePath("Ginna")
+metadata/_custom_type_script = "uid://duppwwxlkrj4d"
 
 [node name="Title" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_c2aan")

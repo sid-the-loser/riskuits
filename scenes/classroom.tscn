@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c4iijybop1qfa"]
+[gd_scene load_steps=26 format=3 uid="uid://c4iijybop1qfa"]
 
 [ext_resource type="Script" uid="uid://b030rhnbgwfbt" path="res://scenes/classroom.gd" id="1_kkrti"]
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="1_x5cc4"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dpmvfyn3088rj" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_Chair.png" id="13_ut2n3"]
 [ext_resource type="Texture2D" uid="uid://5f4ihmf0vxdl" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_NPC4_North.png" id="14_f0xpw"]
 [ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="15_14aws"]
+[ext_resource type="Texture2D" uid="uid://peguwlqtkc76" path="res://assets from harrish/Art/backpack.png" id="15_gyxwi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x5cc4"]
 size = Vector3(29.929565, 1, 1)
@@ -38,13 +39,17 @@ size = Vector3(2.2264404, 1, 1.9765625)
 size = Vector3(5.608124, 1, 1.7752686)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l51k1"]
+size = Vector3(1, 1, 1.2763062)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kt5ds"]
-size = Vector3(2.4086914, 1, 7.286682)
+size = Vector3(1.1217041, 1, 7.286682)
 
-[node name="Classroom" type="Node3D" node_paths=PackedStringArray("pause_menu")]
+[node name="Classroom" type="Node3D" node_paths=PackedStringArray("pause_menu", "biscuits", "npcs", "npcs_chairs")]
 script = ExtResource("1_kkrti")
 pause_menu = NodePath("PauseMenu")
+biscuits = NodePath("BiscuitGals")
+npcs = NodePath("NPCs")
+npcs_chairs = NodePath("ReplacementChairs")
 
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
 transform = Transform3D(1, 0, 0, 0, 0.9464692, 0.3227944, 0, -0.3227944, 0.9464692, 0, 6.141553, 9.182448)
@@ -64,7 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.235068, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_kkrti")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 9.352572, 0.99999905, -15.645048)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 12.265601, 1.0000005, -16.435696)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.2841786, 0.5560002, -0.7810931, -0.15715902, 0.7766489, 0.6100145, 0.94580305, 0.29610887, -0.13332656, -8.113295, 0, 8.661687)
@@ -102,6 +107,7 @@ shape = SubResource("BoxShape3D_xubko")
 [node name="RightWall" type="CollisionShape3D" parent="Collisions/Classroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.261006, 1.334302, -8.834351)
 shape = SubResource("BoxShape3D_rt84g")
+debug_color = Color(0.9607843, 0, 0.5176471, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Classroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2599182, 1.3687506, -15.39089)
@@ -208,6 +214,7 @@ spot_angle = 75.11775
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.065366745, 1.5540378, -2.929266)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerSeat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.13815308)
 shape = SubResource("BoxShape3D_l51k1")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
@@ -215,7 +222,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.794241, 1.5562034, -16.078358)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ClassroomExit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7043457, 0, -0.38345337)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3478394, 0, -0.38345337)
 shape = SubResource("BoxShape3D_kt5ds")
 debug_color = Color(0, 11.708403, 13.469126, 1)
 
@@ -236,6 +243,48 @@ transform = Transform3D(0.21410152, 0.40882564, 0, -0.40882564, 0.21410152, 0, 0
 shaded = true
 texture = ExtResource("8_l51k1")
 
+[node name="ReplacementChairs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -0.12373543, 2.58371, -2.155466)
+visible = false
+
+[node name="Sprite3D10" type="Sprite3D" parent="ReplacementChairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0049570203, -0.25277948, 4.2965107)
+texture = ExtResource("13_ut2n3")
+
+[node name="Sprite3D12" type="Sprite3D" parent="ReplacementChairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.037467, -0.25277925, 4.2965107)
+texture = ExtResource("13_ut2n3")
+
+[node name="Sprite3D13" type="Sprite3D" parent="ReplacementChairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.037467, -0.031773806, -0.97210956)
+texture = ExtResource("13_ut2n3")
+
+[node name="Sprite3D14" type="Sprite3D" parent="ReplacementChairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2939396, 0.014399767, -0.9567802)
+texture = ExtResource("13_ut2n3")
+
+[node name="Sprite3D11" type="Sprite3D" parent="ReplacementChairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.583371, -0.26944923, 4.295812)
+texture = ExtResource("13_ut2n3")
+
+[node name="Chairs" type="Node3D" parent="."]
+
+[node name="Sprite3D6" type="Sprite3D" parent="Chairs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -0.12373543, 2.58371, -2.155466)
+texture = ExtResource("13_ut2n3")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Chairs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -0.110027075, 2.5356162, -8.085486)
+texture = ExtResource("13_ut2n3")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Chairs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -6.3478723, 2.5356162, -8.085486)
+texture = ExtResource("13_ut2n3")
+
+[node name="Sprite3D9" type="Sprite3D" parent="Chairs"]
+transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, 5.937398, 2.5356162, -8.085486)
+texture = ExtResource("13_ut2n3")
+
 [node name="NPCs" type="Node3D" parent="."]
 
 [node name="Sprite3D" type="Sprite3D" parent="NPCs"]
@@ -254,25 +303,13 @@ texture = ExtResource("11_gyxwi")
 transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, 5.909071, 2.564916, -3.1409986)
 texture = ExtResource("12_6y7hp")
 
-[node name="Sprite3D6" type="Sprite3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -0.12373543, 2.58371, -2.6929579)
-texture = ExtResource("13_ut2n3")
-
-[node name="Sprite3D7" type="Sprite3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -0.110027075, 2.5356162, -8.085486)
-texture = ExtResource("13_ut2n3")
-
-[node name="Sprite3D8" type="Sprite3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -6.3478723, 2.5356162, -8.085486)
-texture = ExtResource("13_ut2n3")
-
-[node name="Sprite3D9" type="Sprite3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, 5.937398, 2.5356162, -8.085486)
-texture = ExtResource("13_ut2n3")
-
 [node name="Sprite3D5" type="Sprite3D" parent="NPCs"]
 transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -6.409779, 2.564916, -3.1409986)
 texture = ExtResource("14_f0xpw")
+
+[node name="Sprite3D6" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(0.42500007, 0, 0, 0, 0.42500004, 0, 0, 0, 0.42500004, -6.242802, 1.6811087, -7.750193)
+texture = ExtResource("15_gyxwi")
 
 [node name="PauseMenu" parent="." instance=ExtResource("15_14aws")]
 visible = false

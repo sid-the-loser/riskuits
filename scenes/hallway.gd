@@ -26,6 +26,7 @@ var ended_flag = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioManager.play_soundtrack("level")
 	pause_menu.hide()
 	interaction_icon.hide()
 	win_control.hide()
@@ -35,13 +36,13 @@ func _ready() -> void:
 	if GameManager.tutorial_flag:
 		ginna.hide()
 		Dialogic.start("pre_classroom_hallway")
-		limit_2.position.z = -41.782
+		limit_2.position.z = -40.0
+		Cam1.update_limits()
 	else:
 		ginna.show()
 		player.position = Vector3(-13.212, 1.0, -23.651)
 		limit_2.position.z = -107.416
-		
-	Cam1.update_limits()
+		Cam1.update_limits()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,6 +68,7 @@ func _process(delta: float) -> void:
 		if !GameManager.using_ui:
 			if Input.is_action_just_pressed("talk") and can_talk_to_ginna_flag and !talking_to_ginna_flag:
 				Dialogic.start("ginna")
+				AudioManager.play_soundtrack("ginna")
 				talking_to_ginna_flag = true
 			
 			elif talking_to_ginna_flag:
