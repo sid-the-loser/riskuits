@@ -1,10 +1,11 @@
-[gd_scene load_steps=52 format=3 uid="uid://dtwjf1dyx2cp4"]
+[gd_scene load_steps=53 format=3 uid="uid://dtwjf1dyx2cp4"]
 
 [ext_resource type="Script" uid="uid://bnwo3ije6hs4g" path="res://scenes/library.gd" id="1_m4m2s"]
 [ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="2_n61aj"]
 [ext_resource type="FontFile" uid="uid://c07u130o31i1k" path="res://CustomFonts/RobotoSlab-VariableFont_wght.ttf" id="3_h01uo"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="4_6frsu"]
 [ext_resource type="PackedScene" uid="uid://bcwmeteaf00ew" path="res://models/library/RiscuitsLibrary.gltf" id="5_6frsu"]
+[ext_resource type="Script" uid="uid://yrwak40wcom2" path="res://scripts/camera/clipping_camera.gd" id="5_nvcvi"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="6_dr2oc"]
 [ext_resource type="Texture2D" uid="uid://blc8vawulmiqd" path="res://assets from harrish/Art/UI_Sprite/SpaceBarPress-export.png" id="6_qyo4v"]
 [ext_resource type="Texture2D" uid="uid://c2mantfn2lu04" path="res://assets from harrish/Art/Biscuit_Pixel_Sprites/Riskuits_Wafune_Pixel.png" id="7_h01uo"]
@@ -18,6 +19,32 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyo4v"]
 bg_color = Color(0.019607844, 0, 0.14509805, 0.4745098)
+
+[sub_resource type="Animation" id="Animation_wyy3a"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [120]
+}
 
 [sub_resource type="Animation" id="Animation_h01uo"]
 resource_name = "Wafune_Win_Animation"
@@ -47,63 +74,10 @@ tracks/1/keys = {
 "values": [120, 122]
 }
 
-[sub_resource type="Animation" id="Animation_wyy3a"]
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [120]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q3d3p"]
 _data = {
 &"RESET": SubResource("Animation_wyy3a"),
 &"Wafune_Win_Animation": SubResource("Animation_h01uo")
-}
-
-[sub_resource type="Animation" id="Animation_q3d3p"]
-resource_name = "Wafune_Lose_Animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.50245035, 0.98869264),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [120, 125, 120]
 }
 
 [sub_resource type="Animation" id="Animation_7bqx5"]
@@ -131,6 +105,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [120]
+}
+
+[sub_resource type="Animation" id="Animation_q3d3p"]
+resource_name = "Wafune_Lose_Animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.50245035, 0.98869264),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [120, 125, 120]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aotgj"]
@@ -183,6 +184,21 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_qyo4v"]
 size = Vector3(1.6828918, 1.1290283, 0.13745117)
 
+[sub_resource type="Animation" id="Animation_nvcvi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5.814373, 2.6307116, 25.91991)]
+}
+
 [sub_resource type="Animation" id="Animation_gopiv"]
 resource_name = "Wafune_bobbing"
 length = 3.0
@@ -198,21 +214,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-5.814373, 2.6307116, 25.91991), Vector3(-5.814373, 2.819771, 25.91991), Vector3(-5.814373, 2.6307116, 25.91991)]
-}
-
-[sub_resource type="Animation" id="Animation_nvcvi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-5.814373, 2.6307116, 25.91991)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rcoji"]
@@ -236,7 +237,7 @@ size = Vector3(4.5399323, 1, 2.149292)
 size = Vector3(1.3379974, 1, 28.23085)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7bqx5"]
-size = Vector3(1.3379974, 1, 6.9793262)
+size = Vector3(1.3379974, 5.287781, 6.9793262)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aotgj"]
 size = Vector3(1.3379974, 1, 22.09444)
@@ -266,10 +267,10 @@ size = Vector3(4.448943, 1, 2.336681)
 size = Vector3(4.4299, 1, 2.336681)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_646v3"]
-size = Vector3(1.309719, 1, 10.238938)
+size = Vector3(1.309719, 5.2576904, 10.238938)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2e2ah"]
-size = Vector3(1.1709356, 1, 10.238938)
+size = Vector3(1.1709356, 5.2442627, 10.238938)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_46ko3"]
 size = Vector3(1.2894473, 1, 7.145611)
@@ -410,16 +411,25 @@ libraries = {
 [node name="Player" parent="." instance=ExtResource("4_6frsu")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 17.48586, 1, -13.178209)
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(0.5555556, 0, 0, 0, 0.54143864, 0.1244437, 0, -0.1244437, 0.54143864, 0.06105423, 2.6296504, 4.912928)
+[node name="ClippingCamera" type="Node3D" parent="Player" node_paths=PackedStringArray("cam_collider", "camera_3d", "max_cam_position")]
+script = ExtResource("5_nvcvi")
+cam_collider = NodePath("CamCollider")
+camera_3d = NodePath("Camera3D")
+max_cam_position = NodePath("MaxCamPosition")
+
+[node name="Camera3D" type="Camera3D" parent="Player/ClippingCamera"]
+transform = Transform3D(0.5555556, 0, 0, 0, 0.54143864, 0.12444371, 0, -0.12444371, 0.54143864, 0.06105423, 2.6296504, 4.912928)
 current = true
+
+[node name="CamCollider" type="RayCast3D" parent="Player/ClippingCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.63, 0)
+target_position = Vector3(0, 0, 5.2)
+
+[node name="MaxCamPosition" type="Node3D" parent="Player/ClippingCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06105423, 2.6296504, 4.912928)
 
 [node name="blockbench_export" parent="." instance=ExtResource("5_6frsu")]
 transform = Transform3D(-1.5867235e-07, 0, 3.6300004, 0, 3.63, 0, -3.6300004, 0, -1.5867235e-07, -20.930803, 0, 1.2430897)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.99765855, -0.035388608, -0.058523178, -0.05662001, 0.90735, 0.41654563, 0.038360044, 0.4188839, -0.90722924, 0, 0, 0)
-shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("6_dr2oc")
@@ -495,55 +505,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4879966, 1.8002913, 26.398
 shape = SubResource("BoxShape3D_wyy3a")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
-[node name="LampLight" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.34506893, 0.36047918, -0.86659235, 1.2932522e-08, 0.9233042, 0.38406977, 0.9385774, 0.13253054, -0.31860355, -8.517759, 4.6136284, 24.306517)
-light_color = Color(1, 0.8509804, 0.62352943, 1)
-light_energy = 14.846
-spot_range = 6.1597495
-spot_angle = 37.20961
-
-[node name="LampLight2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.4794164, 16.997225, 29.074259)
-light_color = Color(1, 0.8509804, 0.62352943, 1)
-light_energy = 14.846
-spot_range = 22.344421
-spot_angle = 37.20961
-
-[node name="LampLight3" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 11.285112, 16.997225, 28.260538)
-light_color = Color(1, 0.8509804, 0.62352943, 1)
-light_energy = 14.846
-spot_range = 22.344421
-spot_angle = 37.20961
-
-[node name="LampLight4" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.4160557, 16.997225, 7.42305)
-light_color = Color(1, 0.8509804, 0.62352943, 1)
-light_energy = 14.846
-spot_range = 22.344421
-spot_angle = 37.20961
-
-[node name="LampLight5" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 16.967602, 18.043293, 7.42305)
-light_color = Color(1, 0.8509804, 0.62352943, 1)
-light_energy = 14.846
-spot_range = 26.721958
-spot_angle = 28.576723
-
-[node name="LampLight6" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -10.323942, 20.893126, 6.485715)
-light_color = Color(1, 0.8509804, 0.62352943, 1)
-light_energy = 14.846
-spot_range = 26.721958
-spot_angle = 28.576723
-
-[node name="LampLight7" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -8.928351, 20.658812, -8.553743)
-light_color = Color(1, 0.8509804, 0.62352943, 1)
-light_energy = 14.846
-spot_range = 26.721958
-spot_angle = 28.576723
-
 [node name="EnvironmentColliders" type="Node3D" parent="."]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="EnvironmentColliders"]
@@ -553,7 +514,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -16.53033, 1.3420973, 5.74624
 shape = SubResource("BoxShape3D_q3d3p")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 21.282269, 1.3420973, 27.556156)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 21.282269, 5.629878, 27.556156)
 shape = SubResource("BoxShape3D_7bqx5")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
@@ -597,11 +558,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.305023, 1.3420973, 2.78172
 shape = SubResource("BoxShape3D_6g40d")
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.337644, 1.3420973, 9.621253)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.337644, 5.5997877, 9.621253)
 shape = SubResource("BoxShape3D_646v3")
 
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9.787253, 1.3420973, 9.621253)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9.787253, 5.58636, 9.621253)
 shape = SubResource("BoxShape3D_2e2ah")
 
 [node name="CollisionShape3D16" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
@@ -727,6 +688,61 @@ texture = ExtResource("15_2e2ah")
 [node name="Sprite3D20" type="Sprite3D" parent="NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.438776, 2.519118, 34.15887)
 texture = ExtResource("15_2e2ah")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="LampLight" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(-0.34506893, 0.36047915, -0.86659235, 1.2932522e-08, 0.9233041, 0.38406977, 0.9385774, 0.13253051, -0.31860355, -8.517759, 4.6136284, 24.306517)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 6.1597495
+spot_angle = 37.20961
+
+[node name="LampLight2" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.4794164, 16.997225, 29.074259)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 22.344421
+spot_angle = 37.20961
+
+[node name="LampLight3" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 11.285112, 16.997225, 28.260538)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 22.344421
+spot_angle = 37.20961
+
+[node name="LampLight4" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.4160557, 16.997225, 7.42305)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 22.344421
+spot_angle = 37.20961
+
+[node name="LampLight5" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 16.967602, 18.043293, 7.42305)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 26.721958
+spot_angle = 28.576723
+
+[node name="LampLight6" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -10.323942, 20.893126, 6.485715)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 26.721958
+spot_angle = 28.576723
+
+[node name="LampLight7" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -8.928351, 20.658812, -8.553743)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 26.721958
+spot_angle = 28.576723
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(-0.99765855, -0.035388608, -0.058523178, -0.05662001, 0.90735, 0.41654563, 0.038360044, 0.4188839, -0.90722924, 0, 0, 0)
+shadow_enabled = true
 
 [connection signal="button_down" from="Win/MainMenu" to="." method="_on_main_menu_button_down"]
 [connection signal="button_down" from="Lose/MainMenu2" to="." method="_on_main_menu_2_button_down"]
