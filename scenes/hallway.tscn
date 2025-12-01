@@ -227,7 +227,7 @@ metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.125984, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_3w3tr")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -4.0828123, 1, 12.087546)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -4.0828123, 1, 19.596018)
 
 [node name="blockbench_export" parent="." instance=ExtResource("4_1k2v8")]
 transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -38.221077, 0, -7.5450535)
@@ -485,7 +485,7 @@ offset_right = 62.5
 offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 120
-text = "You bagged her!"
+text = "You got a date!"
 
 [node name="MainMenu" type="Button" parent="Win"]
 layout_mode = 1
@@ -529,7 +529,7 @@ offset_right = 33.5
 offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 120
-text = "You lost!"
+text = "You fumbled!"
 
 [node name="MainMenu2" type="Button" parent="Lose"]
 layout_mode = 1

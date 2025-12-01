@@ -96,7 +96,7 @@ offset_right = 62.5
 offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 120
-text = "You bagged her!"
+text = "You got a date!"
 
 [node name="MainMenu" type="Button" parent="Win"]
 layout_mode = 1
@@ -140,7 +140,7 @@ offset_right = 33.5
 offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 120
-text = "You lost!"
+text = "You fumbled!"
 
 [node name="MainMenu2" type="Button" parent="Lose"]
 layout_mode = 1

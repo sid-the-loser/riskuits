@@ -1,2 +1,31 @@
 join c_wafune center
-Yo
+c_wafune: H-Hello. You’re from the same class as me, right?
+- Yeah, I am! Nice to meet you.
+	c_wafune: Nice to meet you as well!
+- Sup…I read books too.
+	c_wafune: Umm..please don’t make fun of my hobbies and interests.
+	[end_timeline]
+- Erm.. Hwello my queen...
+	c_rat: Erm.. Hwello my queen. If I were to answer, there will be no challenge for the puzzle. So I will let you figure it out for yourself!
+	c_wafune: Umm..I have to go now.
+	[end_timeline]
+c_wafune: B-by the way, you seem like someone who knows their way around this place. You know where I can find the fantasy novel section?
+- No clue? Good luck finding it!
+	c_wafune: Oh…okay. I’ll get going now
+	[end_timeline]
+- I am not sure, but I can tag along with you to find it, if you don’t mind.
+	c_wafune: That sounds great! I appreciate your help. *fiddles with her fingers*
+- You smell good.
+	c_wafune: G-Get away from me, p-please!
+	[end_timeline]
+c_wafune: Ah! T-There it is. The fantasy novel section.
+c_wafune: I will choose this book, Layers Behind an Alchemist. Now to look for a spot to read this.
+- Wanna come to my place and read?
+	c_wafune: Uhm..I-I just met you and lunch is almost over.. I have to go now.
+	[end_timeline]
+- I say we go to the cafe nearby and grab a coffee while we read.
+	c_wafune: Great idea! I could go for a coffee right about now.
+	set {bagged} = true
+- Read the book later. Let’s just cut class and get outta here!
+	c_wafune: That sounds v-very irresponsible. I’ll have to pass on that. S-sorry.
+	[end_timeline]
