@@ -39,8 +39,9 @@ size = Vector3(5.608124, 1, 1.7752686)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kt5ds"]
 size = Vector3(2.4086914, 1, 7.286682)
 
-[node name="Classroom" type="Node3D"]
+[node name="Classroom" type="Node3D" node_paths=PackedStringArray("pause_menu")]
 script = ExtResource("1_kkrti")
+pause_menu = NodePath("PauseMenu")
 
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
 transform = Transform3D(1, 0, 0, 0, 0.9464692, 0.3227944, 0, -0.3227944, 0.9464692, 0, 6.141553, 9.182448)

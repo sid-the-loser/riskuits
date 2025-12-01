@@ -44,10 +44,15 @@ text = "classroom (tutorial)"
 
 [node name="Classroom" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "classroom"
+text = "Classroom"
+
+[node name="Library" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Library"
 
 [connection signal="button_down" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_button_down"]
 [connection signal="button_down" from="VBoxContainer/HallwayTutorial" to="." method="_on_hallway_tutorial_button_down"]
 [connection signal="button_down" from="VBoxContainer/Hallway" to="." method="_on_hallway_button_down"]
 [connection signal="button_down" from="VBoxContainer/ClassroomTutorial" to="." method="_on_classroom_tutorial_button_down"]
 [connection signal="button_down" from="VBoxContainer/Classroom" to="." method="_on_classroom_button_down"]
+[connection signal="button_down" from="VBoxContainer/Library" to="." method="_on_library_button_down"]

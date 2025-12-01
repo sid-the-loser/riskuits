@@ -1,0 +1,122 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtwjf1dyx2cp4"]
+
+[ext_resource type="Script" uid="uid://bnwo3ije6hs4g" path="res://scenes/library.gd" id="1_m4m2s"]
+[ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="2_n61aj"]
+[ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="3_igipr"]
+[ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="4_6frsu"]
+
+[node name="Library" type="Node3D" node_paths=PackedStringArray("pause_menu", "win_control", "lose_control")]
+script = ExtResource("1_m4m2s")
+pause_menu = NodePath("PauseMenu")
+win_control = NodePath("Win")
+lose_control = NodePath("Lose")
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_n61aj")]
+visible = false
+
+[node name="Win" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Win"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Win"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_right = 62.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 120
+text = "You bagged her!"
+
+[node name="MainMenu" type="Button" parent="Win"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -15.5
+offset_right = 48.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
+
+[node name="Lose" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Lose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Lose"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.5
+offset_right = 33.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 120
+text = "You lost!"
+
+[node name="MainMenu2" type="Button" parent="Lose"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -15.5
+offset_right = 48.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
+
+[node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8424168, 5.830878, 28.9)
+script = ExtResource("3_igipr")
+look_at_main_subject_ = false
+main_subject_ = NodePath("../Player")
+rail_movement_axis = "z"
+rail_limit_1_ = NodePath("Limit1")
+rail_limit_2_ = NodePath("Limit2")
+offset_ = 9.0
+metadata/_custom_type_script = "uid://du6mtnue0r5dw"
+
+[node name="Limit2" type="Camera3D" parent="RailCamera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -107.41551)
+
+[node name="Limit1" type="Camera3D" parent="RailCamera3D"]
+
+[node name="Player" parent="." instance=ExtResource("4_6frsu")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -4.405, 1, 18.618)
