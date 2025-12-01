@@ -22,11 +22,11 @@ func _input(event: InputEvent) -> void:
 		if event.is_action_pressed("debug_exit"):
 			get_tree().quit()
 			
-		elif event.is_action_pressed("debug_fullscreen_toggle"):
-			print("button pressed")
-			if fullscreen:
-				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-			else:
-				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-			
-			fullscreen = !fullscreen
+	if event.is_action_pressed("debug_fullscreen_toggle"):
+		print("button pressed")
+		if fullscreen:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		
+		fullscreen = !fullscreen
