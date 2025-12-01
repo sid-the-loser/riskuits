@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d0jasc8dyycal"]
+[gd_scene load_steps=19 format=3 uid="uid://d0jasc8dyycal"]
 
 [ext_resource type="Script" uid="uid://tac1tx36u1fm" path="res://scenes/hallway.gd" id="1_1k2v8"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="2_h81ti"]
@@ -127,6 +127,9 @@ _data = {
 &"RESET": SubResource("Animation_hwv8p"),
 &"SpaceBar_UI": SubResource("Animation_drbwl")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nlnob"]
+size = Vector3(4.703453, 1, 4.405426)
 
 [node name="Hallway" type="Node3D"]
 script = ExtResource("1_1k2v8")
@@ -309,6 +312,7 @@ libraries = {
 
 [node name="InteractionIcon" type="Sprite3D" parent="."]
 transform = Transform3D(0.45204127, 0, -0.21367894, 0, 0.5, 0, 0.21367894, 0, 0.45204127, 1.8231094, 4.332182, -42.916225)
+visible = false
 billboard = 1
 texture = ExtResource("8_nlnob")
 hframes = 8
@@ -318,4 +322,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_52g5x")
 }
 
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8294145, 2.5286963, -42.985035)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59038925, 0, 0.16664124)
+shape = SubResource("BoxShape3D_nlnob")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
 [connection signal="body_entered" from="ClassroomEntrance" to="." method="_on_classroom_entrance_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
