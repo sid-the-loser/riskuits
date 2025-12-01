@@ -22,6 +22,9 @@ func _ready() -> void:
 	feasible_position = get_position()
 	print(feasible_position, "fff")
 	
+	update_limits()
+	
+func update_limits():
 	match rail_movement_axis:
 		"x":
 			rail_limit_max_ = rail_limit_1_.global_position.x if rail_limit_1_.global_position.x > rail_limit_2_.global_position.x else rail_limit_2_.global_position.x
@@ -31,7 +34,7 @@ func _ready() -> void:
 			rail_limit_min_ = rail_limit_1_.global_position.y if rail_limit_1_.global_position.y < rail_limit_2_.global_position.y else rail_limit_2_.global_position.y
 		"z":
 			rail_limit_max_ = rail_limit_1_.global_position.z if rail_limit_1_.global_position.z > rail_limit_2_.global_position.z else rail_limit_2_.global_position.z
-			rail_limit_min_ = rail_limit_1_.global_position.z if rail_limit_1_.global_position.z < rail_limit_2_.global_position.z else rail_limit_2_.global_position.z
+			rail_limit_min_ = rail_limit_1_.global_position.z if rail_limit_1_.global_position.z < rail_limit_2_.global_position.z else rail_limit_2_.global_position.z	
 
 func _process(delta: float) -> void:
 	if run_on_physics_process:
