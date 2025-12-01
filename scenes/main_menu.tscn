@@ -332,6 +332,22 @@ grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
 text = "Play"
 
+[node name="SkipIntroButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -160.0
+offset_right = -200.0
+offset_bottom = -129.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+text = "Skip Intro"
+
 [node name="QuitButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 3
@@ -340,13 +356,14 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -360.0
-offset_top = -152.0
+offset_top = -120.0
 offset_right = -200.0
-offset_bottom = -121.0
+offset_bottom = -89.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_oa1go")
 text = "Quit"
 
 [connection signal="button_down" from="Control/PlayButton" to="." method="_on_play_button_button_down"]
+[connection signal="button_down" from="Control/SkipIntroButton" to="." method="_on_skip_intro_button_button_down"]
 [connection signal="button_down" from="Control/QuitButton" to="." method="_on_quit_button_button_down"]
