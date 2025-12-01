@@ -7,6 +7,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.from_ = "lib"
 	win_control.hide()
 	lose_control.hide()
 

@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bnwo3ije6hs4g" path="res://scenes/library.gd" id="1_m4m2s"]
 [ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="2_n61aj"]
-[ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="3_igipr"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="4_6frsu"]
 [ext_resource type="PackedScene" uid="uid://bcwmeteaf00ew" path="res://models/library/RiscuitsLibrary.gltf" id="5_6frsu"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="6_dr2oc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6frsu"]
+size = Vector3(40.37036, 1, 1)
 
 [node name="Library" type="Node3D" node_paths=PackedStringArray("pause_menu", "win_control", "lose_control")]
 script = ExtResource("1_m4m2s")
@@ -104,22 +106,12 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
 
-[node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.408115, 5.830878, 34.029858)
-script = ExtResource("3_igipr")
-look_at_main_subject_ = false
-main_subject_ = NodePath("../Player")
-rail_limit_1_ = NodePath("Limit1")
-rail_limit_2_ = NodePath("Limit2")
-metadata/_custom_type_script = "uid://du6mtnue0r5dw"
-
-[node name="Limit2" type="Camera3D" parent="RailCamera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.34276, 0, 0)
-
-[node name="Limit1" type="Camera3D" parent="RailCamera3D"]
-
 [node name="Player" parent="." instance=ExtResource("4_6frsu")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -4.405, 1, 18.618)
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(0.5555556, 0, 0, 0, 0.5351945, 0.14902632, 0, -0.14902632, 0.5351945, 0, 5.5698767, 6.999962)
+current = true
 
 [node name="blockbench_export" parent="." instance=ExtResource("5_6frsu")]
 transform = Transform3D(-1.5867235e-07, 0, 3.6300004, 0, 3.63, 0, -3.6300004, 0, -1.5867235e-07, -20.930803, 0, 1.2430897)
@@ -130,3 +122,9 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("6_dr2oc")
+
+[node name="LibraryCollisions" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LibraryCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4605713, 1.4633477, 37.078667)
+shape = SubResource("BoxShape3D_6frsu")

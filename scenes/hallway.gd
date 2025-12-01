@@ -40,7 +40,14 @@ func _ready() -> void:
 		Cam1.update_limits()
 	else:
 		ginna.show()
-		player.position = Vector3(-13.212, 1.0, -23.651)
+		if GameManager.from_ == "caf":
+			player.position = Vector3(-4.405, 1.0, -96.29)
+		elif GameManager.from_ == "lib":
+			player.position = Vector3(72.079, 1.0, -62.963)
+		elif GameManager.from_ == "start":
+			player.position = Vector3(-4.083, 1.0, 12.088)
+		else:
+			player.position = Vector3(-13.212, 1.0, -23.651)
 		limit_2.position.z = -107.416
 		Cam1.update_limits()
 

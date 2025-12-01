@@ -227,7 +227,7 @@ metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.125984, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_3w3tr")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -4.405, 1, 18.618)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -4.0828123, 1, 12.087546)
 
 [node name="blockbench_export" parent="." instance=ExtResource("4_1k2v8")]
 transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -38.221077, 0, -7.5450535)

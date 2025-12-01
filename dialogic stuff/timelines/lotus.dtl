@@ -1,0 +1,34 @@
+join c_lotus center
+c_lotus: Hey there, you’re from the same class as me, aren’t you?
+- Hello, Yup, that’s me! *nonchalantly scratching the back of your ear*
+- Hello. Yup, that's me! *points fingers together with knees bent*
+- Hello. Yup, that’s me! *acting like an alien cyborg*
+c_lotus: Haha, that's cute.
+c_lotus: Nice to meet you! I was wondering…*glances to the side and twirls her hair*...
+c_lotus: What did you get on this question over here?
+*She shows you a page from her textbook. You don’t know what textbook it is, but it's a textbook*
+As you feel a surge of adrenaline to impress Lotus, you blurt out…
+- Uh…yeah, I totally know this one. The answer’s “mitochondria”
+	c_lotus: Oh…I see.
+	c_lotus: *The question in the textbook was asking which year President Geronimo Stilton created the Declaration of Independence* It was a history textbook*
+	[end_timeline]
+- A mouse like me relies on his instinct. And mine are telling me that we should skip class and get some parfaits.
+	c_lotus: No thanks. That’s… not really what I had in mind.
+	[end_timeline]
+- I actually don't remember...
+	c_rat: I actually don’t remember this being covered in class, but if you want, we can work through it together. Two brains are better than one, right?
+	c_lotus: My my… that would be wonderful! It’s rare to find someone willing to solve things with me instead of pretending to know everything.
+	c_lotus: Take a seat next to me.
+	*You two study together*
+c_lotus: Oh…. lunch break is about to end. Are you free to pick this back up again after school?
+- Sure! I know this great coffee spot where we can study
+	c_lotus: Sorry, but I am not much of a coffee drinker.
+	c_lotus: *she looks like she’s about to puke*
+	[end_timeline]
+- I’m down. I know this cafe where they make really good tea. Wanna go there after school?
+	c_lotus: Sure! I can definitely go for some tea. I bet it will pair nicely with a bite of me *winks*. See you after class?
+	set {bagged} = true
+- Nah, Sorry. I gotta pump some iron or something…*flexes biceps, nonchalantly*
+	c_lotus: Oh..kay? Have fun!
+	*way to go, idiot…*
+	[end_timeline]

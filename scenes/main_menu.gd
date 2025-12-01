@@ -10,6 +10,7 @@ func _ready():
 	animation_player.play("TitleScreenCameraMove")
 	animation_player_gals.play("TitleGals")
 	AudioManager.play_soundtrack("title")
+	GameManager.from_ = "start"
 	
 func _on_play_button_button_down() -> void:
 	GameManager.tutorial_flag = true

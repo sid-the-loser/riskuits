@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbi1f2uc836vy"]
+[gd_scene load_steps=17 format=3 uid="uid://dbi1f2uc836vy"]
 
 [ext_resource type="PackedScene" uid="uid://dq64vp5tos7cw" path="res://models/dininghall/RiscuitsDiningHall.gltf" id="1_8w4oh"]
 [ext_resource type="Script" uid="uid://caxamwvyek2n" path="res://scenes/dining_hall.gd" id="1_hvw7s"]
@@ -54,6 +54,9 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u2u04"]
 size = Vector3(12.943359, 1, 3.9902954)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yqfbd"]
+size = Vector3(1, 1, 8.233154)
 
 [node name="DiningHall" type="Node3D" node_paths=PackedStringArray("pause_menu", "win_control", "lose_control", "interactions_icon", "interactions_icon_animator")]
 script = ExtResource("1_hvw7s")
@@ -218,7 +221,16 @@ texture = ExtResource("8_ry1bp")
 transform = Transform3D(0.56, 0, 0, 0, 0.0097733345, 0.5599147, 0, -0.5599147, 0.0097733345, 39.098007, 2.8049715, 22.51873)
 texture = ExtResource("9_qkvnl")
 
-[node name="NPCs" type="Node3D" parent="."]
+[node name="ExitHallway" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4226813, 1.4878285, 5.6216063)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitHallway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24719238)
+shape = SubResource("BoxShape3D_yqfbd")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[connection signal="button_down" from="Win/MainMenu" to="." method="_on_main_menu_button_down"]
+[connection signal="button_down" from="Lose/MainMenu2" to="." method="_on_main_menu_2_button_down"]
 [connection signal="body_entered" from="LotusArea" to="." method="_on_lotus_area_body_entered"]
 [connection signal="body_exited" from="LotusArea" to="." method="_on_lotus_area_body_exited"]
+[connection signal="body_entered" from="ExitHallway" to="." method="_on_exit_hallway_body_entered"]

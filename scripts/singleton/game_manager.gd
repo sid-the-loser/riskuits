@@ -5,12 +5,11 @@ var using_ui: bool = false
 
 var tutorial_flag = true
 
+var from_: String = "class"
+
 var debug_mode: bool = false
 
 var fullscreen = true
-
-var audio_head = 0.0 # 45.176 sec
-var audio_head_half = 0.0 # 22.588 sec # TODO: use a singleton you coward!
 
 # TODO: Add settings saving and loading
 

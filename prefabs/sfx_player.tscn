@@ -18,21 +18,25 @@ metadata/_custom_type_script = "uid://duppwwxlkrj4d"
 
 [node name="Title" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_c2aan")
-volume_db = -10.0
+volume_db = -80.0
 autoplay = true
 
 [node name="Level" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_vbyyt")
+volume_db = -80.0
 autoplay = true
 
 [node name="Ginna" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_7k15i")
+volume_db = -80.0
 autoplay = true
 
 [node name="Lotus" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_mbg0e")
+volume_db = -80.0
 autoplay = true
 
 [node name="Wafune" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_vg53h")
+volume_db = -80.0
 autoplay = true

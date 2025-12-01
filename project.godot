@@ -35,6 +35,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "classroom": "res://dialogic stuff/timelines/classroom.dtl",
 "ginna": "res://dialogic stuff/timelines/ginna.dtl",
+"lotus": "res://dialogic stuff/timelines/lotus.dtl",
 "pre_classroom_hallway": "res://dialogic stuff/timelines/pre_classroom_hallway.dtl"
 }
 layout/style_directory={
