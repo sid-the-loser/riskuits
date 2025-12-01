@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dbi1f2uc836vy"]
+[gd_scene load_steps=41 format=3 uid="uid://dbi1f2uc836vy"]
 
 [ext_resource type="PackedScene" uid="uid://dq64vp5tos7cw" path="res://models/dininghall/RiscuitsDiningHall.gltf" id="1_8w4oh"]
 [ext_resource type="Script" uid="uid://caxamwvyek2n" path="res://scenes/dining_hall.gd" id="1_hvw7s"]
@@ -11,6 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://blc8vawulmiqd" path="res://assets from harrish/Art/UI_Sprite/SpaceBarPress-export.png" id="8_u2u04"]
 [ext_resource type="Texture2D" uid="uid://u3w4f6od0wpj" path="res://assets from harrish/Art/WafuneBooks.png" id="9_qkvnl"]
 [ext_resource type="PackedScene" uid="uid://b0gosuak2c46q" path="res://models/dininghall/RiscuitsChair.gltf" id="11_yqfbd"]
+[ext_resource type="Texture2D" uid="uid://cvdwutlpybypg" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_6-export.png" id="12_4wg2u"]
+[ext_resource type="Texture2D" uid="uid://brx3eqjns1xkp" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_2-export.png" id="13_b06mc"]
+[ext_resource type="Texture2D" uid="uid://behmokj4bvpa2" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_5-export.png" id="14_3qwah"]
+[ext_resource type="Texture2D" uid="uid://cibl74527p6s5" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_1-export.png" id="15_hsk0w"]
+[ext_resource type="Texture2D" uid="uid://cbn3ypi06hwk" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_4-export.png" id="16_lwcov"]
+[ext_resource type="Texture2D" uid="uid://deq8xehwu3c6o" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_0-export.png" id="17_csdgb"]
 
 [sub_resource type="Animation" id="Animation_hwv8p"]
 length = 0.001
@@ -58,6 +64,57 @@ size = Vector3(2.580307, 1, 0.09399414)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yqfbd"]
 size = Vector3(1, 1, 8.233154)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b06mc"]
+size = Vector3(36.996483, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3qwah"]
+size = Vector3(0.74857473, 1, 5.704529)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hsk0w"]
+size = Vector3(3.6428463, 1, 0.82247925)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lwcov"]
+size = Vector3(1.0752919, 1, 35.25205)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_csdgb"]
+size = Vector3(1.0752919, 1, 8.572653)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ieihk"]
+size = Vector3(49.926903, 1, 1.2980452)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rsto0"]
+size = Vector3(22.745811, 1, 8.666257)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xxeux"]
+size = Vector3(2.9604492, 1, 7.784851)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_soo83"]
+size = Vector3(6.257141, 1, 3.4300652)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1oq67"]
+size = Vector3(2.7283096, 1, 3.4300652)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cikhx"]
+size = Vector3(2.0633736, 1, 1.5851774)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w77g6"]
+size = Vector3(2.1565647, 1, 2.1329207)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ycrxb"]
+size = Vector3(1.4596124, 1, 1.4273818)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_etb1c"]
+size = Vector3(3.0809717, 1, 11.729832)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o7gdg"]
+size = Vector3(1.4793217, 1, 16.1049)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_un0px"]
+size = Vector3(1.4793217, 1, 53.499737)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4pnqh"]
+size = Vector3(8.965138, 1, 2.1100278)
 
 [node name="DiningHall" type="Node3D" node_paths=PackedStringArray("pause_menu", "win_control", "lose_control", "interactions_icon", "interactions_icon_animator")]
 script = ExtResource("1_hvw7s")
@@ -205,10 +262,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.430664, 0, -0.06436157)
 shape = SubResource("BoxShape3D_u2u04")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="LotusCollision" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.305077, 2.712984, 22.622452)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LotusCollision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11986542, 0, -0.015991211)
 shape = SubResource("BoxShape3D_4wg2u")
 
@@ -408,6 +465,151 @@ transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 29
 
 [node name="blockbench_export55" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
 transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 29.012207, -0.39160347, 118.70652)
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.767231, 3.8179421, -10.130741)
+texture = ExtResource("12_4wg2u")
+
+[node name="Sprite3D4" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.767231, 3.8179421, -13.083391)
+texture = ExtResource("13_b06mc")
+
+[node name="Sprite3D2" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.411053, 3.8179421, -10.130741)
+flip_h = true
+texture = ExtResource("14_3qwah")
+
+[node name="Sprite3D5" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.91398, 3.8179421, -12.163139)
+texture = ExtResource("15_hsk0w")
+
+[node name="Sprite3D3" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.411053, 3.8179421, -13.077484)
+flip_h = true
+texture = ExtResource("16_lwcov")
+
+[node name="Sprite3D6" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.063034, 3.8179421, -11.257827)
+texture = ExtResource("17_csdgb")
+
+[node name="Sprite3D7" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.681944, 3.8179421, -10.130741)
+flip_h = true
+texture = ExtResource("12_4wg2u")
+
+[node name="Sprite3D8" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.681944, 3.8179421, -13.077484)
+flip_h = true
+texture = ExtResource("12_4wg2u")
+
+[node name="LevelCollisions" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.434818, 1.397635, -6.942389)
+shape = SubResource("BoxShape3D_b06mc")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.319278, 1.397635, -9.254372)
+shape = SubResource("BoxShape3D_3qwah")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3935957, 1.397635, -11.695396)
+shape = SubResource("BoxShape3D_hsk0w")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.361651, 1.4111156, 5.6417236)
+shape = SubResource("BoxShape3D_lwcov")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06282, 1.4111156, 27.420673)
+shape = SubResource("BoxShape3D_csdgb")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.488626, 1.4111156, 26.985909)
+shape = SubResource("BoxShape3D_ieihk")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.57619, 1.4111156, 22.215408)
+shape = SubResource("BoxShape3D_rsto0")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.607513, 1.4111156, 22.298578)
+shape = SubResource("BoxShape3D_xxeux")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.582947, 1.4111156, 22.284874)
+shape = SubResource("BoxShape3D_soo83")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(0.56672263, 0, -0.8239086, 0, 1, 0, 0.8239086, 0, 0.56672263, 36.66339, 1.4111154, 24.12302)
+shape = SubResource("BoxShape3D_1oq67")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(0.56672263, 0, -0.8239086, 0, 1, 0, 0.8239086, 0, 0.56672263, 38.490726, 1.4111145, 20.581287)
+shape = SubResource("BoxShape3D_1oq67")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(0.7727558, 0, -0.6347036, 0, 1, 0, 0.6347036, 0, 0.7727558, 38.735023, 1.4111149, 24.07203)
+shape = SubResource("BoxShape3D_1oq67")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(0.7727558, 0, -0.6347036, 0, 1, 0, 0.6347036, 0, 0.7727558, 36.56743, 1.4111149, 20.336405)
+shape = SubResource("BoxShape3D_1oq67")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(0.7727558, 0, -0.6347036, 0, 1, 0, 0.6347036, 0, 0.7727558, 36.634003, 1.4111149, 18.543283)
+shape = SubResource("BoxShape3D_cikhx")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(-0.15051885, 0, -0.9886072, 0, 1, 0, 0.9886072, 0, -0.15051885, 50.143166, 1.4111154, -2.0192926)
+shape = SubResource("BoxShape3D_w77g6")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(0.044752836, 0, -0.9989981, 0, 1, 0, 0.9989981, 0, 0.044752836, 49.96835, 1.4111154, -7.9479613)
+shape = SubResource("BoxShape3D_ycrxb")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.49787, 1.4111154, -17.958416)
+shape = SubResource("BoxShape3D_etb1c")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.077972, 1.4111154, -15.825404)
+shape = SubResource("BoxShape3D_o7gdg")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.898796, 1.4111154, 2.872013)
+shape = SubResource("BoxShape3D_un0px")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.068817, 1.4111154, -23.386093)
+shape = SubResource("BoxShape3D_4pnqh")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="LevelCollisions"]
+transform = Transform3D(0.044752836, 0, -0.9989981, 0, 1, 0, 0.9989981, 0, 0.044752836, 5.0985594, 1.6811497, 15.669575)
+shape = SubResource("BoxShape3D_ycrxb")
+debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [connection signal="button_down" from="Win/MainMenu" to="." method="_on_main_menu_button_down"]
 [connection signal="button_down" from="Lose/MainMenu2" to="." method="_on_main_menu_2_button_down"]
