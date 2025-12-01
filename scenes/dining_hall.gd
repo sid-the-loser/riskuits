@@ -5,10 +5,15 @@ extends Node3D
 @export var win_control: Control
 @export var lose_control: Control
 
+@export var interactions_icon: Sprite3D
+@export var interactions_icon_animator: AnimationPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	win_control.hide()
 	lose_control.hide()
+	interactions_icon_animator.play("SpaceBar_UI")
+	interactions_icon.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,3 +26,13 @@ func _process(delta: float) -> void:
 		else:
 			GameManager.using_ui = true
 			pause_menu.show()
+
+
+func _on_lotus_area_body_entered(body: Node3D) -> void:
+	if body.name == "Player":
+		interactions_icon.show()
+
+
+func _on_lotus_area_body_exited(body: Node3D) -> void:
+	if body.name == "Player":
+		interactions_icon.hide()

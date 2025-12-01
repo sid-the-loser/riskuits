@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3frmbogxi32u"
-path.s3tc="res://.godot/imported/Riskuits_Lotus_Pixelier.png-4e2492908f4f9507fa165d7ca068b484.s3tc.ctex"
-path.etc2="res://.godot/imported/Riskuits_Lotus_Pixelier.png-4e2492908f4f9507fa165d7ca068b484.etc2.ctex"
+uid="uid://7t8m8m80ud5b"
+path.s3tc="res://.godot/imported/LotusTea.png-355e7bce44f5744439bdb75c3f84ccd5.s3tc.ctex"
+path.etc2="res://.godot/imported/LotusTea.png-355e7bce44f5744439bdb75c3f84ccd5.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets from harrish/Art/Biscuit_Pixel_Sprites/Riskuits_Lotus_Pixelier.png"
-dest_files=["res://.godot/imported/Riskuits_Lotus_Pixelier.png-4e2492908f4f9507fa165d7ca068b484.s3tc.ctex", "res://.godot/imported/Riskuits_Lotus_Pixelier.png-4e2492908f4f9507fa165d7ca068b484.etc2.ctex"]
+source_file="res://assets from harrish/Art/LotusTea.png"
+dest_files=["res://.godot/imported/LotusTea.png-355e7bce44f5744439bdb75c3f84ccd5.s3tc.ctex", "res://.godot/imported/LotusTea.png-355e7bce44f5744439bdb75c3f84ccd5.etc2.ctex"]
 
 [params]
 
