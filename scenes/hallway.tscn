@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://d0jasc8dyycal"]
+[gd_scene load_steps=49 format=3 uid="uid://d0jasc8dyycal"]
 
 [ext_resource type="Script" uid="uid://tac1tx36u1fm" path="res://scenes/hallway.gd" id="1_1k2v8"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="2_h81ti"]
@@ -246,6 +246,18 @@ size = Vector3(2.0117073, 1, 18.321978)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hwv8p"]
 size = Vector3(9.1970825, 1, 2.943184)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fxf57"]
+size = Vector3(68.08736, 1, 2.943184)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lyhqc"]
+size = Vector3(2.3105745, 1, 2.3410206)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_84wcw"]
+size = Vector3(18.243177, 1, 2.1807642)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x1vi3"]
+size = Vector3(76.453476, 1, 3.471592)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_52g5x"]
 size = Vector3(2.5372925, 1, 43.76041)
 
@@ -263,6 +275,15 @@ size = Vector3(2.5372925, 1, 9.121052)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xgli8"]
 size = Vector3(2.5372925, 1, 18.23643)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dvv28"]
+size = Vector3(0.71932983, 1, 51.41804)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kl7cc"]
+size = Vector3(0.71932983, 1, 33.246113)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ufb1b"]
+size = Vector3(0.71932983, 1, 122.67233)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ew26q"]
 size = Vector3(1.8156433, 1, 9.272073)
@@ -690,6 +711,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.019492, 1.4395008, -65.797
 shape = SubResource("BoxShape3D_hwv8p")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="HallwayCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.27459, 1.4395008, -68.769806)
+shape = SubResource("BoxShape3D_fxf57")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="HallwayCollision"]
+transform = Transform3D(0.9829899, 0, -0.1836597, 0, 1, 0, 0.1836597, 0, 0.9829899, 65.30137, 1.4395008, -65.989105)
+shape = SubResource("BoxShape3D_lyhqc")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="HallwayCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.690735, 1.4395008, -66.31364)
+shape = SubResource("BoxShape3D_84wcw")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="HallwayCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.914585, 1.4395008, -66.31364)
+shape = SubResource("BoxShape3D_84wcw")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="HallwayCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.09153, 1.4395008, -54.880814)
+shape = SubResource("BoxShape3D_x1vi3")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="HallwayCollision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.062351, 1.4395008, -59.967438)
 shape = SubResource("BoxShape3D_52g5x")
@@ -720,6 +766,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.206382, 1.4395008, 23.32386
 shape = SubResource("BoxShape3D_xgli8")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="HallwayCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2657185, 1.4395008, -11.569714)
+shape = SubResource("BoxShape3D_dvv28")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="HallwayCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.147068, 1.4395008, -83.78661)
+shape = SubResource("BoxShape3D_kl7cc")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="HallwayCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.201592, 1.4395008, -39.0735)
+shape = SubResource("BoxShape3D_ufb1b")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="HallwayCollision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7743025, 1.4395008, -76.34543)
 shape = SubResource("BoxShape3D_ew26q")
@@ -745,10 +806,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.99427, 1.6569982, -67.0344
 shape = SubResource("BoxShape3D_frgbo")
 debug_color = Color(0.627451, 0.49019608, 0.5529412, 1)
 
-[node name="blockbench_export2" parent="." instance=ExtResource("10_drbwl")]
+[node name="NewClocks" type="Node3D" parent="."]
+
+[node name="blockbench_export2" parent="NewClocks" instance=ExtResource("10_drbwl")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.6122804, -0.9274187, 17.717674)
 
-[node name="blockbench_export3" parent="." instance=ExtResource("10_drbwl")]
+[node name="blockbench_export3" parent="NewClocks" instance=ExtResource("10_drbwl")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 41.524532, -0.9274187, -66.823875)
 
 [connection signal="body_entered" from="ClassroomEntrance" to="." method="_on_classroom_entrance_body_entered"]
