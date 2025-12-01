@@ -1,12 +1,143 @@
-[gd_scene load_steps=15 format=3 uid="uid://dtwjf1dyx2cp4"]
+[gd_scene load_steps=52 format=3 uid="uid://dtwjf1dyx2cp4"]
 
 [ext_resource type="Script" uid="uid://bnwo3ije6hs4g" path="res://scenes/library.gd" id="1_m4m2s"]
 [ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="2_n61aj"]
+[ext_resource type="FontFile" uid="uid://c07u130o31i1k" path="res://CustomFonts/RobotoSlab-VariableFont_wght.ttf" id="3_h01uo"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="4_6frsu"]
 [ext_resource type="PackedScene" uid="uid://bcwmeteaf00ew" path="res://models/library/RiscuitsLibrary.gltf" id="5_6frsu"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="6_dr2oc"]
 [ext_resource type="Texture2D" uid="uid://blc8vawulmiqd" path="res://assets from harrish/Art/UI_Sprite/SpaceBarPress-export.png" id="6_qyo4v"]
 [ext_resource type="Texture2D" uid="uid://c2mantfn2lu04" path="res://assets from harrish/Art/Biscuit_Pixel_Sprites/Riskuits_Wafune_Pixel.png" id="7_h01uo"]
+[ext_resource type="Texture2D" uid="uid://647iaq0lwr4d" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_NPC3_North.png" id="9_gopiv"]
+[ext_resource type="Texture2D" uid="uid://bmqthjltqmlrb" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_NPC2_North.png" id="10_nvcvi"]
+[ext_resource type="Texture2D" uid="uid://cibl74527p6s5" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_1-export.png" id="11_rcoji"]
+[ext_resource type="Texture2D" uid="uid://brx3eqjns1xkp" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_2-export.png" id="12_hmypv"]
+[ext_resource type="Texture2D" uid="uid://u3w4f6od0wpj" path="res://assets from harrish/Art/WafuneBooks.png" id="13_6g40d"]
+[ext_resource type="Texture2D" uid="uid://behmokj4bvpa2" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_5-export.png" id="14_646v3"]
+[ext_resource type="Texture2D" uid="uid://dpmvfyn3088rj" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_Chair.png" id="15_2e2ah"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyo4v"]
+bg_color = Color(0.019607844, 0, 0.14509805, 0.4745098)
+
+[sub_resource type="Animation" id="Animation_h01uo"]
+resource_name = "Wafune_Win_Animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [120, 122]
+}
+
+[sub_resource type="Animation" id="Animation_wyy3a"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [120]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q3d3p"]
+_data = {
+&"RESET": SubResource("Animation_wyy3a"),
+&"Wafune_Win_Animation": SubResource("Animation_h01uo")
+}
+
+[sub_resource type="Animation" id="Animation_q3d3p"]
+resource_name = "Wafune_Lose_Animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.50245035, 0.98869264),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [120, 125, 120]
+}
+
+[sub_resource type="Animation" id="Animation_7bqx5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [120]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aotgj"]
+_data = {
+&"RESET": SubResource("Animation_7bqx5"),
+&"Wafune_Lose_Animation": SubResource("Animation_q3d3p")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6frsu"]
 size = Vector3(40.37036, 1, 1)
@@ -52,11 +183,106 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_qyo4v"]
 size = Vector3(1.6828918, 1.1290283, 0.13745117)
 
+[sub_resource type="Animation" id="Animation_gopiv"]
+resource_name = "Wafune_bobbing"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6666666, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-5.814373, 2.6307116, 25.91991), Vector3(-5.814373, 2.819771, 25.91991), Vector3(-5.814373, 2.6307116, 25.91991)]
+}
+
+[sub_resource type="Animation" id="Animation_nvcvi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5.814373, 2.6307116, 25.91991)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rcoji"]
+_data = {
+&"RESET": SubResource("Animation_nvcvi"),
+&"Wafune_bobbing": SubResource("Animation_gopiv")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_h01uo"]
 size = Vector3(1, 1, 8.209717)
 
+[sub_resource type="BoxMesh" id="BoxMesh_qyo4v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h01uo"]
+albedo_color = Color(0.31764707, 0.2, 0.20392157, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_wyy3a"]
 size = Vector3(4.5399323, 1, 2.149292)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q3d3p"]
+size = Vector3(1.3379974, 1, 28.23085)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7bqx5"]
+size = Vector3(1.3379974, 1, 6.9793262)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aotgj"]
+size = Vector3(1.3379974, 1, 22.09444)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_idaw7"]
+size = Vector3(1.4717331, 1, 1.5914865)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6m1la"]
+size = Vector3(1.5156517, 1, 2.5753617)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nvcvi"]
+size = Vector3(1.4745007, 1, 1.636089)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rcoji"]
+size = Vector3(1.556639, 1, 1.4104642)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b5ts1"]
+size = Vector3(0.26369473, 1, 0.3378087)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hmypv"]
+size = Vector3(4.3685894, 1, 2.336681)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmaae"]
+size = Vector3(4.448943, 1, 2.336681)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6g40d"]
+size = Vector3(4.4299, 1, 2.336681)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_646v3"]
+size = Vector3(1.309719, 1, 10.238938)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2e2ah"]
+size = Vector3(1.1709356, 1, 10.238938)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_46ko3"]
+size = Vector3(1.2894473, 1, 7.145611)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ef8s"]
+size = Vector3(4.4512253, 1, 2.336681)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hmypv"]
+height = 1.03125
+radius = 1.1674805
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gopiv"]
+size = Vector3(19.406141, 1, 1.0794127)
 
 [node name="Library" type="Node3D" node_paths=PackedStringArray("pause_menu", "interaction_icon", "interaction_icon_animation", "win_control", "lose_control")]
 script = ExtResource("1_m4m2s")
@@ -68,9 +294,11 @@ lose_control = NodePath("Lose")
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_n61aj")]
 visible = false
+modulate = Color(1, 1, 1, 0)
 
 [node name="Win" type="Control" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,18 +313,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qyo4v")
 
 [node name="Label" type="Label" parent="Win"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -62.5
-offset_right = 62.5
-offset_bottom = 23.0
+anchor_bottom = 0.5
+offset_left = -469.0
+offset_top = -81.0
+offset_right = 439.0
+offset_bottom = 84.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_h01uo")
 theme_override_font_sizes/font_size = 120
-text = "You got a date!"
+text = "You Got A Date!"
 
 [node name="MainMenu" type="Button" parent="Win"]
 layout_mode = 1
@@ -105,16 +339,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -15.5
-offset_right = 48.0
-offset_bottom = 15.5
+offset_left = 404.0
+offset_top = 216.0
+offset_right = 504.0
+offset_bottom = 251.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Win"]
+libraries = {
+&"": SubResource("AnimationLibrary_q3d3p")
+}
+
 [node name="Lose" type="Control" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -132,15 +372,20 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Lose"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -33.5
-offset_right = 33.5
-offset_bottom = 23.0
+anchor_bottom = 0.5
+offset_left = -395.5
+offset_top = -82.5
+offset_right = 395.5
+offset_bottom = 82.5
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.37444338, 0.3394712, 1)
 theme_override_font_sizes/font_size = 120
-text = "You fumbled!"
+text = "You Fumbled!"
 
 [node name="MainMenu2" type="Button" parent="Lose"]
 layout_mode = 1
@@ -149,26 +394,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -15.5
-offset_right = 48.0
-offset_bottom = 15.5
+offset_left = 404.0
+offset_top = 216.0
+offset_right = 500.0
+offset_bottom = 247.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lose"]
+libraries = {
+&"": SubResource("AnimationLibrary_aotgj")
+}
 
 [node name="Player" parent="." instance=ExtResource("4_6frsu")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 17.48586, 1, -13.178209)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(0.5555556, 0, 0, 0, 0.5351945, 0.14902632, 0, -0.14902632, 0.5351945, 0, 5.5698767, 6.999962)
+transform = Transform3D(0.5555556, 0, 0, 0, 0.54143864, 0.1244437, 0, -0.1244437, 0.54143864, 0.06105423, 2.6296504, 4.912928)
 current = true
 
 [node name="blockbench_export" parent="." instance=ExtResource("5_6frsu")]
 transform = Transform3D(-1.5867235e-07, 0, 3.6300004, 0, 3.63, 0, -3.6300004, 0, -1.5867235e-07, -20.930803, 0, 1.2430897)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.9976586, -0.035388608, -0.058523193, -0.046339035, 0.9791307, 0.19787823, 0.050299212, 0.20012683, -0.9784781, 0, 0, 0)
+transform = Transform3D(-0.99765855, -0.035388608, -0.058523178, -0.05662001, 0.90735, 0.41654563, 0.038360044, 0.4188839, -0.90722924, 0, 0, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -181,7 +431,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4605713, 1.4633477, 37.0786
 shape = SubResource("BoxShape3D_6frsu")
 
 [node name="InteractionIcon" type="Sprite3D" parent="."]
-transform = Transform3D(0.45204127, 0, -0.21367894, 0, 0.5, 0, 0.21367894, 0, 0.45204127, -5.913093, 4.5797105, 25.750948)
+transform = Transform3D(0.45204127, 0, -0.21367894, 0, 0.5, 0, 0.21367894, 0, 0.45204127, -5.913093, 4.686923, 25.750948)
 billboard = 1
 texture = ExtResource("6_qyo4v")
 hframes = 8
@@ -200,9 +450,14 @@ shape = SubResource("BoxShape3D_qyo4v")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Wafune" type="Sprite3D" parent="."]
-transform = Transform3D(-0.023163404, 0.4609136, 0, -0.4609136, -0.023163404, 0, 0, 0, 0.99999994, -5.814373, 2.6488454, 25.91991)
+transform = Transform3D(-0.023163404, 0.4609136, 0, -0.4609136, -0.023163404, 0, 0, 0, 0.99999994, -5.814373, 2.6307116, 25.91991)
 shaded = true
 texture = ExtResource("7_h01uo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Wafune"]
+libraries = {
+&"": SubResource("AnimationLibrary_rcoji")
+}
 
 [node name="ExitLibrary" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.36815, 2.126956, -13.498742)
@@ -211,12 +466,267 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.36815, 2.126956, -13.49874
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30187988)
 shape = SubResource("BoxShape3D_h01uo")
 
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(42.053432, 0, 0, 0, 2.6630664, 0, 0, 0, 1, 2.1752276, 25.14025, -21.945776)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+mesh = SubResource("BoxMesh_qyo4v")
+surface_material_override/0 = SubResource("StandardMaterial3D_h01uo")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.5110576, 0, 0, 0, 1, 0, -4.873326, 0)
+mesh = SubResource("BoxMesh_qyo4v")
+surface_material_override/0 = SubResource("StandardMaterial3D_h01uo")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1034527, 0)
+mesh = SubResource("BoxMesh_qyo4v")
+surface_material_override/0 = SubResource("StandardMaterial3D_h01uo")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2128735, 0)
+mesh = SubResource("BoxMesh_qyo4v")
+surface_material_override/0 = SubResource("StandardMaterial3D_h01uo")
+
 [node name="WafuneTrigger" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WafuneTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4879966, 1.8002913, 26.398466)
 shape = SubResource("BoxShape3D_wyy3a")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="LampLight" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.34506893, 0.36047918, -0.86659235, 1.2932522e-08, 0.9233042, 0.38406977, 0.9385774, 0.13253054, -0.31860355, -8.517759, 4.6136284, 24.306517)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 6.1597495
+spot_angle = 37.20961
+
+[node name="LampLight2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.4794164, 16.997225, 29.074259)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 22.344421
+spot_angle = 37.20961
+
+[node name="LampLight3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 11.285112, 16.997225, 28.260538)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 22.344421
+spot_angle = 37.20961
+
+[node name="LampLight4" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.4160557, 16.997225, 7.42305)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 22.344421
+spot_angle = 37.20961
+
+[node name="LampLight5" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 16.967602, 18.043293, 7.42305)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 26.721958
+spot_angle = 28.576723
+
+[node name="LampLight6" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -10.323942, 20.893126, 6.485715)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 26.721958
+spot_angle = 28.576723
+
+[node name="LampLight7" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -8.928351, 20.658812, -8.553743)
+light_color = Color(1, 0.8509804, 0.62352943, 1)
+light_energy = 14.846
+spot_range = 26.721958
+spot_angle = 28.576723
+
+[node name="EnvironmentColliders" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="EnvironmentColliders"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -16.53033, 1.3420973, 5.7462482)
+shape = SubResource("BoxShape3D_q3d3p")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 21.282269, 1.3420973, 27.556156)
+shape = SubResource("BoxShape3D_7bqx5")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 23.181986, 1.3420973, -1.4621339)
+shape = SubResource("BoxShape3D_aotgj")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 23.04825, 1.3420973, 35.864)
+shape = SubResource("BoxShape3D_idaw7")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -18.366888, 1.3420973, 35.35944)
+shape = SubResource("BoxShape3D_6m1la")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.409027, 1.3420973, 28.955833)
+shape = SubResource("BoxShape3D_6m1la")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.90263665, 1.3420973, 29.169598)
+shape = SubResource("BoxShape3D_nvcvi")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.449237, 1.3420973, 24.145336)
+shape = SubResource("BoxShape3D_rcoji")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -8.69999, 1.3420973, 23.928627)
+shape = SubResource("BoxShape3D_b5ts1")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.24817, 1.3420973, 13.740952)
+shape = SubResource("BoxShape3D_hmypv")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12.680907, 1.3420973, 31.489777)
+shape = SubResource("BoxShape3D_dmaae")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.305023, 1.3420973, 2.7817287)
+shape = SubResource("BoxShape3D_6g40d")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.337644, 1.3420973, 9.621253)
+shape = SubResource("BoxShape3D_646v3")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9.787253, 1.3420973, 9.621253)
+shape = SubResource("BoxShape3D_2e2ah")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 18.532646, 1.3420973, 12.455866)
+shape = SubResource("BoxShape3D_46ko3")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.3695297, 1.3420973, -9.639082)
+shape = SubResource("BoxShape3D_7ef8s")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.505823, 1.3264723, 29.831429)
+shape = SubResource("CylinderShape3D_hmypv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="EnvironmentColliders/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.743473, 1.3420973, -21.405188)
+shape = SubResource("BoxShape3D_gopiv")
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.45696, 2.5017035, 5.141826)
+texture = ExtResource("9_gopiv")
+
+[node name="Sprite3D2" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7795076, 2.5017035, -6.814635)
+texture = ExtResource("10_nvcvi")
+
+[node name="Sprite3D3" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.061098, 2.7309158, 0.54421735)
+texture = ExtResource("11_rcoji")
+
+[node name="Sprite3D5" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1688848, 2.7309158, 11.327511)
+flip_h = true
+texture = ExtResource("12_hmypv")
+
+[node name="Sprite3D22" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(0.4783911, 0, 0, 0, -2.091114e-08, -1, 0, 0.4783911, -4.371139e-08, -5.123726, 2.7309158, 12.892388)
+flip_h = true
+texture = ExtResource("13_6g40d")
+
+[node name="Sprite3D23" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(-0.16569684, -0.44877905, 4.1005684e-08, 0, -2.091114e-08, -1, 0.44877905, -0.16569684, 1.5139994e-08, -6.9601836, 2.7309158, 3.2197237)
+flip_h = true
+texture = ExtResource("13_6g40d")
+
+[node name="Sprite3D25" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(-0.16569684, -0.44877905, 4.1005684e-08, 0, -2.091114e-08, -1, 0.44877905, -0.16569684, 1.5139994e-08, -6.16047, 2.7309158, -9.618011)
+flip_h = true
+texture = ExtResource("13_6g40d")
+
+[node name="Sprite3D24" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(0.47793975, -0.020775393, 1.8982806e-09, 0, -2.091114e-08, -1, 0.020775393, 0.47793975, -4.367015e-08, -9.190821, 2.7309158, 2.3218637)
+flip_h = true
+texture = ExtResource("13_6g40d")
+
+[node name="Sprite3D21" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.975796, 2.7309158, 28.980629)
+flip_h = true
+texture = ExtResource("14_646v3")
+
+[node name="Sprite3D4" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.061098, 2.519118, 0.45467806)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D6" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.895729, 2.519118, 11.16135)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D7" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.239817, 2.519118, 11.16135)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D8" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.239817, 2.519118, 16.153008)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D9" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.866065, 2.519118, 16.153008)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D10" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.866065, 2.519118, 5.0798693)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D11" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.866065, 2.519118, 0.5725689)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D12" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.008903, 2.519118, -7.312038)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D13" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.008903, 2.519118, -12.658371)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D14" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.190988, 2.519118, -12.658371)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D15" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.635197, 2.519118, 28.960629)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D16" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.580798, 2.519118, 28.960629)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D17" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.438776, 2.519118, 28.960629)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D18" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.635197, 2.519118, 34.15887)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D19" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.580798, 2.519118, 34.15887)
+texture = ExtResource("15_2e2ah")
+
+[node name="Sprite3D20" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.438776, 2.519118, 34.15887)
+texture = ExtResource("15_2e2ah")
 
 [connection signal="button_down" from="Win/MainMenu" to="." method="_on_main_menu_button_down"]
 [connection signal="button_down" from="Lose/MainMenu2" to="." method="_on_main_menu_2_button_down"]

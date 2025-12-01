@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dbi1f2uc836vy"]
+[gd_scene load_steps=18 format=3 uid="uid://dbi1f2uc836vy"]
 
 [ext_resource type="PackedScene" uid="uid://dq64vp5tos7cw" path="res://models/dininghall/RiscuitsDiningHall.gltf" id="1_8w4oh"]
 [ext_resource type="Script" uid="uid://caxamwvyek2n" path="res://scenes/dining_hall.gd" id="1_hvw7s"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://7t8m8m80ud5b" path="res://assets from harrish/Art/LotusTea.png" id="8_ry1bp"]
 [ext_resource type="Texture2D" uid="uid://blc8vawulmiqd" path="res://assets from harrish/Art/UI_Sprite/SpaceBarPress-export.png" id="8_u2u04"]
 [ext_resource type="Texture2D" uid="uid://u3w4f6od0wpj" path="res://assets from harrish/Art/WafuneBooks.png" id="9_qkvnl"]
+[ext_resource type="PackedScene" uid="uid://b0gosuak2c46q" path="res://models/dininghall/RiscuitsChair.gltf" id="11_yqfbd"]
 
 [sub_resource type="Animation" id="Animation_hwv8p"]
 length = 0.001
@@ -161,7 +162,7 @@ grow_vertical = 2
 text = "Main Menu"
 
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.05272, 5.830878, 33.711857)
+transform = Transform3D(1, 0, 0, 0, 0.9733112, 0.22948919, 0, -0.22948919, 0.9733112, 42.05272, 5.830878, 28.827763)
 script = ExtResource("4_k7dkh")
 look_at_main_subject_ = false
 main_subject_ = NodePath("../Player")
@@ -170,15 +171,16 @@ rail_limit_2_ = NodePath("Limit2")
 metadata/_custom_type_script = "uid://du6mtnue0r5dw"
 
 [node name="Limit2" type="Camera3D" parent="RailCamera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.563925, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -29.919212, 3.0157099, -6.79945)
 
 [node name="Limit1" type="Camera3D" parent="RailCamera3D"]
+transform = Transform3D(0.99636614, -0.0100848805, 0.08457431, 0.019546393, 0.99353814, -0.11180283, -0.08290029, 0.1130497, 0.9901249, 0, -1.1981649, -0.28250504)
 
 [node name="Player" parent="." instance=ExtResource("5_pimhm")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 7.941087, 1.000001, 6.1129055)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.9976586, -0.035388608, -0.058523193, -0.046339035, 0.9791307, 0.19787823, 0.050299212, 0.20012683, -0.9784781, 0, 0, 0)
+transform = Transform3D(-0.97031915, -0.12488165, 0.20708758, -0.077973805, 0.97217286, 0.22090691, -0.22891217, 0.19820276, -0.95305556, 0, 0, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -211,7 +213,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11986542, 0, -0.015991211)
 shape = SubResource("BoxShape3D_4wg2u")
 
 [node name="Lotus" type="Sprite3D" parent="."]
-transform = Transform3D(0.6272585, 0, 0, 0, 0.6272585, 0, 0, 0, 1, 42.305077, 2.712984, 22.622452)
+transform = Transform3D(0.67244524, 0, 0, 0, 0.67244524, 0, 0, 0, 1, 42.305077, 2.712984, 22.622452)
 shaded = true
 texture = ExtResource("7_pimhm")
 
@@ -230,6 +232,182 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4226813, 1.4878285, 5.62160
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24719238)
 shape = SubResource("BoxShape3D_yqfbd")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="DiningChairs" type="Node3D" parent="."]
+
+[node name="blockbench_export2" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -3.7787666, -0.25156927, -49.461323)
+
+[node name="blockbench_export56" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(2.7078073, 0, 4.2033057, 0, 5, 0, -4.2033057, 0, 2.7078073, 62.18184, -0.25156927, -46.812313)
+
+[node name="blockbench_export57" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(4.2658896, 0, -2.6081002, 0, 5.0000005, 0, 2.6081002, 0, 4.2658896, 109.52421, -0.25156927, 69.10473)
+
+[node name="blockbench_export58" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(2.185264, 0, 4.49718, 0, 5.000001, 0, -4.49718, 0, 2.185264, 52.432526, -0.25156927, -21.526396)
+
+[node name="blockbench_export59" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(2.185264, 0, 4.49718, 0, 5.000001, 0, -4.49718, 0, 2.185264, 52.432526, -0.25156927, -29.58522)
+
+[node name="blockbench_export3" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -3.7787666, -0.25156927, -46.706024)
+
+[node name="blockbench_export4" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -3.7787666, -0.25156927, -43.960613)
+
+[node name="blockbench_export5" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -3.7787666, -0.25156927, -36.65307)
+
+[node name="blockbench_export6" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -3.7787666, -0.25156927, -33.89777)
+
+[node name="blockbench_export7" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -3.7787666, -0.25156927, -31.152359)
+
+[node name="blockbench_export8" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -3.7787666, -0.25156927, -23.913654)
+
+[node name="blockbench_export9" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -3.7787666, -0.25156927, -21.158356)
+
+[node name="blockbench_export10" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -3.7787666, -0.25156927, -18.412945)
+
+[node name="blockbench_export11" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 4.145342, -0.25156927, -49.461323)
+
+[node name="blockbench_export12" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 4.145342, -0.25156927, -46.706024)
+
+[node name="blockbench_export13" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 4.145342, -0.25156927, -43.960613)
+
+[node name="blockbench_export14" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 4.145342, -0.25156927, -36.65307)
+
+[node name="blockbench_export15" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 4.145342, -0.25156927, -33.89777)
+
+[node name="blockbench_export16" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 4.145342, -0.25156927, -31.152359)
+
+[node name="blockbench_export17" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 4.145342, -0.25156927, -23.913654)
+
+[node name="blockbench_export18" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 4.145342, -0.25156927, -21.158356)
+
+[node name="blockbench_export19" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 4.145342, -0.25156927, -18.412945)
+
+[node name="blockbench_export20" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 11.567394, -0.25156927, -49.461323)
+
+[node name="blockbench_export21" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 11.567394, -0.25156927, -46.706024)
+
+[node name="blockbench_export22" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 11.567394, -0.25156927, -43.960613)
+
+[node name="blockbench_export23" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 11.567394, -0.25156927, -36.65307)
+
+[node name="blockbench_export24" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 11.567394, -0.25156927, -33.89777)
+
+[node name="blockbench_export25" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 11.567394, -0.25156927, -31.152359)
+
+[node name="blockbench_export26" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 11.567394, -0.25156927, -23.913654)
+
+[node name="blockbench_export27" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 11.567394, -0.25156927, -21.158356)
+
+[node name="blockbench_export28" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 11.567394, -0.25156927, -18.412945)
+
+[node name="blockbench_export29" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 45.028122, -0.39160347, 87.65814)
+
+[node name="blockbench_export30" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 45.028122, -0.39160347, 90.41344)
+
+[node name="blockbench_export31" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 45.028122, -0.39160347, 93.15885)
+
+[node name="blockbench_export32" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 45.028122, -0.39160347, 100.4664)
+
+[node name="blockbench_export33" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 45.028122, -0.39160347, 103.221695)
+
+[node name="blockbench_export34" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 45.028122, -0.39160347, 105.9671)
+
+[node name="blockbench_export35" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 45.028122, -0.39160347, 113.20581)
+
+[node name="blockbench_export36" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 45.028122, -0.39160347, 115.961105)
+
+[node name="blockbench_export37" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 45.028122, -0.39160347, 118.70652)
+
+[node name="blockbench_export38" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 36.593884, -0.39160347, 87.65814)
+
+[node name="blockbench_export39" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 36.593884, -0.39160347, 90.41344)
+
+[node name="blockbench_export40" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 36.593884, -0.39160347, 93.15885)
+
+[node name="blockbench_export41" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 36.593884, -0.39160347, 100.4664)
+
+[node name="blockbench_export42" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 36.593884, -0.39160347, 103.221695)
+
+[node name="blockbench_export43" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 36.593884, -0.39160347, 105.9671)
+
+[node name="blockbench_export44" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 36.593884, -0.39160347, 113.20581)
+
+[node name="blockbench_export45" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 36.593884, -0.39160347, 115.961105)
+
+[node name="blockbench_export46" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 36.593884, -0.39160347, 118.70652)
+
+[node name="blockbench_export47" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 29.012207, -0.39160347, 87.65814)
+
+[node name="blockbench_export48" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 29.012207, -0.39160347, 90.41344)
+
+[node name="blockbench_export49" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 29.012207, -0.39160347, 93.15885)
+
+[node name="blockbench_export50" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 29.012207, -0.39160347, 100.4664)
+
+[node name="blockbench_export51" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 29.012207, -0.39160347, 103.221695)
+
+[node name="blockbench_export52" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 29.012207, -0.39160347, 105.9671)
+
+[node name="blockbench_export53" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 29.012207, -0.39160347, 113.20581)
+
+[node name="blockbench_export54" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 29.012207, -0.39160347, 115.961105)
+
+[node name="blockbench_export55" parent="DiningChairs" instance=ExtResource("11_yqfbd")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 29.012207, -0.39160347, 118.70652)
 
 [connection signal="button_down" from="Win/MainMenu" to="." method="_on_main_menu_button_down"]
 [connection signal="button_down" from="Lose/MainMenu2" to="." method="_on_main_menu_2_button_down"]

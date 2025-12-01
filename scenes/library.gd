@@ -5,6 +5,11 @@ extends Node3D
 @export var interaction_icon: Sprite3D
 @export var interaction_icon_animation: AnimationPlayer
 
+@onready var animation_player_wafune: AnimationPlayer = $Wafune/AnimationPlayer
+
+@onready var animation_player: AnimationPlayer = $Win/AnimationPlayer
+@onready var animation_player_lose: AnimationPlayer = $Lose/AnimationPlayer
+
 @export var win_control: Control
 @export var lose_control: Control
 
@@ -14,10 +19,11 @@ var can_talk_to_wafune_flag = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.from_ = "lib"
+	$Wafune/AnimationPlayer.play("Wafune_bobbing")
 	win_control.hide()
 	lose_control.hide()
 	interaction_icon.hide()
-	interaction_icon_animation.play("Spacebar_UI")
+	interaction_icon_animation.play("SpaceBar_UI")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,9 +31,12 @@ func _process(delta: float) -> void:
 	if Dialogic.current_timeline == null and talking_to_wafune_flag:
 		if Dialogic.VAR.get_variable("bagged"):
 			win_control.show()
+			$Win/AnimationPlayer.play("Wafune_Win_Animation");
+			# TODO: Stop the animation looping please my ears burn
 		else:
 			lose_control.show()
-			
+			$Lose/AnimationPlayer.play("Wafune_Lose_Animation");
+			# TODO: Stop the animation looping please my ass burns
 		GameManager.using_ui = true
 	
 	if Input.is_action_just_pressed("back") and Dialogic.current_timeline == null:
@@ -59,7 +68,7 @@ func _on_wafune_trigger_body_entered(body: Node3D) -> void:
 
 func _on_wafune_trigger_body_exited(body: Node3D) -> void:
 	if body.name == "Player":
-		interaction_icon.show()
+		interaction_icon.hide()
 		can_talk_to_wafune_flag = false
 
 

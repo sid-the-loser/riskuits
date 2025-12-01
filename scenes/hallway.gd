@@ -12,6 +12,10 @@ extends Node3D
 @export var ginna_animator: AnimationPlayer
 @export var interaction_animator: AnimationPlayer
 
+@onready var animation_player_lose: AnimationPlayer = $Lose/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Win/AnimationPlayer
+
+
 @export var win_control: Control
 @export var lose_control: Control
 
@@ -84,9 +88,13 @@ func _process(delta: float) -> void:
 		if ended_flag:
 			if Dialogic.VAR.get_variable("bagged"):
 				win_control.show()
+				$Win/AnimationPlayer.play("Ginna_Win_Animation");
+				# TODO: Stop the animation looping please my ass 
+				
 			else:
 				lose_control.show()
-				
+				$Lose/AnimationPlayer.play("Ginna_Lose_Animation");
+				# TODO: Stop the animation looping please my bunda
 			GameManager.using_ui = true
 			
 

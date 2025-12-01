@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d0jasc8dyycal"]
+[gd_scene load_steps=42 format=3 uid="uid://d0jasc8dyycal"]
 
 [ext_resource type="Script" uid="uid://tac1tx36u1fm" path="res://scenes/hallway.gd" id="1_1k2v8"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="2_h81ti"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="6_txc3n"]
 [ext_resource type="Texture2D" uid="uid://bnmf865ncijf7" path="res://assets from harrish/Art/Biscuit_Pixel_Sprites/Riskuits_Ginna_Pixel(New).png" id="7_yjeik"]
 [ext_resource type="Texture2D" uid="uid://blc8vawulmiqd" path="res://assets from harrish/Art/UI_Sprite/SpaceBarPress-export.png" id="8_nlnob"]
+[ext_resource type="FontFile" uid="uid://c07u130o31i1k" path="res://CustomFonts/RobotoSlab-VariableFont_wght.ttf" id="9_w57m6"]
+[ext_resource type="PackedScene" uid="uid://cjorl78p5xtxk" path="res://models/TheClock.gltf" id="10_drbwl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1k2v8"]
 size = Vector3(2.9698486, 2.2020264, 6.8615723)
@@ -39,10 +41,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4.0333333),
+"times": PackedFloat32Array(0, 1.99, 4.0333333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(1.7936468, 2.748487, -42.898075), Vector3(1.7936468, 3.0798955, -42.898075), Vector3(1.7936468, 2.748487, -42.898075)]
+"values": [Vector3(1.7936468, 2.748487, -42.898075), Vector3(1.7936468, 2.9937868, -42.898075), Vector3(1.7936468, 2.748487, -42.898075)]
 }
 
 [sub_resource type="Animation" id="Animation_w57m6"]
@@ -133,6 +135,107 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nlnob"]
 size = Vector3(4.703453, 1, 4.405426)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w57m6"]
+bg_color = Color(1, 0.44705883, 0.6901961, 0.54509807)
+
+[sub_resource type="Animation" id="Animation_52g5x"]
+resource_name = "Ginna_Win_Animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ew26q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ew26q"]
+_data = {
+&"Ginna_Win_Animation": SubResource("Animation_52g5x"),
+&"RESET": SubResource("Animation_ew26q")
+}
+
+[sub_resource type="Animation" id="Animation_keade"]
+resource_name = "Ginna_Lose_Animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [117, 122]
+}
+
+[sub_resource type="Animation" id="Animation_gvesl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [117]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yar4q"]
+_data = {
+&"Ginna_Lose_Animation": SubResource("Animation_keade"),
+&"RESET": SubResource("Animation_gvesl")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w57m6"]
 size = Vector3(72.554535, 1, 10.16217)
@@ -279,7 +382,6 @@ spot_angle_attenuation = 2.2191393
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="IndoorLighting/HallwayTypeA_Lights"]
 transform = Transform3D(1, 0, 0, 0, 0.052597396, -0.99861574, 0, 0.99861574, 0.052597392, 5.699412, 26.129198, 58.95932)
-visible = false
 light_energy = 1.182
 shadow_enabled = true
 spot_range = 4096.0
@@ -460,6 +562,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Win" type="Control" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -474,18 +577,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w57m6")
 
 [node name="Label" type="Label" parent="Win"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -62.5
-offset_right = 62.5
-offset_bottom = 23.0
+anchor_bottom = 0.5
+offset_left = -469.0
+offset_top = -81.0
+offset_right = 439.0
+offset_bottom = 84.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_w57m6")
 theme_override_font_sizes/font_size = 120
-text = "You got a date!"
+text = "You Got A Date!"
 
 [node name="MainMenu" type="Button" parent="Win"]
 layout_mode = 1
@@ -494,16 +603,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -15.5
-offset_right = 48.0
-offset_bottom = 15.5
+offset_left = 404.0
+offset_top = 216.0
+offset_right = 504.0
+offset_bottom = 251.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Win"]
+libraries = {
+&"": SubResource("AnimationLibrary_ew26q")
+}
+
 [node name="Lose" type="Control" parent="."]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -521,15 +635,20 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Lose"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -33.5
-offset_right = 33.5
-offset_bottom = 23.0
+anchor_bottom = 0.5
+offset_left = -395.5
+offset_top = -82.5
+offset_right = 395.5
+offset_bottom = 82.5
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 120
-text = "You fumbled!"
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.37444338, 0.3394712, 1)
+theme_override_font_sizes/font_size = 117
+text = "You Fumbled!"
 
 [node name="MainMenu2" type="Button" parent="Lose"]
 layout_mode = 1
@@ -538,13 +657,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -15.5
-offset_right = 48.0
-offset_bottom = 15.5
+offset_left = 404.0
+offset_top = 216.0
+offset_right = 500.0
+offset_bottom = 247.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lose"]
+libraries = {
+&"": SubResource("AnimationLibrary_yar4q")
+}
 
 [node name="XCamTrigger" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.608175, 2.9950585, -61.754585)
@@ -620,6 +744,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.99427, 1.6569982, -67.0344
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LibEntrance"]
 shape = SubResource("BoxShape3D_frgbo")
 debug_color = Color(0.627451, 0.49019608, 0.5529412, 1)
+
+[node name="blockbench_export2" parent="." instance=ExtResource("10_drbwl")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.6122804, -0.9274187, 17.717674)
+
+[node name="blockbench_export3" parent="." instance=ExtResource("10_drbwl")]
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 41.524532, -0.9274187, -66.823875)
 
 [connection signal="body_entered" from="ClassroomEntrance" to="." method="_on_classroom_entrance_body_entered"]
 [connection signal="body_entered" from="GinnaArea3D" to="." method="_on_area_3d_body_entered"]

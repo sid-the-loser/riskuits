@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://eh7te1cp07q5"]
+[gd_scene load_steps=4 format=3 uid="uid://eh7te1cp07q5"]
 
 [ext_resource type="Script" uid="uid://bkbbh4ca5fq0" path="res://scripts/pause_menu.gd" id="1_hf53u"]
+[ext_resource type="FontFile" uid="uid://c07u130o31i1k" path="res://CustomFonts/RobotoSlab-VariableFont_wght.ttf" id="2_iyb4f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hf53u"]
 content_margin_left = 0.0
@@ -37,10 +38,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -133.5
+offset_top = 170.0
+offset_right = 133.5
+offset_bottom = 275.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_iyb4f")
 theme_override_font_sizes/font_size = 76
 text = "Paused"
 
@@ -68,6 +71,7 @@ layout_mode = 2
 text = "Quit to Main Menu"
 
 [node name="QuitG" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Quit to Game"
 

@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://behmokj4bvpa2"
-path.s3tc="res://.godot/imported/Riskuits_NPC_Sit_5-export.png-bbc71a511cb82e1906a83954a38a922e.s3tc.ctex"
-path.etc2="res://.godot/imported/Riskuits_NPC_Sit_5-export.png-bbc71a511cb82e1906a83954a38a922e.etc2.ctex"
+uid="uid://cskjsrtk3hdin"
+path.s3tc="res://.godot/imported/TheClock_0.png-21cd66146210a578ecb061f3bea9cd2b.s3tc.ctex"
+path.etc2="res://.godot/imported/TheClock_0.png-21cd66146210a578ecb061f3bea9cd2b.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "f12944faf9c0cf2f063ce4d7ffde1590"
+}
 
 [deps]
 
-source_file="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_5-export.png"
-dest_files=["res://.godot/imported/Riskuits_NPC_Sit_5-export.png-bbc71a511cb82e1906a83954a38a922e.s3tc.ctex", "res://.godot/imported/Riskuits_NPC_Sit_5-export.png-bbc71a511cb82e1906a83954a38a922e.etc2.ctex"]
+source_file="res://models/TheClock_0.png"
+dest_files=["res://.godot/imported/TheClock_0.png-21cd66146210a578ecb061f3bea9cd2b.s3tc.ctex", "res://.godot/imported/TheClock_0.png-21cd66146210a578ecb061f3bea9cd2b.etc2.ctex"]
 
 [params]
 
