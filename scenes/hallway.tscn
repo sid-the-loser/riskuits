@@ -322,14 +322,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_52g5x")
 }
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="GinnaArea3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8294145, 2.5286963, -42.985035)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GinnaArea3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59038925, 0, 0.16664124)
 shape = SubResource("BoxShape3D_nlnob")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [connection signal="body_entered" from="ClassroomEntrance" to="." method="_on_classroom_entrance_body_entered"]
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="GinnaArea3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="GinnaArea3D" to="." method="_on_area_3d_body_exited"]
