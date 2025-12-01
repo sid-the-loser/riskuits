@@ -39,6 +39,9 @@ func _process(delta: float) -> void:
 		elif !idle_rendered_flag:
 			update_sprite_rendered()
 			idle_rendered_flag = true
+	else:
+		update_sprite_rendered()
+		idle_rendered_flag = true
 			
 func update_sprite_rendered(): # Expensive method!
 	forward_sprite_.hide()
