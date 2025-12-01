@@ -12,10 +12,6 @@ extends Node3D
 @export var ginna_animator: AnimationPlayer
 @export var interaction_animator: AnimationPlayer
 
-@onready var animation_player_lose: AnimationPlayer = $Lose/AnimationPlayer
-@onready var animation_player: AnimationPlayer = $Win/AnimationPlayer
-
-
 @export var win_control: Control
 @export var lose_control: Control
 
@@ -27,6 +23,8 @@ var x_cam_flag = false
 var talking_to_ginna_flag = false
 var can_talk_to_ginna_flag = false
 var ended_flag = false
+
+var win_or_lose_anim_flag = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -88,13 +86,15 @@ func _process(delta: float) -> void:
 		if ended_flag:
 			if Dialogic.VAR.get_variable("bagged"):
 				win_control.show()
-				$Win/AnimationPlayer.play("Ginna_Win_Animation");
-				# TODO: Stop the animation looping please my ass 
+				if !win_or_lose_anim_flag:
+					$Win/AnimationPlayer.play("Ginna_Win_Animation")
+					win_or_lose_anim_flag = true
 				
 			else:
 				lose_control.show()
-				$Lose/AnimationPlayer.play("Ginna_Lose_Animation");
-				# TODO: Stop the animation looping please my bunda
+				if !win_or_lose_anim_flag:
+					$Lose/AnimationPlayer.play("Ginna_Lose_Animation");
+					win_or_lose_anim_flag = true
 			GameManager.using_ui = true
 			
 

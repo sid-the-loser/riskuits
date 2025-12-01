@@ -1,8 +1,6 @@
 extends Node3D
 
 
-const HALLWAY = preload("uid://d0jasc8dyycal")
-
 @onready var animation_player: AnimationPlayer = $Camera3D/AnimationPlayer
 @onready var animation_player_gals: AnimationPlayer = $Control/TextureRect3/AnimationPlayer
 
@@ -15,7 +13,7 @@ func _ready():
 func _on_play_button_button_down() -> void:
 	GameManager.tutorial_flag = true
 	GameManager.using_ui = false
-	get_tree().change_scene_to_packed(HALLWAY)
+	get_tree().change_scene_to_file("res://scenes/hallway.tscn")
 
 
 func _on_quit_button_button_down() -> void:

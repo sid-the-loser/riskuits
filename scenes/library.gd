@@ -7,14 +7,13 @@ extends Node3D
 
 @onready var animation_player_wafune: AnimationPlayer = $Wafune/AnimationPlayer
 
-@onready var animation_player: AnimationPlayer = $Win/AnimationPlayer
-@onready var animation_player_lose: AnimationPlayer = $Lose/AnimationPlayer
-
 @export var win_control: Control
 @export var lose_control: Control
 
 var talking_to_wafune_flag = false
 var can_talk_to_wafune_flag = false
+
+var win_or_lose_anim_flag = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,12 +30,14 @@ func _process(delta: float) -> void:
 	if Dialogic.current_timeline == null and talking_to_wafune_flag:
 		if Dialogic.VAR.get_variable("bagged"):
 			win_control.show()
-			$Win/AnimationPlayer.play("Wafune_Win_Animation");
-			# TODO: Stop the animation looping please my ears burn
+			if !win_or_lose_anim_flag:
+				$Win/AnimationPlayer.play("Wafune_Win_Animation")
+				win_or_lose_anim_flag = true
 		else:
 			lose_control.show()
-			$Lose/AnimationPlayer.play("Wafune_Lose_Animation");
-			# TODO: Stop the animation looping please my ass burns
+			if !win_or_lose_anim_flag:
+				$Lose/AnimationPlayer.play("Wafune_Lose_Animation")
+				win_or_lose_anim_flag = true
 		GameManager.using_ui = true
 	
 	if Input.is_action_just_pressed("back") and Dialogic.current_timeline == null:
