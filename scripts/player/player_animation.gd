@@ -21,36 +21,33 @@ var anim_pause_flag = false
 func _ready() -> void:
 	idle_rendered_flag = true
 	last_unique_input_direction = Vector2(0, 1)
-	update_sprite_rendered()
 	animation_player_.play("walk")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !GameManager.using_ui and Dialogic.current_timeline == null :
+	if !GameManager.using_ui and Dialogic.current_timeline == null:
 		input_direction = Input.get_vector("move_left", "move_right", 
 											"move_up", "move_down")
 		
+		if anim_pause_flag:
+			anim_pause_flag = false
+		
 		if input_direction != Vector2.ZERO:
 			if input_direction != last_unique_input_direction:
-				update_sprite_rendered()
 				last_unique_input_direction = input_direction
 				idle_rendered_flag = false
 				
 		elif !idle_rendered_flag:
-			update_sprite_rendered()
 			idle_rendered_flag = true
 		
-		anim_pause_flag = false
 	elif !anim_pause_flag:
 		input_direction = Vector2.ZERO
-		if last_unique_input_direction == Vector2.ZERO:
-			last_unique_input_direction = Vector2(0, 1)
-		update_sprite_rendered()
-		last_unique_input_direction = Vector2.ZERO
 		anim_pause_flag = true
+	
+	update_sprite_rendered()
 			
-func update_sprite_rendered(): # Expensive method!
+func update_sprite_rendered():
 	forward_sprite_.hide()
 	forward_walk_sprite_.hide()
 	backward_sprite_.hide()
@@ -58,7 +55,7 @@ func update_sprite_rendered(): # Expensive method!
 	side_sprite_.hide()
 	side_walk_sprite_.hide()
 	
-	if input_direction != Vector2.ZERO:	
+	if input_direction != Vector2.ZERO:
 		if input_direction.y > 0:
 			forward_walk_sprite_.show()
 			

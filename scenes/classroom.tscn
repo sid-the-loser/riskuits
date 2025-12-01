@@ -268,5 +268,6 @@ texture = ExtResource("14_f0xpw")
 [node name="PauseMenu" parent="." instance=ExtResource("15_14aws")]
 visible = false
 
+[connection signal="seated" from="." to="Player" method="_on_classroom_seated"]
 [connection signal="body_entered" from="PlayerSeat" to="." method="_on_player_seat_body_entered"]
 [connection signal="body_entered" from="ClassroomExit" to="." method="_on_classroom_exit_body_entered"]

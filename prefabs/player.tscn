@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://uww0dw0d6m7f"]
+[gd_scene load_steps=14 format=3 uid="uid://uww0dw0d6m7f"]
 
 [ext_resource type="Texture2D" uid="uid://ciysma8ii57ki" path="res://assets from harrish/Art/Mouse-Kun_Sprites/Riskuits_Player_Idle_South.png" id="1_kbsxf"]
+[ext_resource type="Script" uid="uid://chvvxfxtyfic8" path="res://scripts/player/sprite_setting.gd" id="1_rgeog"]
 [ext_resource type="Texture2D" uid="uid://dj6wfckrihuwb" path="res://assets from harrish/Art/Mouse-Kun_Sprites/Riskuits_Player_Walk_South-Sheet.png" id="2_rgeog"]
 [ext_resource type="Script" uid="uid://bju84g2ikeoa7" path="res://scripts/player/player_animation.gd" id="3_1txc5"]
 [ext_resource type="Texture2D" uid="uid://dqd6q8ypiyyxu" path="res://assets from harrish/Art/Mouse-Kun_Sprites/Riskuits_Player_Idle_North.png" id="3_opo22"]
@@ -97,6 +98,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_rgeog")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
