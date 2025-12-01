@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://d0jasc8dyycal"]
+[gd_scene load_steps=33 format=3 uid="uid://d0jasc8dyycal"]
 
 [ext_resource type="Script" uid="uid://tac1tx36u1fm" path="res://scenes/hallway.gd" id="1_1k2v8"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="2_h81ti"]
@@ -166,6 +166,12 @@ size = Vector3(1.8156433, 1, 9.272073)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_keade"]
 size = Vector3(2.1548386, 1, 2.1624036)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xyikb"]
+size = Vector3(8.162415, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_frgbo"]
+size = Vector3(8.162415, 1, 1)
 
 [node name="Hallway" type="Node3D" node_paths=PackedStringArray("limit_2", "player", "pause_menu", "ginna", "interaction_icon", "ginna_animator", "interaction_animator", "win_control", "lose_control", "Cam1", "Cam2")]
 script = ExtResource("1_1k2v8")
@@ -601,6 +607,21 @@ transform = Transform3D(0.99300885, 0, -0.11804002, 0, 1, 0, 0.11804002, 0, 0.99
 shape = SubResource("BoxShape3D_keade")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="CafEntrance" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -89.5075)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CafEntrance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9321506, 1.2730198, -9.828896)
+shape = SubResource("BoxShape3D_xyikb")
+debug_color = Color(0.627451, 0.49019608, 0.5529412, 1)
+
+[node name="LibEntrance" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.99427, 1.6569982, -67.03443)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LibEntrance"]
+shape = SubResource("BoxShape3D_frgbo")
+debug_color = Color(0.627451, 0.49019608, 0.5529412, 1)
+
 [connection signal="body_entered" from="ClassroomEntrance" to="." method="_on_classroom_entrance_body_entered"]
 [connection signal="body_entered" from="GinnaArea3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="GinnaArea3D" to="." method="_on_area_3d_body_exited"]
@@ -608,3 +629,5 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 [connection signal="button_down" from="Lose/MainMenu2" to="." method="_on_main_menu_2_button_down"]
 [connection signal="body_entered" from="XCamTrigger" to="." method="_on_x_cam_trigger_body_entered"]
 [connection signal="body_exited" from="XCamTrigger" to="." method="_on_x_cam_trigger_body_exited"]
+[connection signal="body_entered" from="CafEntrance" to="." method="_on_caf_entrance_body_entered"]
+[connection signal="body_entered" from="LibEntrance" to="." method="_on_lib_entrance_body_entered"]

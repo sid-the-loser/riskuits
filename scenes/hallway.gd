@@ -119,3 +119,12 @@ func _on_x_cam_trigger_body_entered(body: Node3D) -> void:
 func _on_x_cam_trigger_body_exited(body: Node3D) -> void:
 	if body.name == "Player":
 		x_cam_flag = false
+
+
+func _on_caf_entrance_body_entered(body: Node3D) -> void:
+	if !GameManager.tutorial_flag:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/dining_hall.tscn")
+
+func _on_lib_entrance_body_entered(body: Node3D) -> void:
+	if !GameManager.tutorial_flag:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/library.tscn")
