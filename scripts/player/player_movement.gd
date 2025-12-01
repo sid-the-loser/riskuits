@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	)
 	
 func _physics_process(delta: float) -> void:
-	if Dialogic.current_timeline == null and !GameManager.using_ui:
+	if !GameManager.using_ui and Dialogic.current_timeline == null:
 		parent_character_body.set_velocity(input_direction * movement_speed * delta)
 		
 		parent_character_body.move_and_slide()

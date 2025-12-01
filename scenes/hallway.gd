@@ -17,12 +17,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("back") and Dialogic.current_timeline == null:
 		if GameManager.using_ui:
-			pause_menu.hide()
 			GameManager.using_ui = false
+			pause_menu.hide()
 			
 		else:
-			pause_menu.show()
 			GameManager.using_ui = true
+			pause_menu.show()
 
 func _on_classroom_entrance_body_entered(body: Node3D) -> void:
 	if GameManager.tutorial_flag and body.name == "Player":

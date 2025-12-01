@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c4iijybop1qfa"]
+[gd_scene load_steps=24 format=3 uid="uid://c4iijybop1qfa"]
 
 [ext_resource type="Script" uid="uid://b030rhnbgwfbt" path="res://scenes/classroom.gd" id="1_kkrti"]
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="1_x5cc4"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cjq3mmtr4c708" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_NPC5_North.png" id="12_6y7hp"]
 [ext_resource type="Texture2D" uid="uid://dpmvfyn3088rj" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_Chair.png" id="13_ut2n3"]
 [ext_resource type="Texture2D" uid="uid://5f4ihmf0vxdl" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_NPC4_North.png" id="14_f0xpw"]
+[ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="15_14aws"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x5cc4"]
 size = Vector3(29.929565, 1, 1)
@@ -263,6 +264,9 @@ texture = ExtResource("13_ut2n3")
 [node name="Sprite3D5" type="Sprite3D" parent="NPCs"]
 transform = Transform3D(1, 0, 0, 0, 0.99912137, 0.04191053, 0, -0.04191053, 0.99912137, -6.409779, 2.564916, -3.1409986)
 texture = ExtResource("14_f0xpw")
+
+[node name="PauseMenu" parent="." instance=ExtResource("15_14aws")]
+visible = false
 
 [connection signal="body_entered" from="PlayerSeat" to="." method="_on_player_seat_body_entered"]
 [connection signal="body_entered" from="ClassroomExit" to="." method="_on_classroom_exit_body_entered"]

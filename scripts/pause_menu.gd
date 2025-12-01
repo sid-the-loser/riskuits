@@ -1,10 +1,6 @@
 extends Control
 
 
-func _process(delta: float) -> void:
-	GameManager.using_ui = true if is_visible_in_tree() else false
-
-
 func _on_resume_button_down() -> void:
 	GameManager.using_ui = false
 	hide()
