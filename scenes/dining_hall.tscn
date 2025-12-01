@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dbi1f2uc836vy"]
+[gd_scene load_steps=42 format=3 uid="uid://dbi1f2uc836vy"]
 
 [ext_resource type="PackedScene" uid="uid://dq64vp5tos7cw" path="res://models/dininghall/RiscuitsDiningHall.gltf" id="1_8w4oh"]
 [ext_resource type="Script" uid="uid://caxamwvyek2n" path="res://scenes/dining_hall.gd" id="1_hvw7s"]
@@ -11,11 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://blc8vawulmiqd" path="res://assets from harrish/Art/UI_Sprite/SpaceBarPress-export.png" id="8_u2u04"]
 [ext_resource type="Texture2D" uid="uid://u3w4f6od0wpj" path="res://assets from harrish/Art/WafuneBooks.png" id="9_qkvnl"]
 [ext_resource type="PackedScene" uid="uid://b0gosuak2c46q" path="res://models/dininghall/RiscuitsChair.gltf" id="11_yqfbd"]
-[ext_resource type="Texture2D" uid="uid://cvdwutlpybypg" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_6-export.png" id="12_4wg2u"]
 [ext_resource type="Texture2D" uid="uid://brx3eqjns1xkp" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_2-export.png" id="13_b06mc"]
 [ext_resource type="Texture2D" uid="uid://behmokj4bvpa2" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_5-export.png" id="14_3qwah"]
 [ext_resource type="Texture2D" uid="uid://cibl74527p6s5" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_1-export.png" id="15_hsk0w"]
-[ext_resource type="Texture2D" uid="uid://cbn3ypi06hwk" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_4-export.png" id="16_lwcov"]
 [ext_resource type="Texture2D" uid="uid://deq8xehwu3c6o" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_0-export.png" id="17_csdgb"]
 
 [sub_resource type="Animation" id="Animation_hwv8p"]
@@ -512,41 +510,23 @@ transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 29
 
 [node name="NPCs" type="Node3D" parent="."]
 
-[node name="Sprite3D" type="Sprite3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.767231, 3.8179421, -10.130741)
-texture = ExtResource("12_4wg2u")
-
-[node name="Sprite3D4" type="Sprite3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.767231, 3.8179421, -13.083391)
-texture = ExtResource("13_b06mc")
-
-[node name="Sprite3D2" type="Sprite3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.411053, 3.8179421, -10.130741)
+[node name="Sprite3D11" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.197918, 3.6258183, 22.03048)
 flip_h = true
 texture = ExtResource("14_3qwah")
+
+[node name="Sprite3D12" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.799929, 3.6258183, 19.042194)
+texture = ExtResource("17_csdgb")
+
+[node name="Sprite3D4" type="Sprite3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.065086, 3.8179421, -13.083391)
+flip_h = true
+texture = ExtResource("13_b06mc")
 
 [node name="Sprite3D5" type="Sprite3D" parent="NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.91398, 3.8179421, -12.163139)
 texture = ExtResource("15_hsk0w")
-
-[node name="Sprite3D3" type="Sprite3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.411053, 3.8179421, -13.077484)
-flip_h = true
-texture = ExtResource("16_lwcov")
-
-[node name="Sprite3D6" type="Sprite3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.063034, 3.8179421, -11.257827)
-texture = ExtResource("17_csdgb")
-
-[node name="Sprite3D7" type="Sprite3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.681944, 3.8179421, -10.130741)
-flip_h = true
-texture = ExtResource("12_4wg2u")
-
-[node name="Sprite3D8" type="Sprite3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.681944, 3.8179421, -13.077484)
-flip_h = true
-texture = ExtResource("12_4wg2u")
 
 [node name="LevelCollisions" type="StaticBody3D" parent="."]
 
