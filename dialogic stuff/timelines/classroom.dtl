@@ -2,6 +2,7 @@ set {class_dis} = false
 You sit down at your seat as class is starting.
 You notice some faces you've never seen before….wait a minute.
 set {cam_zoom} = true
+[wait time="2.5"]
 c_rat: ARE THEY BISCUITS???
 The teacher says that there are some exchange students joining our class today. She asks the biscuits to introduce themselves to the rest of the class.
 join c_wafune rightmost [animation="Slide From Right" wait="true"]
