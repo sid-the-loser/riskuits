@@ -25,7 +25,7 @@ func _ready():
 	animation_player_gals.play("TitleGals")
 	AudioManager.play_soundtrack("title")
 	GameManager.from_ = "start"
-	AudioManager.music_reset()
+	#AudioManager.music_reset()
 	
 func _on_play_button_button_down() -> void:
 	AudioManager.fade_in()
