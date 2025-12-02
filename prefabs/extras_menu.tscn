@@ -124,7 +124,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_r818f"]
 resource_name = "open"
-length = 0.3
+length = 0.4695
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -132,9 +132,9 @@ tracks/0/path = NodePath("Booklet:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(-328, 0, 0, 0.050000004, 54.666668, 0, -0.050000004, -50.66667, 0, 0),
-"times": PackedFloat32Array(0, 0.3)
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(-328, 0, 0, 0.050000004, 54.666668, 32, -0.06666666, -85.5, 0.008333336, 9.111113, -2.5, -0.03333333, 3, 0.019444447, -2.666667, 0, -0.03333333, 2.5, 0, 0),
+"times": PackedFloat32Array(0, 0.23333333, 0.33333334, 0.46666667)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -143,9 +143,9 @@ tracks/1/path = NodePath("Booklet:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(264, 0, 0, 0.050000004, 0, 264, -0.050000004, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.3)
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(264, 0, 0, 0.050000004, 0, 264, -0.041666668, 0, 0.008333336, 0, 264, -0.019444443, 0, 0.019444447, 0, 264, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.23333333, 0.3, 0.46666667)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8h641"]
