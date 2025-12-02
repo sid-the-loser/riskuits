@@ -1,3 +1,4 @@
+set {bagged} = false
 join c_wafune center
 c_wafune: H-Hello. You’re from the same class as me, right?
 - Yeah, I am! Nice to meet you.

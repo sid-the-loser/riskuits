@@ -6,11 +6,15 @@ signal seated
 @export var biscuits: Node3D
 @export var npcs: Node3D
 @export var npcs_chairs: Node3D
+@export var cam: RailCamera3D
+@export var cam_lookat: Node3D
 
+var default_fov: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.from_ = "class"
+	default_fov = cam.fov
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

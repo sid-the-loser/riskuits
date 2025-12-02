@@ -1,3 +1,4 @@
+set {bagged} = false
 join c_ginna center
 c_ginna: Hey! You’re the weirdo who was staring at me. What do you want!?
 - I like your round face.

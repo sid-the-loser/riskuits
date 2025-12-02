@@ -1,3 +1,4 @@
+set {bagged} = false
 join c_lotus center
 c_lotus: Hey there, you’re from the same class as me, aren’t you?
 - Hello, Yup, that’s me! *nonchalantly scratching the back of your ear*
