@@ -15,7 +15,8 @@ config/description="A game about a rat eating all the different types of biscuit
 config/version="1.1"
 run/main_scene="uid://ciinhkhf0s14n"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://sprites/icon.svg"
+boot_splash/image="uid://cb3r2hrq8s5un"
+config/icon="uid://cmjfigb5yh0xl"
 
 [autoload]
 

@@ -347,6 +347,7 @@ offset_right = 504.0
 offset_bottom = 251.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_h01uo")
 text = "Main Menu"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Win"]
@@ -403,6 +404,7 @@ offset_right = 47.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_h01uo")
 text = "Main Menu"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lose"]

@@ -37,4 +37,5 @@ func _on_open_close_button_up() -> void:
 
 
 func _on_main_menu_button_button_up() -> void:
+	AudioManager.fade_in()
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/main_menu.tscn")

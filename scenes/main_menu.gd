@@ -17,6 +17,7 @@ var load_these: Array[String] = [ # NOTE: might or might not be effective
 ]
 
 func _ready():
+	AudioManager.fade_out()
 	for i in load_these:
 		ResourceLoader.load_threaded_request(i)
 	
