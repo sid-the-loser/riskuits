@@ -13,14 +13,30 @@ extends Node3D
 @export var normal_volume: float = -10.0
 @export var lowest_volume: float = -80.0
 
+@export var scene_animator: AnimationPlayer
+
+var faded_in_flag = false
+
 func _ready() -> void:
 	mute_all_audio()
+	scene_fade_out()
+
+func scene_fade_in():
+	if not faded_in_flag:
+		scene_animator.play("fade_in")
+		faded_in_flag = true
+	
+func scene_fade_out():
+	if faded_in_flag:
+		scene_animator.play("fade_out")
+		faded_in_flag = false
 
 func unmute_particular_audio(name_: String):
 	mute_all_audio()
 	match name_:
 		"title":
 			title_theme.volume_db = normal_volume
+			
 		
 		"level":
 			level_theme.volume_db = normal_volume
@@ -45,7 +61,8 @@ func mute_all_audio():
 
 func play_door_opened():
 	door_opened.play()
+	scene_fade_in()
 
-
-func _on_door_open_finished() -> void:
+func play_door_closed():
 	door_closed.play()
+	scene_fade_out()

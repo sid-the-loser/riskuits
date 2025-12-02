@@ -17,6 +17,8 @@ var win_or_lose_anim_flag = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.using_ui = false
+	AudioManager.door_close()
 	GameManager.from_ = "lib"
 	$Wafune/AnimationPlayer.play("Wafune_bobbing")
 	win_control.hide()
@@ -58,6 +60,7 @@ func _process(delta: float) -> void:
 
 func _on_exit_library_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
+		AudioManager.door_open()
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/hallway.tscn")
 
 

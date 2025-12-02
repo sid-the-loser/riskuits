@@ -41,6 +41,7 @@ func _ready() -> void:
 		limit_2.position.z = -40.0
 		Cam1.update_limits()
 	else:
+		AudioManager.door_close()
 		ginna.show()
 		if GameManager.from_ == "caf":
 			player.position = Vector3(-4.405, 1.0, -96.29)
@@ -100,7 +101,7 @@ func _process(delta: float) -> void:
 
 func _on_classroom_entrance_body_entered(body: Node3D) -> void:
 	if GameManager.tutorial_flag and body.name == "Player":
-		AudioManager.door_sfx()
+		AudioManager.door_open()
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/classroom.tscn")
 
 
@@ -139,10 +140,10 @@ func _on_x_cam_trigger_body_exited(body: Node3D) -> void:
 
 func _on_caf_entrance_body_entered(body: Node3D) -> void:
 	if !GameManager.tutorial_flag and body.name == "Player":
-		AudioManager.door_sfx()
+		AudioManager.door_open()
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/dining_hall.tscn")
 
 func _on_lib_entrance_body_entered(body: Node3D) -> void:
 	if !GameManager.tutorial_flag and body.name == "Player":
-		AudioManager.door_sfx()
+		AudioManager.door_open()
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/library.tscn")

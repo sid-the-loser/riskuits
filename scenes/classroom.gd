@@ -15,6 +15,7 @@ var default_rotation: Vector3 = Vector3(-12.7, 0, 0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioManager.door_close()
 	GameManager.from_ = "class"
 	Dialogic.VAR.set_variable("cam_zoom", false)
 
@@ -57,5 +58,5 @@ func _on_player_seat_body_entered(body: Node3D) -> void:
 
 func _on_classroom_exit_body_entered(body: Node3D) -> void:
 	if not GameManager.tutorial_flag and body.name == "Player":
-		AudioManager.door_sfx()
+		AudioManager.door_open()
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/hallway.tscn")

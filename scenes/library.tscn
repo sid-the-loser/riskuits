@@ -302,7 +302,6 @@ lose_control = NodePath("Lose")
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_n61aj")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 
 [node name="Win" type="Control" parent="."]
 modulate = Color(1, 1, 1, 0)

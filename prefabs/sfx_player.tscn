@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dldx6kg26r4xl"]
+[gd_scene load_steps=14 format=3 uid="uid://dldx6kg26r4xl"]
 
 [ext_resource type="Script" uid="uid://duppwwxlkrj4d" path="res://scripts/sfx_player.gd" id="1_8p78e"]
 [ext_resource type="AudioStream" uid="uid://dpuygljnaki3i" path="res://assets from harrish/Music/RiskuitsTitleTheme_Fixed.wav" id="2_c2aan"]
@@ -9,7 +9,64 @@
 [ext_resource type="AudioStream" uid="uid://d0r3guj7hbwiw" path="res://assets from harrish/SFX/Riskuits_DoorOpen.wav" id="7_7k15i"]
 [ext_resource type="AudioStream" uid="uid://brapka6pfwxiw" path="res://assets from harrish/SFX/Riskuits_DoorClose.wav" id="8_mbg0e"]
 
-[node name="SFXPlayer" type="Node3D" node_paths=PackedStringArray("title_theme", "level_theme", "wafune_theme", "lotus_theme", "ginna_theme", "door_opened", "door_closed")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7k15i"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_mbg0e"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vg53h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ktc1b"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aruca"]
+_data = {
+&"RESET": SubResource("Animation_vg53h"),
+&"fade_in": SubResource("Animation_mbg0e"),
+&"fade_out": SubResource("Animation_ktc1b")
+}
+
+[node name="SFXPlayer" type="Node3D" node_paths=PackedStringArray("title_theme", "level_theme", "wafune_theme", "lotus_theme", "ginna_theme", "door_opened", "door_closed", "scene_animator")]
 script = ExtResource("1_8p78e")
 title_theme = NodePath("Title")
 level_theme = NodePath("Level")
@@ -18,6 +75,7 @@ lotus_theme = NodePath("Lotus")
 ginna_theme = NodePath("Ginna")
 door_opened = NodePath("DoorOpen")
 door_closed = NodePath("DoorClose")
+scene_animator = NodePath("Panel/AnimationPlayer")
 metadata/_custom_type_script = "uid://duppwwxlkrj4d"
 
 [node name="Title" type="AudioStreamPlayer" parent="."]
@@ -53,4 +111,15 @@ volume_db = -10.0
 stream = ExtResource("8_mbg0e")
 volume_db = -10.0
 
-[connection signal="finished" from="DoorOpen" to="." method="_on_door_open_finished"]
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7k15i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
+libraries = {
+&"": SubResource("AnimationLibrary_aruca")
+}

@@ -831,7 +831,7 @@ shape = SubResource("BoxShape3D_1m42w")
 debug_color = Color(0.93333334, 0.101960786, 0.59607846, 1)
 
 [node name="CollisionShape3D22" type="CollisionShape3D" parent="HallwayCollision"]
-transform = Transform3D(0.60025275, 0, -0.7998104, 0, 1, 0, 0.7998104, 0, 0.60025275, 4.512941, 2.1770399, -42.498096)
+transform = Transform3D(0.60025275, 0, -0.7998104, 0, 1, 0, 0.7998104, 0, 0.60025275, 4.4778385, 2.1770399, -42.52689)
 shape = SubResource("BoxShape3D_1m42w")
 debug_color = Color(0.93333334, 0.101960786, 0.59607846, 1)
 

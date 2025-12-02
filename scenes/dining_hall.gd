@@ -20,6 +20,7 @@ var win_or_lose_anim_flag = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioManager.door_close()
 	GameManager.from_ = "caf"
 	win_control.hide()
 	lose_control.hide()
@@ -72,6 +73,7 @@ func _on_lotus_area_body_exited(body: Node3D) -> void:
 
 func _on_exit_hallway_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
+		AudioManager.door_open()
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/hallway.tscn")
 
 
