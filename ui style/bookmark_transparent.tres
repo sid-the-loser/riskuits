@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://ck7aojbpssfu6"]
+
+[ext_resource type="Texture2D" uid="uid://baekdkiye3rmj" path="res://assets from harrish/Art/UI/RiskuitBookmarkaseprite.png" id="1_ae0e4"]
+
+[resource]
+texture = ExtResource("1_ae0e4")
+modulate_color = Color(1, 1, 1, 0.6509804)
