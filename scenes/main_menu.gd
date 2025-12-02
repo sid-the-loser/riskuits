@@ -4,7 +4,7 @@ extends Node3D
 @onready var animation_player: AnimationPlayer = $Camera3D/AnimationPlayer
 @onready var animation_player_gals: AnimationPlayer = $Control/TextureRect3/AnimationPlayer
 
-var load_these: Array[String] = [
+var load_these: Array[String] = [ # NOTE: might or might not be effective
 	"res://scenes/main_menu.tscn",
 	"res://scenes/hallway.tscn",
 	"res://scenes/classroom.tscn",

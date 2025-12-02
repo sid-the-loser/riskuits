@@ -57,4 +57,5 @@ func _on_player_seat_body_entered(body: Node3D) -> void:
 
 func _on_classroom_exit_body_entered(body: Node3D) -> void:
 	if not GameManager.tutorial_flag and body.name == "Player":
+		AudioManager.door_sfx()
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/hallway.tscn")

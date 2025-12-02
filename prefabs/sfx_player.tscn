@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dldx6kg26r4xl"]
+[gd_scene load_steps=9 format=3 uid="uid://dldx6kg26r4xl"]
 
 [ext_resource type="Script" uid="uid://duppwwxlkrj4d" path="res://scripts/sfx_player.gd" id="1_8p78e"]
 [ext_resource type="AudioStream" uid="uid://dpuygljnaki3i" path="res://assets from harrish/Music/RiskuitsTitleTheme_Fixed.wav" id="2_c2aan"]
@@ -6,14 +6,18 @@
 [ext_resource type="AudioStream" uid="uid://c11nr6yi3y1oq" path="res://assets from harrish/Music/Ginna_Theme_Fixed.wav" id="4_7k15i"]
 [ext_resource type="AudioStream" uid="uid://cr56t8b2qbuee" path="res://assets from harrish/Music/Lotus_Theme_Fixed.wav" id="5_mbg0e"]
 [ext_resource type="AudioStream" uid="uid://spre3dq0n3xj" path="res://assets from harrish/Music/Wafune_Theme_Fixed.wav" id="6_vg53h"]
+[ext_resource type="AudioStream" uid="uid://d0r3guj7hbwiw" path="res://assets from harrish/SFX/Riskuits_DoorOpen.wav" id="7_7k15i"]
+[ext_resource type="AudioStream" uid="uid://brapka6pfwxiw" path="res://assets from harrish/SFX/Riskuits_DoorClose.wav" id="8_mbg0e"]
 
-[node name="SFXPlayer" type="Node3D" node_paths=PackedStringArray("title_theme", "level_theme", "wafune_theme", "lotus_theme", "ginna_theme")]
+[node name="SFXPlayer" type="Node3D" node_paths=PackedStringArray("title_theme", "level_theme", "wafune_theme", "lotus_theme", "ginna_theme", "door_opened", "door_closed")]
 script = ExtResource("1_8p78e")
 title_theme = NodePath("Title")
 level_theme = NodePath("Level")
 wafune_theme = NodePath("Wafune")
 lotus_theme = NodePath("Lotus")
 ginna_theme = NodePath("Ginna")
+door_opened = NodePath("DoorOpen")
+door_closed = NodePath("DoorClose")
 metadata/_custom_type_script = "uid://duppwwxlkrj4d"
 
 [node name="Title" type="AudioStreamPlayer" parent="."]
@@ -40,3 +44,13 @@ autoplay = true
 stream = ExtResource("6_vg53h")
 volume_db = -80.0
 autoplay = true
+
+[node name="DoorOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_7k15i")
+volume_db = -10.0
+
+[node name="DoorClose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_mbg0e")
+volume_db = -10.0
+
+[connection signal="finished" from="DoorOpen" to="." method="_on_door_open_finished"]

@@ -10,3 +10,7 @@ func _ready() -> void:
 
 func play_soundtrack(name_: String):
 	player.unmute_particular_audio(name_)
+	
+func door_sfx():
+	player.play_door_opened()
+	
