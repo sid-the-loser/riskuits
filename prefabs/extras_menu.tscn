@@ -155,7 +155,7 @@ _data = {
 &"open": SubResource("Animation_r818f")
 }
 
-[node name="ExtrasMenu" type="Control" node_paths=PackedStringArray("animation_player", "task_label")]
+[node name="ExtrasMenu" type="Control" node_paths=PackedStringArray("animation_player", "task_label", "bookmark")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -167,6 +167,7 @@ grow_vertical = 2
 script = ExtResource("1_woviy")
 animation_player = NodePath("AnimationPlayer")
 task_label = NodePath("Booklet/Quests")
+bookmark = NodePath("Booklet/OpenClose")
 
 [node name="Booklet" type="TextureRect" parent="."]
 layout_mode = 1

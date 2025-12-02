@@ -3,22 +3,32 @@ extends Control
 
 @export var animation_player: AnimationPlayer
 @export var task_label: RichTextLabel
+@export var bookmark: Button
 
 var opened = false
 
 func trigger():
-	update_tasks()
-	if opened:
-		animation_player.play("close")
-		opened = false
-	else:
-		animation_player.play("open")
-		opened = true
+	if !GameManager.using_ui:
+		update_tasks()
+		if opened:
+			animation_player.play("close")
+			opened = false
+		else:
+			animation_player.play("open")
+			opened = true
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("back"):
 		trigger()
-		
+
+func _process(delta: float) -> void:
+	if Dialogic.current_timeline != null or GameManager.using_ui:
+		if opened:
+			trigger()
+		else:
+			bookmark.hide()
+	else:
+		bookmark.show()
 
 func update_tasks():
 	var txt = ""
