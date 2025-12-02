@@ -19,7 +19,8 @@ var load_these: Array[String] = [ # NOTE: might or might not be effective
 func _ready():
 	for i in load_these:
 		ResourceLoader.load_threaded_request(i)
-		
+	
+	GameManager.task_list = []
 	animation_player.play("TitleScreenCameraMove")
 	animation_player_gals.play("TitleGals")
 	AudioManager.play_soundtrack("title")
