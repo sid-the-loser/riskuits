@@ -1,6 +1,10 @@
 extends Node3D
 
 
+@export var play_button_animator: AnimationPlayer
+@export var skip_button_animator: AnimationPlayer
+@export var quit_button_animator: AnimationPlayer
+
 @onready var animation_player: AnimationPlayer = $Camera3D/AnimationPlayer
 @onready var animation_player_gals: AnimationPlayer = $Control/TextureRect3/AnimationPlayer
 
@@ -37,3 +41,19 @@ func _on_skip_intro_button_button_down() -> void:
 
 func _on_quit_button_button_down() -> void:
 	get_tree().quit()
+
+
+func _on_play_button_mouse_entered() -> void:
+	play_button_animator.play("hovering")
+
+
+func _on_play_button_mouse_exited() -> void:
+	play_button_animator.play("idle")
+
+
+func _on_skip_intro_button_mouse_entered() -> void:
+	skip_button_animator.play("hovering")
+
+
+func _on_skip_intro_button_mouse_exited() -> void:
+	skip_button_animator.play("idle")

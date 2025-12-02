@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ciinhkhf0s14n"]
+[gd_scene load_steps=32 format=3 uid="uid://ciinhkhf0s14n"]
 
 [ext_resource type="Script" uid="uid://bhu1jqfr66fh7" path="res://scenes/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/classroom/RiscuitsClassroomNoBorder.gltf" id="2_wu84c"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://b16c6ulqck1ej" path="res://assets from harrish/Art/RiskuitsMenuBlank.png" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://ofp6457bs5ac" path="res://assets from harrish/Art/RiskuitsTitleText.png" id="5_8ln24"]
 [ext_resource type="Texture2D" uid="uid://dfttxfyrcejjx" path="res://assets from harrish/Art/RiskuitsMenuGals.png" id="5_oa1go"]
+[ext_resource type="FontFile" uid="uid://d1tsnmjdsc38f" path="res://CustomFonts/Author Handwriting.otf" id="7_5dd4i"]
+[ext_resource type="StyleBox" uid="uid://c3s0bsqbk80o0" path="res://ui style/play_button_style.tres" id="8_5dd4i"]
+[ext_resource type="StyleBox" uid="uid://c3v2q7ccq5lfa" path="res://ui style/skip_button_style.tres" id="9_lgwnu"]
+[ext_resource type="StyleBox" uid="uid://bbg65j5ufjbqa" path="res://ui style/quit_button_style.tres" id="10_flqon"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rtw2f"]
 size = Vector3(29.929565, 1, 1)
@@ -112,32 +116,157 @@ _data = {
 &"TitleGals": SubResource("Animation_oa1go")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.42352942, 0.050980393, 0.21176471, 0.80784315)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="Animation" id="Animation_5dd4i"]
+resource_name = "hovering"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(640, 0, 0, 0.050000004, 0, 640, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(448, 0, 0, 0.050000004, -2.6666667, 432, -0.16666667, 1.3333334, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.42352942, 0.050980393, 0.21176471, 0.80784315)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="Animation" id="Animation_lgwnu"]
+length = 0.001
 
-[node name="MainMenu" type="Node3D"]
+[sub_resource type="Animation" id="Animation_flqon"]
+resource_name = "idle"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(640, 0, 0, 0.050000004, 0, 640, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(432, 0, 0, 0.050000004, 2.6666667, 448, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rcqid"]
+_data = {
+&"RESET": SubResource("Animation_lgwnu"),
+&"hovering": SubResource("Animation_5dd4i"),
+&"idle": SubResource("Animation_flqon")
+}
+
+[sub_resource type="Animation" id="Animation_rcqid"]
+resource_name = "hovering"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(800, -0.15, 0, 0.15, 0, 800, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(440, -0.15, 0, 0.15, 0, 424, -0.050000004, 2.6666667, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_1ajci"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(800, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(424, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7b55j"]
+resource_name = "idle"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(800, -0.25, 0, 0.25, 0, 800, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(424, -0.25, 0, 0.25, 0, 440, -0.050000004, -2.6666667, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ajci"]
+_data = {
+&"RESET": SubResource("Animation_1ajci"),
+&"hovering": SubResource("Animation_rcqid"),
+&"idle": SubResource("Animation_7b55j")
+}
+
+[node name="MainMenu" type="Node3D" node_paths=PackedStringArray("play_button_animator", "skip_button_animator", "quit_button_animator")]
 script = ExtResource("1_bqqt6")
+play_button_animator = NodePath("Control/PlayButton/AnimationPlayer")
+skip_button_animator = NodePath("Control/SkipIntroButton/AnimationPlayer")
+quit_button_animator = NodePath("Control/QuitButton/AnimationPlayer")
 
 [node name="blockbench_export" parent="." instance=ExtResource("2_wu84c")]
 transform = Transform3D(3.63, 0, 0, 0, 3.63, 0, 0, 0, 3.63, -8.551542, 0, 0)
@@ -323,14 +452,28 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -360.0
+offset_left = -512.0
 offset_top = -200.0
-offset_right = -200.0
-offset_bottom = -169.0
+offset_right = -352.0
+offset_bottom = -79.999146
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_5dd4i")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = ExtResource("8_5dd4i")
+theme_override_styles/pressed = ExtResource("8_5dd4i")
+theme_override_styles/hover = ExtResource("8_5dd4i")
 text = "Play"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/PlayButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_rcqid")
+}
 
 [node name="SkipIntroButton" type="Button" parent="Control"]
 layout_mode = 1
@@ -339,14 +482,28 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -360.0
-offset_top = -160.0
-offset_right = -200.0
-offset_bottom = -129.0
+offset_left = -352.0
+offset_top = -224.0
+offset_right = -192.0
+offset_bottom = -96.99939
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_5dd4i")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = ExtResource("9_lgwnu")
+theme_override_styles/pressed = ExtResource("9_lgwnu")
+theme_override_styles/hover = ExtResource("9_lgwnu")
 text = "Skip Intro"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/SkipIntroButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_1ajci")
+}
 
 [node name="QuitButton" type="Button" parent="Control"]
 layout_mode = 1
@@ -355,15 +512,30 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -360.0
-offset_top = -120.0
-offset_right = -200.0
-offset_bottom = -89.0
+offset_left = -192.0
+offset_top = -208.0
+offset_right = -32.0
+offset_bottom = -80.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_oa1go")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_5dd4i")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = ExtResource("10_flqon")
+theme_override_styles/pressed = ExtResource("10_flqon")
+theme_override_styles/hover = ExtResource("10_flqon")
 text = "Quit"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/QuitButton"]
+
 [connection signal="button_down" from="Control/PlayButton" to="." method="_on_play_button_button_down"]
+[connection signal="mouse_entered" from="Control/PlayButton" to="." method="_on_play_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/PlayButton" to="." method="_on_play_button_mouse_exited"]
 [connection signal="button_down" from="Control/SkipIntroButton" to="." method="_on_skip_intro_button_button_down"]
+[connection signal="mouse_entered" from="Control/SkipIntroButton" to="." method="_on_skip_intro_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/SkipIntroButton" to="." method="_on_skip_intro_button_mouse_exited"]
 [connection signal="button_down" from="Control/QuitButton" to="." method="_on_quit_button_button_down"]

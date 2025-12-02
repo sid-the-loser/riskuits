@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://c3s0bsqbk80o0"]
+
+[ext_resource type="Texture2D" uid="uid://b3terp0wyti8d" path="res://assets from harrish/Art/UI/RiscuitsPaperUI_1.png" id="1_xnn71"]
+
+[resource]
+texture = ExtResource("1_xnn71")
