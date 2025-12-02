@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ciinhkhf0s14n"]
+[gd_scene load_steps=36 format=3 uid="uid://ciinhkhf0s14n"]
 
 [ext_resource type="Script" uid="uid://bhu1jqfr66fh7" path="res://scenes/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/classroom/RiscuitsClassroomNoBorder.gltf" id="2_wu84c"]
@@ -116,6 +116,9 @@ _data = {
 &"TitleGals": SubResource("Animation_oa1go")
 }
 
+[sub_resource type="Animation" id="Animation_lgwnu"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_5dd4i"]
 resource_name = "hovering"
 length = 0.3
@@ -141,9 +144,6 @@ tracks/1/keys = {
 "points": PackedFloat32Array(448, 0, 0, 0.050000004, -2.6666667, 432, -0.16666667, 1.3333334, 0, 0),
 "times": PackedFloat32Array(0, 0.3)
 }
-
-[sub_resource type="Animation" id="Animation_lgwnu"]
-length = 0.001
 
 [sub_resource type="Animation" id="Animation_flqon"]
 resource_name = "idle"
@@ -178,6 +178,31 @@ _data = {
 &"idle": SubResource("Animation_flqon")
 }
 
+[sub_resource type="Animation" id="Animation_1ajci"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(800, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(424, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_rcqid"]
 resource_name = "hovering"
 length = 0.3
@@ -202,31 +227,6 @@ tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 2),
 "points": PackedFloat32Array(440, -0.15, 0, 0.15, 0, 424, -0.050000004, 2.6666667, 0, 0),
 "times": PackedFloat32Array(0, 0.3)
-}
-
-[sub_resource type="Animation" id="Animation_1ajci"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(800, -0.15, 0, 0.15, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(424, -0.15, 0, 0.15, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_7b55j"]
@@ -260,6 +260,90 @@ _data = {
 &"RESET": SubResource("Animation_1ajci"),
 &"hovering": SubResource("Animation_rcqid"),
 &"idle": SubResource("Animation_7b55j")
+}
+
+[sub_resource type="Animation" id="Animation_5pajh"]
+resource_name = "hovering"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(960, -0.15, 0, 0.15, 0, 960, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(440, -0.15, 0, 0.15, 0, 424, -0.050000004, 2.6666667, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_j7ex8"]
+resource_name = "idle"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(960, -0.15, 0, 0.15, 0, 960, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(424, -0.15, 0, 0.15, 0, 440, -0.050000004, -2.6666667, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_a8gd2"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(960, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(424, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hstxw"]
+_data = {
+&"RESET": SubResource("Animation_a8gd2"),
+&"hovering": SubResource("Animation_5pajh"),
+&"idle": SubResource("Animation_j7ex8")
 }
 
 [node name="MainMenu" type="Node3D" node_paths=PackedStringArray("play_button_animator", "skip_button_animator", "quit_button_animator")]
@@ -513,9 +597,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -192.0
-offset_top = -208.0
+offset_top = -224.0
 offset_right = -32.0
-offset_bottom = -80.0
+offset_bottom = -96.00006
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -531,6 +615,9 @@ theme_override_styles/hover = ExtResource("10_flqon")
 text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/QuitButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_hstxw")
+}
 
 [connection signal="button_down" from="Control/PlayButton" to="." method="_on_play_button_button_down"]
 [connection signal="mouse_entered" from="Control/PlayButton" to="." method="_on_play_button_mouse_entered"]
@@ -539,3 +626,5 @@ text = "Quit"
 [connection signal="mouse_entered" from="Control/SkipIntroButton" to="." method="_on_skip_intro_button_mouse_entered"]
 [connection signal="mouse_exited" from="Control/SkipIntroButton" to="." method="_on_skip_intro_button_mouse_exited"]
 [connection signal="button_down" from="Control/QuitButton" to="." method="_on_quit_button_button_down"]
+[connection signal="mouse_entered" from="Control/QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/QuitButton" to="." method="_on_quit_button_mouse_exited"]

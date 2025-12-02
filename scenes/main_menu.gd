@@ -57,3 +57,11 @@ func _on_skip_intro_button_mouse_entered() -> void:
 
 func _on_skip_intro_button_mouse_exited() -> void:
 	skip_button_animator.play("idle")
+	
+
+func _on_quit_button_mouse_entered() -> void:
+	quit_button_animator.play("hovering")
+
+
+func _on_quit_button_mouse_exited() -> void:
+	quit_button_animator.play("idle")
