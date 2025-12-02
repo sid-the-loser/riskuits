@@ -46,9 +46,8 @@ size = Vector3(1, 1, 1.2763062)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kt5ds"]
 size = Vector3(1.1217041, 1, 7.286682)
 
-[node name="Classroom" type="Node3D" node_paths=PackedStringArray("pause_menu", "biscuits", "npcs", "npcs_chairs", "cam")]
+[node name="Classroom" type="Node3D" node_paths=PackedStringArray("biscuits", "npcs", "npcs_chairs", "cam")]
 script = ExtResource("1_kkrti")
-pause_menu = NodePath("PauseMenu")
 biscuits = NodePath("BiscuitGals")
 npcs = NodePath("NPCs")
 npcs_chairs = NodePath("ReplacementChairs")

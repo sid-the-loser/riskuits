@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var pause_menu: Control
+#@export var pause_menu: Control
 
 @export var interaction_icon: Sprite3D
 @export var interaction_icon_animation: AnimationPlayer
@@ -42,14 +42,14 @@ func _process(delta: float) -> void:
 				win_or_lose_anim_flag = true
 		GameManager.using_ui = true
 	
-	if Input.is_action_just_pressed("back") and Dialogic.current_timeline == null:
-		if GameManager.using_ui:
-			GameManager.using_ui = false
-			pause_menu.hide()
-			
-		else:
-			GameManager.using_ui = true
-			pause_menu.show()
+	#if Input.is_action_just_pressed("back") and Dialogic.current_timeline == null:
+		#if GameManager.using_ui:
+			#GameManager.using_ui = false
+			#pause_menu.hide()
+			#
+		#else:
+			#GameManager.using_ui = true
+			#pause_menu.show()
 			
 	if Dialogic.current_timeline == null and !GameManager.using_ui:
 		if Input.is_action_just_pressed("talk") and can_talk_to_wafune_flag:

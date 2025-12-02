@@ -4,7 +4,7 @@ extends Node3D
 @export var limit_2: Camera3D
 
 @export var player: CharacterBody3D
-@export var pause_menu: Control
+#@export var pause_menu: Control
 
 @export var ginna: Sprite3D
 @export var interaction_icon: Sprite3D
@@ -29,7 +29,7 @@ var win_or_lose_anim_flag = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	AudioManager.play_soundtrack("level")
-	pause_menu.hide()
+	#pause_menu.hide()
 	interaction_icon.hide()
 	win_control.hide()
 	lose_control.hide()
@@ -65,15 +65,15 @@ func _process(delta: float) -> void:
 		Cam2.current = false
 	
 	if Dialogic.current_timeline == null:
-		if !ended_flag:
-			if Input.is_action_just_pressed("back"):
-				if GameManager.using_ui:
-					GameManager.using_ui = false
-					pause_menu.hide()
-				
-				else:
-					GameManager.using_ui = true
-					pause_menu.show()
+		#if !ended_flag:
+			#if Input.is_action_just_pressed("back"):
+				#if GameManager.using_ui:
+					#GameManager.using_ui = false
+					#pause_menu.hide()
+				#
+				#else:
+					#GameManager.using_ui = true
+					#pause_menu.show()
 		
 		if !GameManager.using_ui:
 			if Input.is_action_just_pressed("talk") and can_talk_to_ginna_flag and !talking_to_ginna_flag:

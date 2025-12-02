@@ -2,7 +2,7 @@ extends Node3D
 
 signal seated
 
-@export var pause_menu: Control
+#@export var pause_menu: Control
 @export var biscuits: Node3D
 @export var npcs: Node3D
 @export var npcs_chairs: Node3D
@@ -21,15 +21,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Dialogic.current_timeline == null:
-		if Input.is_action_just_pressed("back"):
-			if GameManager.using_ui:
-				GameManager.using_ui = false
-				pause_menu.hide()
-				
-			else:
-				GameManager.using_ui = true
-				pause_menu.show()
+	#if Dialogic.current_timeline == null:
+		#if Input.is_action_just_pressed("back"):
+			#if GameManager.using_ui:
+				#GameManager.using_ui = false
+				#pause_menu.hide()
+				#
+			#else:
+				#GameManager.using_ui = true
+				#pause_menu.show()
 				
 	if Dialogic.VAR.get_variable("cam_zoom"):
 		cam.fov = lerp(cam.fov, fov_chanage, delta)
