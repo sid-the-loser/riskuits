@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxa4ckx0udygr"]
+[gd_scene load_steps=17 format=3 uid="uid://bxa4ckx0udygr"]
 
 [ext_resource type="Script" uid="uid://be30g1xjgmqlk" path="res://scripts/extras_menu.gd" id="1_woviy"]
 [ext_resource type="Texture2D" uid="uid://dnrcmh6h3m0l" path="res://assets from harrish/Art/UI/RiskuitsPauseBooklet.png" id="2_u0vhp"]
@@ -6,6 +6,66 @@
 [ext_resource type="StyleBox" uid="uid://ck7aojbpssfu6" path="res://ui style/bookmark_transparent.tres" id="4_gplla"]
 [ext_resource type="StyleBox" uid="uid://de2345h6cc8wl" path="res://ui style/bookmark.tres" id="4_r818f"]
 [ext_resource type="StyleBox" uid="uid://cn722wefpic5r" path="res://ui style/bookmark_dim.tres" id="5_oq8gv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gplla"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.92156863, 0.78039217, 0, 0.65882355)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8h641"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8782817, 0.78585553, 0.4929633, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k06l0"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8782817, 0.78585553, 0.4929633, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dx0vj"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8782817, 0.78585553, 0.4929633, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gwe1"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8782817, 0.78585553, 0.4929633, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq8gv"]
 bg_color = Color(1, 1, 1, 1)
@@ -163,6 +223,18 @@ offset_right = 53.5
 offset_bottom = -57.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_u0vhp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gplla")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8h641")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k06l0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_dx0vj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6gwe1")
 text = "Main Menu"
 
 [node name="OpenClose" type="Button" parent="Booklet"]
