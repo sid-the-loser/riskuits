@@ -1,6 +1,7 @@
 set {class_dis} = false
 You sit down at your seat as class is starting.
 You notice some faces you've never seen before….wait a minute.
+set {cam_zoom} = true
 c_rat: ARE THEY BISCUITS???
 The teacher says that there are some exchange students joining our class today. She asks the biscuits to introduce themselves to the rest of the class.
 join c_wafune rightmost [animation="Slide From Right" wait="true"]
@@ -26,6 +27,7 @@ audio "res://sfx from outside/bel-sekolah-153453.mp3" [volume="-20.0"]
 leave c_lotus [animation="Slide To Left" wait="true"]
 leave c_ginna [animation="Slide Out Down" wait="true"]
 leave c_wafune [animation="Slide To Right" wait="true"]
+set {cam_zoom} = false
 set {class_dis} = true
 c_rat: Huh.. Lunch break already?
 This is your chance! Find them and make your move before you miss your shot!

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://uww0dw0d6m7f"]
+[gd_scene load_steps=18 format=3 uid="uid://uww0dw0d6m7f"]
 
 [ext_resource type="Texture2D" uid="uid://ciysma8ii57ki" path="res://assets from harrish/Art/Mouse-Kun_Sprites/Riskuits_Player_Idle_South.png" id="1_kbsxf"]
 [ext_resource type="Script" uid="uid://chvvxfxtyfic8" path="res://scripts/player/sprite_setting.gd" id="1_rgeog"]
@@ -97,8 +97,64 @@ _data = {
 &"walk": SubResource("Animation_kbsxf")
 }
 
-[node name="Player" type="CharacterBody3D"]
+[sub_resource type="Animation" id="Animation_opo22"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8rb0w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sd3sa"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m2qjg"]
+_data = {
+&"RESET": SubResource("Animation_8rb0w"),
+&"fade_in": SubResource("Animation_sd3sa"),
+&"fade_out": SubResource("Animation_opo22")
+}
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("player_animation", "fade_animation")]
 script = ExtResource("1_rgeog")
+player_animation = NodePath("PlayerAnimation")
+fade_animation = NodePath("Back/AnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -127,10 +183,14 @@ hframes = 4
 
 [node name="Back" type="Sprite3D" parent="."]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 1, 0)
-visible = false
 shaded = true
 alpha_cut = 2
 texture = ExtResource("3_opo22")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Back"]
+libraries = {
+&"": SubResource("AnimationLibrary_m2qjg")
+}
 
 [node name="BackWalk" type="Sprite3D" parent="."]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 1, 0)
@@ -149,6 +209,7 @@ texture = ExtResource("5_sd3sa")
 
 [node name="SideWalk" type="Sprite3D" parent="."]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 1, 0)
+visible = false
 shaded = true
 alpha_cut = 2
 texture = ExtResource("6_m2qjg")

@@ -7,16 +7,16 @@ signal seated
 @export var npcs: Node3D
 @export var npcs_chairs: Node3D
 @export var cam: RailCamera3D
-@export var cam_lookat: Node3D
+@export var cam_rotation_change: Vector3 = Vector3(-6.4, 0, 0)
+@export var fov_chanage: float = 14.7
 
-var default_fov: float
-var default_rotation: Vector3
+var default_fov: float = 60.0
+var default_rotation: Vector3 = Vector3(-12.7, 0, 0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.from_ = "class"
-	default_fov = cam.fov
-	default_rotation = cam.rotation
+	Dialogic.VAR.set_variable("cam_zoom", false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -29,6 +29,13 @@ func _process(delta: float) -> void:
 			else:
 				GameManager.using_ui = true
 				pause_menu.show()
+				
+	if Dialogic.VAR.get_variable("cam_zoom"):
+		cam.fov = lerp(cam.fov, fov_chanage, delta)
+		cam.global_rotation = cam_rotation_change
+	else:
+		cam.fov = lerp(cam.fov, default_fov, delta)
+		cam.global_rotation = default_rotation
 				
 	if Dialogic.VAR.get_variable("class_dis") and !GameManager.tutorial_flag:
 		hide_all()

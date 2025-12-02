@@ -50,6 +50,7 @@ layout/style_directory={
 }
 variables={
 "bagged": false,
+"cam_zoom": false,
 "class_dis": false
 }
 extensions_folder="res://addons/dialogic_additions"
