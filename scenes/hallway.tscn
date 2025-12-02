@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://d0jasc8dyycal"]
+[gd_scene load_steps=54 format=3 uid="uid://d0jasc8dyycal"]
 
 [ext_resource type="Script" uid="uid://tac1tx36u1fm" path="res://scenes/hallway.gd" id="1_1k2v8"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="2_h81ti"]
@@ -308,6 +308,9 @@ size = Vector3(2.1548386, 1, 2.1624036)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nmws0"]
 size = Vector3(31.400587, 1, 2.1624036)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1m42w"]
+size = Vector3(1.9711914, 2.2579346, 0.14074707)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xyikb"]
 size = Vector3(8.162415, 1, 1)
@@ -821,6 +824,16 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46409273, 1.4395008, -100.579384)
 shape = SubResource("BoxShape3D_nmws0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="HallwayCollision"]
+transform = Transform3D(0.9999539, 0, -0.009599164, 0, 1, 0, 0.009599164, 0, 0.9999539, -11.893718, 2.1770399, 14.705679)
+shape = SubResource("BoxShape3D_1m42w")
+debug_color = Color(0.93333334, 0.101960786, 0.59607846, 1)
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="HallwayCollision"]
+transform = Transform3D(0.60025275, 0, -0.7998104, 0, 1, 0, 0.7998104, 0, 0.60025275, 4.512941, 2.1770399, -42.498096)
+shape = SubResource("BoxShape3D_1m42w")
+debug_color = Color(0.93333334, 0.101960786, 0.59607846, 1)
 
 [node name="CafEntrance" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -89.5075)
