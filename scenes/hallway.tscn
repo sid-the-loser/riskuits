@@ -531,7 +531,7 @@ mesh = SubResource("PlaneMesh_yjeik")
 skeleton = NodePath("../../Player")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Windows"]
-transform = Transform3D(0.08702533, 0, 0, 0, 0.9999983, 5.400125e-13, 0, -4.440892e-15, 1, -0.07095528, 0, 0)
+transform = Transform3D(0.08852965, 0, 0, 0, 0.9999982, 5.5422333e-13, 0, -4.440892e-15, 1, -0.07095516, 0, 0)
 mesh = SubResource("PlaneMesh_yjeik")
 skeleton = NodePath("../../Player")
 
