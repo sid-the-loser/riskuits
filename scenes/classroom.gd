@@ -13,6 +13,8 @@ signal seated
 var default_fov: float = 60.0
 var default_rotation: Vector3 = Vector3(-12.7, 0, 0)
 
+var task_added_flag = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	AudioManager.door_close()
@@ -40,6 +42,9 @@ func _process(delta: float) -> void:
 				
 	if Dialogic.VAR.get_variable("class_dis") and !GameManager.tutorial_flag:
 		hide_all()
+		if not task_added_flag:
+			GameManager.task_list.append("Go on lunch break.")
+			task_added_flag = true
 
 func hide_all():
 	biscuits.hide()

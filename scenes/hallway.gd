@@ -36,10 +36,12 @@ func _ready() -> void:
 	ginna_animator.play("GinnaBobbing")
 	interaction_animator.play("SpaceBar_UI")
 	if GameManager.tutorial_flag:
+		AudioManager.fade_out()
 		ginna.hide()
 		Dialogic.start("pre_classroom_hallway")
 		limit_2.position.z = -40.0
 		Cam1.update_limits()
+		GameManager.task_list.append("Go to class!")
 	else:
 		AudioManager.door_close()
 		ginna.show()
@@ -53,6 +55,7 @@ func _ready() -> void:
 			player.position = Vector3(-13.212, 1.0, -23.651)
 		limit_2.position.z = -107.416
 		Cam1.update_limits()
+		GameManager.task_list.append("Rizz the biscuits!")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

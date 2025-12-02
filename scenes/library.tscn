@@ -1,7 +1,6 @@
 [gd_scene load_steps=54 format=3 uid="uid://dtwjf1dyx2cp4"]
 
 [ext_resource type="Script" uid="uid://bnwo3ije6hs4g" path="res://scenes/library.gd" id="1_m4m2s"]
-[ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="2_n61aj"]
 [ext_resource type="FontFile" uid="uid://c07u130o31i1k" path="res://CustomFonts/RobotoSlab-VariableFont_wght.ttf" id="3_h01uo"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="4_6frsu"]
 [ext_resource type="PackedScene" uid="uid://bcwmeteaf00ew" path="res://models/library/RiscuitsLibrary.gltf" id="5_6frsu"]
@@ -16,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://u3w4f6od0wpj" path="res://assets from harrish/Art/WafuneBooks.png" id="13_6g40d"]
 [ext_resource type="Texture2D" uid="uid://behmokj4bvpa2" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_5-export.png" id="14_646v3"]
 [ext_resource type="Texture2D" uid="uid://dpmvfyn3088rj" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_Chair.png" id="15_2e2ah"]
+[ext_resource type="PackedScene" uid="uid://bxa4ckx0udygr" path="res://prefabs/extras_menu.tscn" id="16_nvcvi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyo4v"]
 bg_color = Color(0.019607844, 0, 0.14509805, 0.4745098)
@@ -292,16 +292,12 @@ radius = 1.1674805
 [sub_resource type="BoxShape3D" id="BoxShape3D_gopiv"]
 size = Vector3(19.406141, 1, 1.0794127)
 
-[node name="Library" type="Node3D" node_paths=PackedStringArray("pause_menu", "interaction_icon", "interaction_icon_animation", "win_control", "lose_control")]
+[node name="Library" type="Node3D" node_paths=PackedStringArray("interaction_icon", "interaction_icon_animation", "win_control", "lose_control")]
 script = ExtResource("1_m4m2s")
-pause_menu = NodePath("PauseMenu")
 interaction_icon = NodePath("InteractionIcon")
 interaction_icon_animation = NodePath("InteractionIcon/AnimationPlayer")
 win_control = NodePath("Win")
 lose_control = NodePath("Lose")
-
-[node name="PauseMenu" parent="." instance=ExtResource("2_n61aj")]
-visible = false
 
 [node name="Win" type="Control" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -750,6 +746,8 @@ spot_angle = 28.576723
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
 transform = Transform3D(-0.99765855, -0.035388608, -0.058523178, -0.05662001, 0.90735, 0.41654563, 0.038360044, 0.4188839, -0.90722924, 0, 0, 0)
 shadow_enabled = true
+
+[node name="ExtrasMenu" parent="." instance=ExtResource("16_nvcvi")]
 
 [connection signal="button_down" from="Win/MainMenu" to="." method="_on_main_menu_button_down"]
 [connection signal="button_down" from="Lose/MainMenu2" to="." method="_on_main_menu_2_button_down"]

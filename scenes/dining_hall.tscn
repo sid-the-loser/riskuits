@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dq64vp5tos7cw" path="res://models/dininghall/RiscuitsDiningHall.gltf" id="1_8w4oh"]
 [ext_resource type="Script" uid="uid://caxamwvyek2n" path="res://scenes/dining_hall.gd" id="1_hvw7s"]
-[ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="3_t7842"]
 [ext_resource type="FontFile" uid="uid://c07u130o31i1k" path="res://CustomFonts/RobotoSlab-VariableFont_wght.ttf" id="4_3qwah"]
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="4_k7dkh"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="5_pimhm"]
@@ -18,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cibl74527p6s5" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_1-export.png" id="15_hsk0w"]
 [ext_resource type="Texture2D" uid="uid://cbn3ypi06hwk" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_4-export.png" id="16_lwcov"]
 [ext_resource type="Texture2D" uid="uid://deq8xehwu3c6o" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_0-export.png" id="17_csdgb"]
+[ext_resource type="PackedScene" uid="uid://bxa4ckx0udygr" path="res://prefabs/extras_menu.tscn" id="18_3qwah"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qwah"]
 bg_color = Color(0.011764706, 0.5254902, 0.078431375, 0.43529412)
@@ -286,9 +286,8 @@ size = Vector3(1.4793217, 1, 53.499737)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4pnqh"]
 size = Vector3(8.965138, 1, 2.1100278)
 
-[node name="DiningHall" type="Node3D" node_paths=PackedStringArray("pause_menu", "win_control", "lose_control", "interactions_icon", "interactions_icon_animator", "lotus_animatior")]
+[node name="DiningHall" type="Node3D" node_paths=PackedStringArray("win_control", "lose_control", "interactions_icon", "interactions_icon_animator", "lotus_animatior")]
 script = ExtResource("1_hvw7s")
-pause_menu = NodePath("PauseMenu")
 win_control = NodePath("Win")
 lose_control = NodePath("Lose")
 interactions_icon = NodePath("InteractionIcon")
@@ -297,9 +296,6 @@ lotus_animatior = NodePath("Lotus/AnimationPlayer")
 
 [node name="blockbench_export" parent="." instance=ExtResource("1_8w4oh")]
 transform = Transform3D(-1.5867235e-07, 0, 3.6300004, 0, 3.63, 0, -3.6300004, 0, -1.5867235e-07, 0, 0, 0)
-
-[node name="PauseMenu" parent="." instance=ExtResource("3_t7842")]
-visible = false
 
 [node name="Win" type="Control" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -801,6 +797,8 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 transform = Transform3D(0.044752836, 0, -0.9989981, 0, 1, 0, 0.9989981, 0, 0.044752836, 5.0985594, 1.6811497, 15.669575)
 shape = SubResource("BoxShape3D_ycrxb")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="ExtrasMenu" parent="." instance=ExtResource("18_3qwah")]
 
 [connection signal="button_down" from="Win/MainMenu" to="." method="_on_main_menu_button_down"]
 [connection signal="button_down" from="Lose/MainMenu2" to="." method="_on_main_menu_2_button_down"]

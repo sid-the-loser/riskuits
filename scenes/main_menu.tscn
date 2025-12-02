@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ciinhkhf0s14n"]
+[gd_scene load_steps=39 format=3 uid="uid://ciinhkhf0s14n"]
 
 [ext_resource type="Script" uid="uid://bhu1jqfr66fh7" path="res://scenes/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://bdgi38t1sv8jn" path="res://models/classroom/RiscuitsClassroomNoBorder.gltf" id="2_wu84c"]
@@ -116,6 +116,23 @@ _data = {
 &"TitleGals": SubResource("Animation_oa1go")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
 [sub_resource type="Animation" id="Animation_lgwnu"]
 length = 0.001
 
@@ -177,6 +194,23 @@ _data = {
 &"hovering": SubResource("Animation_5dd4i"),
 &"idle": SubResource("Animation_flqon")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgwnu"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [sub_resource type="Animation" id="Animation_1ajci"]
 length = 0.001
@@ -261,6 +295,23 @@ _data = {
 &"hovering": SubResource("Animation_rcqid"),
 &"idle": SubResource("Animation_7b55j")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flqon"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [sub_resource type="Animation" id="Animation_a8gd2"]
 length = 0.001
@@ -552,6 +603,7 @@ theme_override_font_sizes/font_size = 41
 theme_override_styles/normal = ExtResource("8_5dd4i")
 theme_override_styles/pressed = ExtResource("8_5dd4i")
 theme_override_styles/hover = ExtResource("8_5dd4i")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5dd4i")
 text = "Play"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/PlayButton"]
@@ -582,6 +634,7 @@ theme_override_font_sizes/font_size = 41
 theme_override_styles/normal = ExtResource("9_lgwnu")
 theme_override_styles/pressed = ExtResource("9_lgwnu")
 theme_override_styles/hover = ExtResource("9_lgwnu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lgwnu")
 text = "Skip Intro"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/SkipIntroButton"]
@@ -612,6 +665,7 @@ theme_override_font_sizes/font_size = 41
 theme_override_styles/normal = ExtResource("10_flqon")
 theme_override_styles/pressed = ExtResource("10_flqon")
 theme_override_styles/hover = ExtResource("10_flqon")
+theme_override_styles/focus = SubResource("StyleBoxFlat_flqon")
 text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/QuitButton"]

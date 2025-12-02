@@ -5,11 +5,11 @@
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="3_u7i40"]
 [ext_resource type="PackedScene" uid="uid://cea8gvhv2cs05" path="res://models/hallway/RiscuitsHallwayVersion2.gltf" id="4_1k2v8"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="4_3w3tr"]
-[ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="6_txc3n"]
 [ext_resource type="Texture2D" uid="uid://bnmf865ncijf7" path="res://assets from harrish/Art/Biscuit_Pixel_Sprites/Riskuits_Ginna_Pixel(New).png" id="7_yjeik"]
 [ext_resource type="Texture2D" uid="uid://blc8vawulmiqd" path="res://assets from harrish/Art/UI_Sprite/SpaceBarPress-export.png" id="8_nlnob"]
 [ext_resource type="FontFile" uid="uid://c07u130o31i1k" path="res://CustomFonts/RobotoSlab-VariableFont_wght.ttf" id="9_w57m6"]
 [ext_resource type="PackedScene" uid="uid://cjorl78p5xtxk" path="res://models/TheClock.gltf" id="10_drbwl"]
+[ext_resource type="PackedScene" uid="uid://bxa4ckx0udygr" path="res://prefabs/extras_menu.tscn" id="10_hwv8p"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_drbwl"]
 dof_blur_far_enabled = true
@@ -385,9 +385,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.284977, 1.9384022, -24.11
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21295166, 0.11327219, 0.2581787)
 shape = SubResource("BoxShape3D_1k2v8")
 debug_color = Color(0, 11.708403, 13.469126, 1)
-
-[node name="PauseMenu" parent="." instance=ExtResource("6_txc3n")]
-visible = false
 
 [node name="IndoorLighting" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.994467, 0.10504918, 0, -0.10504918, -0.994467, -10.044668, 33.912212, 7.6079617)
@@ -856,6 +853,8 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.6122804, -0.9274187, 17.717
 
 [node name="blockbench_export3" parent="NewClocks" instance=ExtResource("10_drbwl")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 41.524532, -0.9274187, -66.823875)
+
+[node name="ExtrasMenu" parent="." instance=ExtResource("10_hwv8p")]
 
 [connection signal="body_entered" from="ClassroomEntrance" to="." method="_on_classroom_entrance_body_entered"]
 [connection signal="body_entered" from="GinnaArea3D" to="." method="_on_area_3d_body_entered"]

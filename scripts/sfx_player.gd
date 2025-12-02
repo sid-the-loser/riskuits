@@ -66,3 +66,10 @@ func play_door_opened():
 func play_door_closed():
 	door_closed.play()
 	scene_fade_out()
+	
+func reset_playheads():
+	title_theme.seek(0)
+	level_theme.seek(0)
+	wafune_theme.seek(0)
+	lotus_theme.seek(0)
+	ginna_theme.seek(0)

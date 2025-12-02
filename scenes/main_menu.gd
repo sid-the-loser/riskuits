@@ -25,8 +25,10 @@ func _ready():
 	animation_player_gals.play("TitleGals")
 	AudioManager.play_soundtrack("title")
 	GameManager.from_ = "start"
+	AudioManager.music_reset()
 	
 func _on_play_button_button_down() -> void:
+	AudioManager.fade_in()
 	GameManager.tutorial_flag = true
 	GameManager.using_ui = false
 	GameManager.from_ = "start"
@@ -34,9 +36,12 @@ func _on_play_button_button_down() -> void:
 
 
 func _on_skip_intro_button_button_down() -> void:
+	AudioManager.fade_in()
 	GameManager.tutorial_flag = false
 	GameManager.using_ui = false
 	GameManager.from_ = "class"
+	GameManager.task_list.append("Go to class!")
+	GameManager.task_list.append("Go on lunch break.")
 	get_tree().change_scene_to_file("res://scenes/hallway.tscn")
 
 

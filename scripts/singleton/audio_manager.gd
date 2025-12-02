@@ -17,3 +17,11 @@ func door_open():
 func door_close():
 	player.play_door_closed()
 	
+func fade_in():
+	player.scene_fade_in()
+	
+func fade_out():
+	player.scene_fade_out()
+	
+func music_reset():
+	player.reset_playheads()

@@ -14,10 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://cjq3mmtr4c708" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_NPC5_North.png" id="12_6y7hp"]
 [ext_resource type="Texture2D" uid="uid://dpmvfyn3088rj" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_Chair.png" id="13_ut2n3"]
 [ext_resource type="Texture2D" uid="uid://5f4ihmf0vxdl" path="res://assets from harrish/Art/NPC_Sprites/Riskuits_NPC4_North.png" id="14_f0xpw"]
-[ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="15_14aws"]
 [ext_resource type="Texture2D" uid="uid://peguwlqtkc76" path="res://assets from harrish/Art/backpack.png" id="15_gyxwi"]
 [ext_resource type="Texture2D" uid="uid://0s7osop2a42a" path="res://assets from harrish/Art/GinnaDS.png" id="16_6y7hp"]
 [ext_resource type="Texture2D" uid="uid://u3w4f6od0wpj" path="res://assets from harrish/Art/WafuneBooks.png" id="17_ut2n3"]
+[ext_resource type="PackedScene" uid="uid://bxa4ckx0udygr" path="res://prefabs/extras_menu.tscn" id="18_ut2n3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x5cc4"]
 size = Vector3(29.929565, 1, 1)
@@ -321,8 +321,7 @@ texture = ExtResource("16_6y7hp")
 transform = Transform3D(0.475, 0, 0, 0, 0.20598805, 0.4280116, 0, -0.4280116, 0.20598805, 5.9743237, 2.5901701, -9.479041)
 texture = ExtResource("17_ut2n3")
 
-[node name="PauseMenu" parent="." instance=ExtResource("15_14aws")]
-visible = false
+[node name="ExtrasMenu" parent="." instance=ExtResource("18_ut2n3")]
 
 [connection signal="seated" from="." to="Player" method="_on_classroom_seated"]
 [connection signal="body_entered" from="PlayerSeat" to="." method="_on_player_seat_body_entered"]
