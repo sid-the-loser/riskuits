@@ -57,7 +57,7 @@ cam = NodePath("RailCamera3D")
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
 transform = Transform3D(1, 0, 0, 0, 0.99337274, 0.11493715, 0, -0.11493715, 0.99337274, 0, 6.141553, 9.182448)
 current = true
-fov = 14.7
+fov = 60.0
 script = ExtResource("1_x5cc4")
 look_at_main_subject_ = false
 main_subject_ = NodePath("../Player")
