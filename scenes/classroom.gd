@@ -10,11 +10,13 @@ signal seated
 @export var cam_lookat: Node3D
 
 var default_fov: float
+var default_rotation: Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.from_ = "class"
 	default_fov = cam.fov
+	default_rotation = cam.rotation
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
