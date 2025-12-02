@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dtwjf1dyx2cp4"]
+[gd_scene load_steps=54 format=3 uid="uid://dtwjf1dyx2cp4"]
 
 [ext_resource type="Script" uid="uid://bnwo3ije6hs4g" path="res://scenes/library.gd" id="1_m4m2s"]
 [ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="2_n61aj"]
@@ -139,6 +139,13 @@ _data = {
 &"RESET": SubResource("Animation_7bqx5"),
 &"Wafune_Lose_Animation": SubResource("Animation_q3d3p")
 }
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nvcvi"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 25.19
+dof_blur_far_transition = 120.0
+dof_blur_near_distance = 0.16
+dof_blur_near_transition = 1533.02
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6frsu"]
 size = Vector3(40.37036, 1, 1)
@@ -298,7 +305,6 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 
 [node name="Win" type="Control" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
@@ -385,6 +391,7 @@ offset_bottom = 82.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.37444338, 0.3394712, 1)
+theme_override_fonts/font = ExtResource("3_h01uo")
 theme_override_font_sizes/font_size = 120
 text = "You Fumbled!"
 
@@ -395,10 +402,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 404.0
-offset_top = 216.0
-offset_right = 500.0
-offset_bottom = 247.0
+offset_left = -49.0
+offset_top = 84.0
+offset_right = 47.0
+offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
@@ -409,7 +416,7 @@ libraries = {
 }
 
 [node name="Player" parent="." instance=ExtResource("4_6frsu")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 17.48586, 1, -13.178209)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 17.924723, 1, -13.158614)
 
 [node name="ClippingCamera" type="Node3D" parent="Player" node_paths=PackedStringArray("cam_collider", "camera_3d", "max_cam_position")]
 script = ExtResource("5_nvcvi")
@@ -419,6 +426,7 @@ max_cam_position = NodePath("MaxCamPosition")
 
 [node name="Camera3D" type="Camera3D" parent="Player/ClippingCamera"]
 transform = Transform3D(0.5555556, 0, 0, 0, 0.54143864, 0.12444371, 0, -0.12444371, 0.54143864, 0.06105423, 2.6296504, 4.912928)
+attributes = SubResource("CameraAttributesPractical_nvcvi")
 current = true
 
 [node name="CamCollider" type="RayCast3D" parent="Player/ClippingCamera"]

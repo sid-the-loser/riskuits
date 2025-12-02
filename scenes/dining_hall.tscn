@@ -1,8 +1,9 @@
-[gd_scene load_steps=44 format=3 uid="uid://dbi1f2uc836vy"]
+[gd_scene load_steps=53 format=3 uid="uid://dbi1f2uc836vy"]
 
 [ext_resource type="PackedScene" uid="uid://dq64vp5tos7cw" path="res://models/dininghall/RiscuitsDiningHall.gltf" id="1_8w4oh"]
 [ext_resource type="Script" uid="uid://caxamwvyek2n" path="res://scenes/dining_hall.gd" id="1_hvw7s"]
 [ext_resource type="PackedScene" uid="uid://eh7te1cp07q5" path="res://prefabs/pause_menu.tscn" id="3_t7842"]
+[ext_resource type="FontFile" uid="uid://c07u130o31i1k" path="res://CustomFonts/RobotoSlab-VariableFont_wght.ttf" id="4_3qwah"]
 [ext_resource type="Script" uid="uid://du6mtnue0r5dw" path="res://scripts/rail_cam.gd" id="4_k7dkh"]
 [ext_resource type="PackedScene" uid="uid://uww0dw0d6m7f" path="res://prefabs/player.tscn" id="5_pimhm"]
 [ext_resource type="Environment" uid="uid://cuxra7uc8caxi" path="res://world_environment_stuff/inclass_environment.tres" id="6_k7dkh"]
@@ -17,6 +18,137 @@
 [ext_resource type="Texture2D" uid="uid://cibl74527p6s5" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_1-export.png" id="15_hsk0w"]
 [ext_resource type="Texture2D" uid="uid://cbn3ypi06hwk" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_4-export.png" id="16_lwcov"]
 [ext_resource type="Texture2D" uid="uid://deq8xehwu3c6o" path="res://assets from harrish/Art/NPC_Sprites/Sideways/Riskuits_NPC_Sit_0-export.png" id="17_csdgb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qwah"]
+bg_color = Color(0.011764706, 0.5254902, 0.078431375, 0.43529412)
+
+[sub_resource type="Animation" id="Animation_csdgb"]
+resource_name = "Lotus_Win_Animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ieihk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rsto0"]
+_data = {
+&"Lotus_Win_Animation": SubResource("Animation_csdgb"),
+&"RESET": SubResource("Animation_ieihk")
+}
+
+[sub_resource type="Animation" id="Animation_hsk0w"]
+resource_name = "Lotus_Lose_Animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.97),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [118, 122]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(193, 242), Vector2(190, 242)]
+}
+
+[sub_resource type="Animation" id="Animation_lwcov"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [118]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(193, 242)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_csdgb"]
+_data = {
+&"Lotus_Lose_Animation": SubResource("Animation_hsk0w"),
+&"RESET": SubResource("Animation_lwcov")
+}
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_3qwah"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.04
+dof_blur_far_transition = 125.0
+dof_blur_amount = 0.06
 
 [sub_resource type="Animation" id="Animation_hwv8p"]
 length = 0.001
@@ -170,7 +302,7 @@ transform = Transform3D(-1.5867235e-07, 0, 3.6300004, 0, 3.63, 0, -3.6300004, 0,
 visible = false
 
 [node name="Win" type="Control" parent="."]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -185,18 +317,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3qwah")
 
 [node name="Label" type="Label" parent="Win"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -62.5
-offset_right = 62.5
-offset_bottom = 23.0
+anchor_bottom = 0.5
+offset_left = -469.0
+offset_top = -81.0
+offset_right = 439.0
+offset_bottom = 84.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_3qwah")
 theme_override_font_sizes/font_size = 120
-text = "You got a date!"
+text = "You Got A Date!"
 
 [node name="MainMenu" type="Button" parent="Win"]
 layout_mode = 1
@@ -205,16 +343,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -15.5
-offset_right = 48.0
-offset_bottom = 15.5
+offset_left = -59.0
+offset_top = 84.0
+offset_right = 37.0
+offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Win"]
+libraries = {
+&"": SubResource("AnimationLibrary_rsto0")
+}
+
 [node name="Lose" type="Control" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -232,15 +376,21 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Lose"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -33.5
-offset_right = 33.5
-offset_bottom = 23.0
+anchor_bottom = 0.5
+offset_left = -383.0
+offset_top = -82.0
+offset_right = 408.0
+offset_bottom = 83.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 120
-text = "You fumbled!"
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.37444338, 0.3394712, 1)
+theme_override_fonts/font = ExtResource("4_3qwah")
+theme_override_font_sizes/font_size = 118
+text = "You Fumbled!"
 
 [node name="MainMenu2" type="Button" parent="Lose"]
 layout_mode = 1
@@ -249,16 +399,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -15.5
-offset_right = 48.0
-offset_bottom = 15.5
+offset_left = -59.0
+offset_top = 84.0
+offset_right = 62.0
+offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lose"]
+libraries = {
+&"": SubResource("AnimationLibrary_csdgb")
+}
+
 [node name="RailCamera3D" type="Camera3D" parent="." node_paths=PackedStringArray("main_subject_", "rail_limit_1_", "rail_limit_2_")]
 transform = Transform3D(1, 0, 0, 0, 0.9733112, 0.22948919, 0, -0.22948919, 0.9733112, 42.05272, 5.830878, 28.827763)
+attributes = SubResource("CameraAttributesPractical_3qwah")
 script = ExtResource("4_k7dkh")
 look_at_main_subject_ = false
 main_subject_ = NodePath("../Player")
@@ -283,7 +439,7 @@ shadow_enabled = true
 environment = ExtResource("6_k7dkh")
 
 [node name="InteractionIcon" type="Sprite3D" parent="."]
-transform = Transform3D(0.45204127, 0, -0.21367894, 0, 0.5, 0, 0.21367894, 0, 0.45204127, 43.22821, 5.3860965, 22.014496)
+transform = Transform3D(0.45204127, 0, -0.21367894, 0, 0.5, 0, 0.21367894, 0, 0.45204127, 42.885677, 4.4096427, 22.014496)
 billboard = 1
 texture = ExtResource("8_u2u04")
 hframes = 8

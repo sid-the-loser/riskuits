@@ -8,10 +8,15 @@ extends Node3D
 @export var interactions_icon: Sprite3D
 @export var interactions_icon_animator: AnimationPlayer
 
+@onready var animation_player: AnimationPlayer = $Win/AnimationPlayer
+@onready var animation_player_lose: AnimationPlayer = $Lose/AnimationPlayer
+
+
 @export var lotus_animatior: AnimationPlayer
 
 var talking_to_lotus_flag = false
 var can_talk_to_lotus_flag = false
+var win_or_lose_anim_flag = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,9 +33,14 @@ func _process(delta: float) -> void:
 	if talking_to_lotus_flag and Dialogic.current_timeline == null:
 		if Dialogic.VAR.get_variable("bagged"):
 			win_control.show()
+			if !win_or_lose_anim_flag:
+				$Win/AnimationPlayer.play("Lotus_Win_Animation")
+				win_or_lose_anim_flag = true
 		else:
 			lose_control.show()
-			
+			if !win_or_lose_anim_flag:
+				$Lose/AnimationPlayer.play("Lotus_Lose_Animation")
+				win_or_lose_anim_flag = true
 		GameManager.using_ui = true
 		
 	if Input.is_action_just_pressed("back") and Dialogic.current_timeline == null:
